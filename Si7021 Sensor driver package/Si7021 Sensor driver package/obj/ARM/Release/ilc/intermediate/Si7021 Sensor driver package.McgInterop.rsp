@@ -1,0 +1,46 @@
+ /debug:pdbonly
+ /nowarn:0436;0618;1668;1685;1701;1702
+ /debug+
+ /nostdlib+
+ /optimize+
+ /out:"C:\Users\Heinr\OneDrive\Desktop\Systecs\ROOMsense\Si7021 Sensor driver package\Si7021 Sensor driver package\obj\ARM\Release\ilc\intermediate\Si7021 Sensor driver package.McgInterop.dll"
+ /pdb:"C:\Users\Heinr\OneDrive\Desktop\Systecs\ROOMsense\Si7021 Sensor driver package\Si7021 Sensor driver package\obj\ARM\Release\ilc\intermediate\Si7021 Sensor driver package.McgInterop.pdb"
+ /platform:arm
+ /warnaserror+
+ /unsafe
+ /nologo
+ /target:library
+ /define:MCG_PRE_BUILD
+ /define:WIN32
+ /define:ARM
+ /r:"C:\Users\Heinr\.nuget\packages\microsoft.net.native.compiler\1.7.6\tools\ARM\ilc\lib\Private\System.Private.CoreLib.dll"
+ /r:"C:\Users\Heinr\.nuget\packages\microsoft.net.native.compiler\1.7.6\tools\ARM\ilc\lib\Private\System.Private.CoreLib.InteropServices.dll"
+ /r:"C:\Users\Heinr\.nuget\packages\microsoft.net.native.compiler\1.7.6\tools\ARM\ilc\lib\Private\System.Private.Interop.dll"
+ /r:"C:\Users\Heinr\OneDrive\Desktop\Systecs\ROOMsense\Si7021 Sensor driver package\Si7021 Sensor driver package\obj\ARM\Release\ilc\in\System.Private.Uri.dll"
+ /r:"C:\Users\Heinr\.nuget\packages\microsoft.net.native.compiler\1.7.6\tools\ARM\ilc\lib\Private\System.Private.CompilerServices.ICastable.dll"
+ /r:"C:\Users\Heinr\.nuget\packages\microsoft.net.native.compiler\1.7.6\tools\ARM\ilc\lib\Private\System.Private.Reflection.dll"
+ /r:"C:\Users\Heinr\.nuget\packages\microsoft.net.native.compiler\1.7.6\tools\ARM\ilc\lib\Private\System.Private.DispatchProxy.dll"
+ /r:"C:\Users\Heinr\OneDrive\Desktop\Systecs\ROOMsense\Si7021 Sensor driver package\Si7021 Sensor driver package\obj\ARM\Release\ilc\in\System.Reflection.DispatchProxy.dll"
+ /r:"C:\Users\Heinr\OneDrive\Desktop\Systecs\ROOMsense\Si7021 Sensor driver package\Si7021 Sensor driver package\obj\ARM\Release\ilc\in\System.Reflection.dll"
+ /r:"C:\Users\Heinr\OneDrive\Desktop\Systecs\ROOMsense\Si7021 Sensor driver package\Si7021 Sensor driver package\obj\ARM\Release\ilc\in\System.Runtime.dll"
+ /r:"C:\Users\Heinr\OneDrive\Desktop\Systecs\ROOMsense\Si7021 Sensor driver package\Si7021 Sensor driver package\obj\ARM\Release\ilc\in\System.Runtime.InteropServices.dll"
+ /r:"C:\Users\Heinr\OneDrive\Desktop\Systecs\ROOMsense\Si7021 Sensor driver package\Si7021 Sensor driver package\obj\ARM\Release\ilc\in\System.Runtime.InteropServices.WindowsRuntime.dll"
+ /r:"C:\Users\Heinr\OneDrive\Desktop\Systecs\ROOMsense\Si7021 Sensor driver package\Si7021 Sensor driver package\obj\ARM\Release\ilc\in\System.Numerics.Vectors.dll"
+ /r:"C:\Users\Heinr\OneDrive\Desktop\Systecs\ROOMsense\Si7021 Sensor driver package\Si7021 Sensor driver package\obj\ARM\Release\ilc\in\System.Threading.dll"
+ /r:"C:\Users\Heinr\OneDrive\Desktop\Systecs\ROOMsense\Si7021 Sensor driver package\Si7021 Sensor driver package\obj\ARM\Release\ilc\in\System.Diagnostics.Debug.dll"
+ /r:"C:\Users\Heinr\OneDrive\Desktop\Systecs\ROOMsense\Si7021 Sensor driver package\Si7021 Sensor driver package\obj\ARM\Release\ilc\in\System.Runtime.WindowsRuntime.UI.Xaml.dll"
+ /r:"C:\Users\Heinr\OneDrive\Desktop\Systecs\ROOMsense\Si7021 Sensor driver package\Si7021 Sensor driver package\obj\ARM\Release\ilc\intermediate\TransformedSRWR\System.Runtime.WindowsRuntime.dll"
+ /r:"C:\Users\Heinr\OneDrive\Desktop\Systecs\ROOMsense\Si7021 Sensor driver package\Si7021 Sensor driver package\obj\ARM\Release\ilc\in\System.Dynamic.Runtime.dll"
+ /r:"C:\Users\Heinr\.nuget\packages\microsoft.net.native.compiler\1.7.6\tools\ARM\ilc\lib\Private\System.Private.CoreLib.Augments.dll"
+ /r:"C:\Users\Heinr\OneDrive\Desktop\Systecs\ROOMsense\Si7021 Sensor driver package\Si7021 Sensor driver package\obj\ARM\Release\ilc\in\System.Runtime.Extensions.dll"
+ /r:"C:\Users\Heinr\OneDrive\Desktop\Systecs\ROOMsense\Si7021 Sensor driver package\Si7021 Sensor driver package\obj\ARM\Release\ilc\in\System.Collections.dll"
+ /r:"C:\Users\Heinr\OneDrive\Desktop\Systecs\ROOMsense\Si7021 Sensor driver package\Si7021 Sensor driver package\obj\ARM\Release\ilc\in\System.ObjectModel.dll"
+ /r:"C:\Users\Heinr\.nuget\packages\microsoft.net.native.sharedlibrary-arm\1.7.3\tools\SharedLibrary\ret\AnalysisILToc\System.Private.SharedLibrary.Interop.Generated.iltoc"
+ "C:\Users\Heinr\OneDrive\Desktop\Systecs\ROOMsense\Si7021 Sensor driver package\Si7021 Sensor driver package\obj\ARM\Release\ilc\intermediate\Si7021 Sensor driver package.McgInterop\Adapters.g.cs"
+ "C:\Users\Heinr\OneDrive\Desktop\Systecs\ROOMsense\Si7021 Sensor driver package\Si7021 Sensor driver package\obj\ARM\Release\ilc\intermediate\Si7021 Sensor driver package.McgInterop\AssemblyInfo.g.cs"
+ "C:\Users\Heinr\OneDrive\Desktop\Systecs\ROOMsense\Si7021 Sensor driver package\Si7021 Sensor driver package\obj\ARM\Release\ilc\intermediate\Si7021 Sensor driver package.McgInterop\Data.g.cs"
+ "C:\Users\Heinr\OneDrive\Desktop\Systecs\ROOMsense\Si7021 Sensor driver package\Si7021 Sensor driver package\obj\ARM\Release\ilc\intermediate\Si7021 Sensor driver package.McgInterop\Helpers.g.cs"
+ "C:\Users\Heinr\OneDrive\Desktop\Systecs\ROOMsense\Si7021 Sensor driver package\Si7021 Sensor driver package\obj\ARM\Release\ilc\intermediate\Si7021 Sensor driver package.McgInterop\ImplTypes.g.cs"
+ "C:\Users\Heinr\OneDrive\Desktop\Systecs\ROOMsense\Si7021 Sensor driver package\Si7021 Sensor driver package\obj\ARM\Release\ilc\intermediate\Si7021 Sensor driver package.McgInterop\PInvoke.g.cs"
+ "C:\Users\Heinr\OneDrive\Desktop\Systecs\ROOMsense\Si7021 Sensor driver package\Si7021 Sensor driver package\obj\ARM\Release\ilc\intermediate\Si7021 Sensor driver package.McgInterop\SafeTypes.g.cs"
+ "C:\Users\Heinr\OneDrive\Desktop\Systecs\ROOMsense\Si7021 Sensor driver package\Si7021 Sensor driver package\obj\ARM\Release\ilc\intermediate\Si7021 Sensor driver package.McgInterop\SharedStubs.g.cs"

@@ -13,17 +13,30 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
+//I2C
 using System.Threading.Tasks;
 using Windows.Devices.I2c;
 using Windows.Devices.Enumeration;
 using Windows.UI.Core;
 
+//Azure Storage
+using Microsoft.WindowsAzure.Storage;
+using Microsoft.WindowsAzure.Storage.Table;
+
 // Die Elementvorlage "Leere Seite" wird unter https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x407 dokumentiert.
+
 
 namespace Si7021_Sensor_driver_package
 {
+
+
     public sealed partial class MainPage : Page
     {
+        private static string Sensore_name = "Luca";
+        private static string account_name = "";
+        private static string key = "";
+        private static string table = "testtableluca";
+
         private I2cDevice si7021Sensor;
         private DispatcherTimer timer;
 
@@ -43,7 +56,7 @@ namespace Si7021_Sensor_driver_package
 
         private async Task start()
         {
-            //get selector string tath will return all I2C controller on the system
+            //get selector string tath will return all I 2C controller on the system
             string i2cDeviceSelector = I2cDevice.GetDeviceSelector();
             //find I2C bus controller device with selector string
             IReadOnlyList<DeviceInformation> devices = await DeviceInformation.FindAllAsync(i2cDeviceSelector);
@@ -58,6 +71,8 @@ namespace Si7021_Sensor_driver_package
             timer.Tick += Timer_Tick;
             timer.Start();
         }
+        int i = 0;
+        public ulong counter = 0;
 
         private void Timer_Tick(object sender, object e)
         {
@@ -93,6 +108,47 @@ namespace Si7021_Sensor_driver_package
             //round to 2 decimal
             temperature = Math.Round(temperature, 2);
             textblock_1.Text += "\n" + temperature.ToString() + " °C";
+
+
+            
+
+            send_data(temperature, humidity);
+        }
+
+        private async void send_data(double temp, double humi)
+        {
+            CloudStorageAccount storageAccount = new CloudStorageAccount(
+                new Microsoft.WindowsAzure.Storage.Auth.StorageCredentials(
+               account_name, key), true);
+
+             // Create the table client
+             CloudTableClient tableClient = storageAccount.CreateCloudTableClient();
+
+            // Get a reference to a table named "peopleTable"
+            CloudTable testtable = tableClient.GetTableReference(table);
+
+            // Create a new customer entity.
+            Sensor_Data data = new Sensor_Data(temp, humi);
+
+            // Create the TableOperation that inserts the customer entity.
+            TableOperation insertOperation = TableOperation.Insert(data);
+
+            // Execute the insert operation.
+            await testtable.ExecuteAsync(insertOperation);
+        }
+
+        private class Sensor_Data : TableEntity
+        {
+            public double Temp { get; set; }
+            public double Humidity { get; set; }
+            public Sensor_Data(double new_temperature,double new_humidity)
+            {
+                this.PartitionKey = Sensore_name;
+                this.RowKey = DateTime.Now.ToString();
+                this.Humidity = new_humidity;
+                this.Temp = new_temperature;
+            }
+
         }
     }
 }
