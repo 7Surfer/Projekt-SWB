@@ -35,7 +35,7 @@ namespace Si7021_Sensor_driver_package
         private static string Sensore_name = "Luca";
         private static string account_name = "";
         private static string key = "";
-        private static string table = "testtableluca";
+        private static string table_name = "testtableluca";
 
         private I2cDevice si7021Sensor;
         private DispatcherTimer timer;
@@ -88,7 +88,6 @@ namespace Si7021_Sensor_driver_package
 
             // Read temperature.
             command[0] = 0xE3;
-
             si7021Sensor.WriteRead(command, temperatureData);
 
             // Calculate and report the humidity.
@@ -109,9 +108,7 @@ namespace Si7021_Sensor_driver_package
             temperature = Math.Round(temperature, 2);
             textblock_1.Text += "\n" + temperature.ToString() + " °C";
 
-
-            
-
+            //send Data to Cloud
             send_data(temperature, humidity);
         }
 
@@ -119,22 +116,22 @@ namespace Si7021_Sensor_driver_package
         {
             CloudStorageAccount storageAccount = new CloudStorageAccount(
                 new Microsoft.WindowsAzure.Storage.Auth.StorageCredentials(
-               account_name, key), true);
+                account_name, key), true);
 
-             // Create the table client
-             CloudTableClient tableClient = storageAccount.CreateCloudTableClient();
+            // Create the table client
+            CloudTableClient tableClient = storageAccount.CreateCloudTableClient();
 
-            // Get a reference to a table named "peopleTable"
-            CloudTable testtable = tableClient.GetTableReference(table);
+            // Get a reference to a table named from the string table_name
+            CloudTable cloud_table = tableClient.GetTableReference(table_name);
 
-            // Create a new customer entity.
+            // Create a new Sensor_Data entity
             Sensor_Data data = new Sensor_Data(temp, humi);
 
-            // Create the TableOperation that inserts the customer entity.
+            // Create the TableOperation that inserts the Sensor_data entity
             TableOperation insertOperation = TableOperation.Insert(data);
 
-            // Execute the insert operation.
-            await testtable.ExecuteAsync(insertOperation);
+            // Execute the insert operation
+            await cloud_table.ExecuteAsync(insertOperation);
         }
 
         private class Sensor_Data : TableEntity
