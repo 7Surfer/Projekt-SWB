@@ -72,7 +72,6 @@ namespace Si7021_Sensor_driver_package
             timer.Start();
         }
         int i = 0;
-        public ulong counter = 0;
 
         private void Timer_Tick(object sender, object e)
         {
