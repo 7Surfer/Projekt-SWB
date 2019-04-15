@@ -10,6 +10,7 @@
 
     <Grid>
         <TextBlock x:Name="textblock_1" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Bitte Warten" VerticalAlignment="Center" FontSize="72" Height="341" Margin="553,336,553,323"/>
+        <Button Content="Quit App" HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="553,864,553,46" FontSize="48" Width="394" Click="Button_Click"/>
 
     </Grid>
 </Page>

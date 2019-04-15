@@ -36,6 +36,7 @@ namespace Si7021_Sensor_driver_package
         private static string account_name = "";
         private static string key = "";
         private static string table_name = "testtableluca";
+        private static int timer_intervall_ms = 5000;
 
         private I2cDevice si7021Sensor;
         private DispatcherTimer timer;
@@ -45,16 +46,16 @@ namespace Si7021_Sensor_driver_package
             this.InitializeComponent();
 
             //call async function at start of programm
-            async_start();
+            Async_start();
         }
 
         //need a async methode to start the task
-        async void async_start()
+        async void Async_start()
         {
-            await start();
+            await Start();
         }
 
-        private async Task start()
+        private async Task Start()
         {
             //get selector string tath will return all I 2C controller on the system
             string i2cDeviceSelector = I2cDevice.GetDeviceSelector();
@@ -67,12 +68,10 @@ namespace Si7021_Sensor_driver_package
             si7021Sensor = await I2cDevice.FromIdAsync(devices[0].Id, si7021_settings);
 
             // Start the polling timer.
-            timer = new DispatcherTimer() { Interval = TimeSpan.FromMilliseconds(5000) };
+            timer = new DispatcherTimer() { Interval = TimeSpan.FromMilliseconds(timer_intervall_ms) };
             timer.Tick += Timer_Tick;
             timer.Start();
         }
-        int i = 0;
-        public ulong counter = 0;
 
         private void Timer_Tick(object sender, object e)
         {
@@ -109,10 +108,10 @@ namespace Si7021_Sensor_driver_package
             textblock_1.Text += "\n" + temperature.ToString() + " °C";
 
             //send Data to Cloud
-            send_data(temperature, humidity);
+            Send_data(temperature, humidity);
         }
 
-        private async void send_data(double temp, double humi)
+        private async void Send_data(double temp, double humi)
         {
             CloudStorageAccount storageAccount = new CloudStorageAccount(
                 new Microsoft.WindowsAzure.Storage.Auth.StorageCredentials(
@@ -146,6 +145,12 @@ namespace Si7021_Sensor_driver_package
                 this.Temp = new_temperature;
             }
 
+        }
+
+        //Quit app
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Exit();
         }
     }
 }

@@ -19,6 +19,15 @@
       <RootProperty Name="Height" />
       <RootProperty Name="Margin" />
     </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.Button">
+      <RootProperty Name="Content" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="FontSize" />
+      <RootProperty Name="Width" />
+      <RootEvent Name="Click" />
+    </RootType>
     <RootType FullName="Si7021_Sensor_driver_package.MainPage" />
   </Roots.RootTypes>
 </Roots>
