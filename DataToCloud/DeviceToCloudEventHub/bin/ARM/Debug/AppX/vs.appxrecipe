@@ -10,7 +10,7 @@
     <PackageArchitecture>arm</PackageArchitecture>
     <PackageIdentityName>f1905d1f-95be-4b59-9a39-2a6ccad68d99</PackageIdentityName>
     <PackageIdentityPublisher>CN=yanni</PackageIdentityPublisher>
-    <IntermediateOutputPath>C:\Users\yanni\source\repos\DataToCloud\DeviceToCloudEventHub\obj\ARM\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\yanni\Desktop\ProjektC#\ROOMsense\DataToCloud\DeviceToCloudEventHub\obj\ARM\Debug\</IntermediateOutputPath>
     <RemoteDeploymentType>
     </RemoteDeploymentType>
     <PackageRegistrationPath>
@@ -18,7 +18,7 @@
     <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
-    <LayoutDir>C:\Users\yanni\source\repos\DataToCloud\DeviceToCloudEventHub\bin\ARM\Debug\AppX</LayoutDir>
+    <LayoutDir>C:\Users\yanni\Desktop\ProjektC#\ROOMsense\DataToCloud\DeviceToCloudEventHub\bin\ARM\Debug\AppX</LayoutDir>
     <RegisteredManifestChecksum>96051512467AC7BACE4C5FC226D6FA9D30AF9419E17E6C45BDFD02757FF464FD</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>f1905d1f-95be-4b59-9a39-2a6ccad68d99_1.0.0.0_arm__27wbqbf9v9ghe</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>f1905d1f-95be-4b59-9a39-2a6ccad68d99_27wbqbf9v9ghe!App</RegisteredUserModeAppID>
@@ -27,16 +27,16 @@
     <RegisteredVersion>1.0.0.0</RegisteredVersion>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\Users\yanni\source\repos\DataToCloud\DeviceToCloudEventHub\bin\ARM\Debug\Core\AppxManifest.xml">
+    <AppXManifest Include="C:\Users\yanni\Desktop\ProjektC#\ROOMsense\DataToCloud\DeviceToCloudEventHub\bin\ARM\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2019-04-20T20:36:57.002</Modified>
+      <Modified>2019-04-21T21:14:01.007</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Users\yanni\source\repos\DataToCloud\DeviceToCloudEventHub\bin\ARM\Debug\DeviceToCloudEventHub.exe">
+    <AppxPackagedFile Include="C:\Users\yanni\Desktop\ProjektC#\ROOMsense\DataToCloud\DeviceToCloudEventHub\bin\ARM\Debug\DeviceToCloudEventHub.exe">
       <PackagePath>entrypoint\DeviceToCloudEventHub.exe</PackagePath>
-      <Modified>2019-04-20T20:36:55.846</Modified>
+      <Modified>2019-04-21T21:13:57.524</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\yanni\.nuget\packages\dotnetty.buffers\0.6.0\lib\netstandard1.3\DotNetty.Buffers.dll">
       <PackagePath>DotNetty.Buffers.dll</PackagePath>
@@ -118,67 +118,67 @@
       <PackagePath>Microsoft.UI.Xaml.Markup.winmd</PackagePath>
       <Modified>2018-10-23T00:33:40.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\yanni\source\repos\DataToCloud\DeviceToCloudEventHub\Properties\Default.rd.xml">
+    <AppxPackagedFile Include="C:\Users\yanni\Desktop\ProjektC#\ROOMsense\DataToCloud\DeviceToCloudEventHub\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
       <Modified>2019-04-19T11:32:48.700</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\yanni\source\repos\DataToCloud\DeviceToCloudEventHub\Assets\LockScreenLogo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\yanni\Desktop\ProjektC#\ROOMsense\DataToCloud\DeviceToCloudEventHub\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
       <Modified>2019-04-05T18:04:41.549</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\yanni\source\repos\DataToCloud\DeviceToCloudEventHub\Assets\SplashScreen.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\yanni\Desktop\ProjektC#\ROOMsense\DataToCloud\DeviceToCloudEventHub\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2019-04-05T18:04:41.549</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\yanni\source\repos\DataToCloud\DeviceToCloudEventHub\Assets\Square150x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\yanni\Desktop\ProjektC#\ROOMsense\DataToCloud\DeviceToCloudEventHub\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2019-04-05T18:04:41.549</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\yanni\source\repos\DataToCloud\DeviceToCloudEventHub\Assets\Square44x44Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\yanni\Desktop\ProjektC#\ROOMsense\DataToCloud\DeviceToCloudEventHub\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2019-04-05T18:04:41.549</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\yanni\source\repos\DataToCloud\DeviceToCloudEventHub\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+    <AppxPackagedFile Include="C:\Users\yanni\Desktop\ProjektC#\ROOMsense\DataToCloud\DeviceToCloudEventHub\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2019-04-05T18:04:41.549</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\yanni\source\repos\DataToCloud\DeviceToCloudEventHub\Assets\StoreLogo.png">
+    <AppxPackagedFile Include="C:\Users\yanni\Desktop\ProjektC#\ROOMsense\DataToCloud\DeviceToCloudEventHub\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2019-04-05T18:04:41.549</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\yanni\source\repos\DataToCloud\DeviceToCloudEventHub\Assets\Wide310x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\yanni\Desktop\ProjektC#\ROOMsense\DataToCloud\DeviceToCloudEventHub\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2019-04-05T18:04:41.549</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\yanni\source\repos\DataToCloud\DeviceToCloudEventHub\bin\ARM\Debug\DeviceToCloudEventHub.xr.xml">
+    <AppxPackagedFile Include="C:\Users\yanni\Desktop\ProjektC#\ROOMsense\DataToCloud\DeviceToCloudEventHub\bin\ARM\Debug\DeviceToCloudEventHub.xr.xml">
       <PackagePath>DeviceToCloudEventHub.xr.xml</PackagePath>
       <Modified>2019-04-19T12:29:25.901</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\yanni\source\repos\DataToCloud\DeviceToCloudEventHub\bin\ARM\Debug\App.xbf">
+    <AppxPackagedFile Include="C:\Users\yanni\Desktop\ProjektC#\ROOMsense\DataToCloud\DeviceToCloudEventHub\bin\ARM\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2019-04-20T20:36:55.493</Modified>
+      <Modified>2019-04-21T21:13:56.763</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\yanni\source\repos\DataToCloud\DeviceToCloudEventHub\bin\ARM\Debug\MainPage.xbf">
+    <AppxPackagedFile Include="C:\Users\yanni\Desktop\ProjektC#\ROOMsense\DataToCloud\DeviceToCloudEventHub\bin\ARM\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2019-04-20T20:36:55.494</Modified>
+      <Modified>2019-04-21T21:13:56.763</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.17763.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
       <Modified>2018-10-22T23:44:28.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\yanni\source\repos\DataToCloud\DeviceToCloudEventHub\bin\ARM\Debug\resources.pri">
+    <AppxPackagedFile Include="C:\Users\yanni\Desktop\ProjektC#\ROOMsense\DataToCloud\DeviceToCloudEventHub\bin\ARM\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2019-04-20T12:32:57.986</Modified>
+      <Modified>2019-04-21T21:13:58.504</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\yanni\source\repos\DataToCloud\DeviceToCloudEventHub\bin\ARM\Debug\Core\DeviceToCloudEventHub.exe">
+    <AppxPackagedFile Include="C:\Users\yanni\Desktop\ProjektC#\ROOMsense\DataToCloud\DeviceToCloudEventHub\bin\ARM\Debug\Core\DeviceToCloudEventHub.exe">
       <PackagePath>DeviceToCloudEventHub.exe</PackagePath>
-      <Modified>2019-04-20T20:36:56.992</Modified>
+      <Modified>2019-04-21T21:14:00.984</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

@@ -39,11 +39,27 @@ namespace DeviceToCloudEventHub
 
     public sealed partial class MainPage : Page
     {
-        
+
         private static int timer_intervall_ms = 5000;
 
         private I2cDevice i2cDevice;
         private DispatcherTimer timer;
+
+        //Measuarment Class
+        public class Measurenent
+        {
+            public string DeviceId { get; set; }
+            public string Timestamp = DateTime.Now.ToString();
+            public double Temperature { get; set; }
+            public double Humidity { get; set; }
+
+            public Measurenent(string deviceID, double temperature, double humidity)
+            {
+                this.Temperature = temperature;
+                this.Humidity = humidity;
+                this.DeviceId = deviceID;
+            }
+        }
 
         public MainPage()
         {
@@ -54,7 +70,7 @@ namespace DeviceToCloudEventHub
         }
 
         //string deviceId = new EasClientDeviceInformation().FriendlyName;
-        
+
         //need a async methode to start the task
         async void Async_start()
         {
@@ -77,7 +93,7 @@ namespace DeviceToCloudEventHub
             timer = new DispatcherTimer() { Interval = TimeSpan.FromMilliseconds(timer_intervall_ms) };
             timer.Tick += Timer_Tick;
             timer.Start();
-            }
+        }
 
         private void Timer_Tick(object sender, object e)
         {
@@ -101,7 +117,7 @@ namespace DeviceToCloudEventHub
             double humidity = -6 + (125 * humidityRatio);
             //round to 2 decimal
             humidity = Math.Round(humidity, 2);
-           
+
 
             // Calculate and report the temperature.
             var rawTempReading = temperatureData[0] << 8 | temperatureData[1];
@@ -113,63 +129,33 @@ namespace DeviceToCloudEventHub
             temperature = Math.Round(temperature, 2);
 
 
-            //Device Id
-            string deviceId = new EasClientDeviceInformation().FriendlyName;
-
-            //Create data containing Object
-            Measurement measurement = new Measurement(deviceId, DateTime.Now, temperature, humidity);
-            //string hubMessage = JsonConvert.SerializeObject(measurement);
-            //Debug.WriteLine("Hub Message: " + hubMessage);
-
-            //send Data to Cloud
-            //Send_data(temperature, humidity);
-            System.Diagnostics.Debug.WriteLine(measurement.ToString()); // data noch richtig
-            //System.Diagnostics.Debug.WriteLine(measurement.temperature);
-
-            Send_data(measurement);
+            //Call function to send data to cloud
+            Send_data(temperature, humidity);
         }
-
-        
 
         //private async void Send_data(double temp, double humi)
-        private async void Send_data(Measurement dataObj)
+        private async void Send_data(double temp, double humi)
         {
-                string iotHubUri = "IoTHubHE.azure-devices.net";
-                string deviceId2 = "yannik-rpi3";
-                string deviceKey = "DotFFX5zCJnrqWlvSCG72qiZgpOv+L4OQ1unzM8s12E=";
+            string iotHubUri = "IoTHubHE.azure-devices.net";
+            string deviceKey = "";
+            string deviceId2 = "yannik-rpi3";
 
-                var deviceClient = DeviceClient.Create(iotHubUri, AuthenticationMethodFactory.CreateAuthenticationWithRegistrySymmetricKey(deviceId2, deviceKey), TransportType.Http1);
+            var deviceClient = DeviceClient.Create(iotHubUri, AuthenticationMethodFactory.CreateAuthenticationWithRegistrySymmetricKey(deviceId2, deviceKey), TransportType.Http1);
 
-            var payload = "{" +
-                "\"deviceId\":\"" + dataObj.DeviceId + "\", " +
-                "\"timestamp\":\"" + dataObj.Timestamp + "\", " +
-                "\"temperature\":\"" + dataObj.Temperature + "\", " +
-                "\"humidity\":" + dataObj.Humidity + "\"" +
-                "}";
+            //create class with meassurement
+            Measurenent measurement = new Measurenent(deviceId2, temp, humi);
+            var payload = JsonConvert.SerializeObject(measurement);
 
 
-
-
-            //string str = String.Format("Temperatur um {0} : {1} Grad Celsius", DateTime.Now, GetTemperature());
-
-            //string str = String.Format("{0} : Temperatur: {1}  Luftfeuchtigkeit: {2}", DateTime.Now, (int) dataObj.tem, humi);
-            //System.Diagnostics.Debug.WriteLine(dataObj.deviceId, dataObj.temperature, dataObj.humidity);
-            //string dataToSend = dataObj.ToJSON(dataObj);
             Message message = new Message(Encoding.UTF8.GetBytes(payload));
 
+            //Write to consol for testing
             Debug.WriteLine("Message: " + payload);
-            //Debug.WriteLine("\t{0}> Sending message: [{1}]", DateTime.Now.ToLocalTime(), payload);
-
-
-            //Print data to console test
-            //System.Diagnostics.Debug.WriteLine(dataObj.deviceId,dataObj.timestamp, dataObj.temperature, dataObj.humidity);
+            //Send to Cloud
             await deviceClient.SendEventAsync(message);
-
-            
-
         }
 
-        
+
 
         //Quit app
         private void Button_Click(object sender, RoutedEventArgs e)

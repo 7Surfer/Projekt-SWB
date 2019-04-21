@@ -25170,11 +25170,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\yanni\\source\\repos\\DataToCloud\\DeviceToCloudEventHub\\DeviceToCloudEventHub.csproj",
+      "projectUniqueName": "C:\\Users\\yanni\\Desktop\\ProjektC#\\ROOMsense\\DataToCloud\\DeviceToCloudEventHub\\DeviceToCloudEventHub.csproj",
       "projectName": "DeviceToCloudEventHub",
-      "projectPath": "C:\\Users\\yanni\\source\\repos\\DataToCloud\\DeviceToCloudEventHub\\DeviceToCloudEventHub.csproj",
+      "projectPath": "C:\\Users\\yanni\\Desktop\\ProjektC#\\ROOMsense\\DataToCloud\\DeviceToCloudEventHub\\DeviceToCloudEventHub.csproj",
       "packagesPath": "C:\\Users\\yanni\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\yanni\\source\\repos\\DataToCloud\\DeviceToCloudEventHub\\obj\\",
+      "outputPath": "C:\\Users\\yanni\\Desktop\\ProjektC#\\ROOMsense\\DataToCloud\\DeviceToCloudEventHub\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
