@@ -1,1 +1,0 @@
-C:\Users\yanni\Desktop\ProjektC#\ROOMsense\DataToCloud\DeviceToCloudEventHub\DeviceToCloudEventHub.csproj;arm
