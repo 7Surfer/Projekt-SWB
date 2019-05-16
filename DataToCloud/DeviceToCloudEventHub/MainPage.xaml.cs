@@ -16,9 +16,8 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-//I2C
+//Async
 using System.Threading.Tasks;
-using Windows.Devices.I2c;
 using Windows.Devices.Enumeration;
 using Windows.UI.Core;
 using Microsoft.Azure.Devices.Client;
@@ -35,14 +34,14 @@ using Windows.Security.ExchangeActiveSyncProvisioning;
 
 namespace DeviceToCloudEventHub
 {
-
-
     public sealed partial class MainPage : Page
     {
 
         private static int timer_intervall_ms = 5000;
+        private string iotHubUri = "IoTHubHE.azure-devices.net";
+        private string deviceKey = "";
+        private string deviceId = "";
 
-        
         private DispatcherTimer timer;
         Si7021_sensor si7021_sensor;
 
@@ -78,6 +77,7 @@ namespace DeviceToCloudEventHub
         }
         private async Task Start()
         {
+            //change after testing to default construcktor
             si7021_sensor.Setup_device();
 
             // Start the polling timer.
@@ -91,9 +91,10 @@ namespace DeviceToCloudEventHub
             double temperature;
             double humidity;
 
+            //Get Data from Sensor
             temperature = si7021_sensor.Get_temperature();
             humidity = si7021_sensor.Get_humidity();
-
+            //Villeicht ändern auf array übergabe um nur 1 Funktionsaufruf zu haben
 
             //Call function to send data to cloud
             Send_data(temperature, humidity);
@@ -102,26 +103,20 @@ namespace DeviceToCloudEventHub
         //private async void Send_data(double temp, double humi)
         private async void Send_data(double temp, double humi)
         {
-            string iotHubUri = "IoTHubHE.azure-devices.net";
-            string deviceKey = "";
-            string deviceId2 = "";
-
-            var deviceClient = DeviceClient.Create(iotHubUri, AuthenticationMethodFactory.CreateAuthenticationWithRegistrySymmetricKey(deviceId2, deviceKey), TransportType.Http1);
+            var deviceClient = DeviceClient.Create(iotHubUri, AuthenticationMethodFactory.CreateAuthenticationWithRegistrySymmetricKey(deviceId, deviceKey), TransportType.Http1);
 
             //create class with meassurement
-            Measurenent measurement = new Measurenent(deviceId2, temp, humi);
+            Measurenent measurement = new Measurenent(deviceId, temp, humi);
             var payload = JsonConvert.SerializeObject(measurement);
-
 
             Message message = new Message(Encoding.UTF8.GetBytes(payload));
 
             //Write to consol for testing
             Debug.WriteLine("Message: " + payload);
+
             //Send to Cloud
             await deviceClient.SendEventAsync(message);
         }
-
-
 
         //Quit app
         private void Button_Click(object sender, RoutedEventArgs e)

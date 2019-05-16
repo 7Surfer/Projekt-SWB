@@ -209,3 +209,15 @@ C:\Users\Heinr\OneDrive\Desktop\SystecTest\ROOMsense\DataToCloud\DeviceToCloudEv
 C:\Users\Heinr\OneDrive\Desktop\SystecTest\ROOMsense\DataToCloud\DeviceToCloudEventHub\obj\ARM\Debug\Microsoft.Azure.Amqp.pri.xml
 C:\Users\Heinr\OneDrive\Desktop\SystecTest\ROOMsense\DataToCloud\DeviceToCloudEventHub\obj\ARM\Debug\ProjectArchitectures.txt
 C:\Users\Heinr\OneDrive\Desktop\SystecTest\ROOMsense\DataToCloud\DeviceToCloudEventHub\obj\ARM\Debug\.winmd_cache\$Microsoft.UI.Xaml.Markup.winmd_636758516200000000.json
+C:\Users\Heinr\OneDrive\Desktop\Systecs\ROOMsense\DataToCloud\DeviceToCloudEventHub\obj\ARM\Debug\DeviceToCloudEventHub.csprojAssemblyReference.cache
+C:\Users\Heinr\OneDrive\Desktop\Systecs\ROOMsense\DataToCloud\DeviceToCloudEventHub\obj\ARM\Debug\App.g.i.cs
+C:\Users\Heinr\OneDrive\Desktop\Systecs\ROOMsense\DataToCloud\DeviceToCloudEventHub\obj\ARM\Debug\App.g.cs
+C:\Users\Heinr\OneDrive\Desktop\Systecs\ROOMsense\DataToCloud\DeviceToCloudEventHub\obj\ARM\Debug\MainPage.g.i.cs
+C:\Users\Heinr\OneDrive\Desktop\Systecs\ROOMsense\DataToCloud\DeviceToCloudEventHub\obj\ARM\Debug\MainPage.g.cs
+C:\Users\Heinr\OneDrive\Desktop\Systecs\ROOMsense\DataToCloud\DeviceToCloudEventHub\obj\ARM\Debug\App.xaml
+C:\Users\Heinr\OneDrive\Desktop\Systecs\ROOMsense\DataToCloud\DeviceToCloudEventHub\obj\ARM\Debug\MainPage.xaml
+C:\Users\Heinr\OneDrive\Desktop\Systecs\ROOMsense\DataToCloud\DeviceToCloudEventHub\obj\ARM\Debug\App.xbf
+C:\Users\Heinr\OneDrive\Desktop\Systecs\ROOMsense\DataToCloud\DeviceToCloudEventHub\obj\ARM\Debug\MainPage.xbf
+C:\Users\Heinr\OneDrive\Desktop\Systecs\ROOMsense\DataToCloud\DeviceToCloudEventHub\obj\ARM\Debug\XamlSaveStateFile.xml
+C:\Users\Heinr\OneDrive\Desktop\Systecs\ROOMsense\DataToCloud\DeviceToCloudEventHub\obj\ARM\Debug\DeviceToCloudEventHub.exe
+C:\Users\Heinr\OneDrive\Desktop\Systecs\ROOMsense\DataToCloud\DeviceToCloudEventHub\obj\ARM\Debug\DeviceToCloudEventHub.pdb
