@@ -1,0 +1,34 @@
+cd <ordnerlink>
+bsp: cd C:\Users\Heinr\OneDrive\Desktop\SystecTest\ROOMsense
+(wichtig die \ in / umändern)
+
+git clone https://github.com/7Surfer/ROOMsense.git
+
+cd roomsense
+
+Wenn am code geändert werden soll dann kann man jetzt ändern und dann weiter zu schritt (2:)
+bei komplett neuer datei weiter zu (1:)
+
+
+1:
+nun am code arbeiten ...
+alles speichern und programme schließen
+
+weiter zu (3:)
+
+
+2:
+neue datei in ordner einfügen
+dann weiter zu (3:)
+
+
+3:
+git add .
+
+git commit -m 'nachricht'
+bsp: git commit -m 'neuer code hinzugefügt'
+
+(villeicht anmelden dann kommt aber die nachricht wie)
+
+git push
+
