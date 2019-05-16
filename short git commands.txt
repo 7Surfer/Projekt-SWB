@@ -6,8 +6,8 @@ git clone https://github.com/7Surfer/ROOMsense.git
 
 cd roomsense
 
-Wenn am code geändert werden soll dann kann man jetzt ändern und dann weiter zu schritt (2:)
-bei komplett neuer datei weiter zu (1:)
+Wenn am code geändert werden soll dann kann man jetzt ändern und dann weiter zu schritt (1:)
+bei komplett neuer datei weiter zu (2:)
 
 
 1:
