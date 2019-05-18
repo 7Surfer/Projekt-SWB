@@ -53,7 +53,7 @@ function exit(message) {
   process.stdin.on("data", process.exit.bind(process, 0));
 }
 
-console.log('IdArray: ' + deviceIdArray);
+console.log('IdArray: ' + deviceIdArray); // Funktioniert nicht weil Datenbankabfrage asynchron ist --> module.exports exportiert leeres Array
 
 
   getDeviceIdArray()
