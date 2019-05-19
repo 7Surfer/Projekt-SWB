@@ -1,7 +1,9 @@
-setTimeout(() => {
-    const sensorData = require('./app');
+const sensorData = require('./app');
 
-}, 1800);
-setTimeout(() => {
-    console.log('Test: ' + sensorData.deviceIdArray);
-}, 2000);
+sensorData.getDeviceIdArray().then((result) => {
+    console.log('Result: ' + result)
+    console.log(result.length)
+}).catch((error) => {
+    console.log(error);
+});
+

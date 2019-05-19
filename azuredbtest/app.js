@@ -1,48 +1,43 @@
 const CosmosClient = require("@azure/cosmos").CosmosClient;
 const dataQueries = require("./queries");
-
 const config = require("./config");
-
 const endpoint = config.endpoint;
-
 const masterKey = config.primaryKey;
-
 const client = new CosmosClient({
   endpoint: endpoint,
   auth: { masterKey: masterKey }
 });
-
 const HttpStatusCode = { NOTFOUND: 404 };
-
 const databaseId = config.database.id;
-
 const containerId = config.container.id;
 
+var lastIdArray = [];
 
-var deviceIdArray = [];
+
 // Query
 async function getDeviceIdArray() {
-  
+  const deviceCount = {
+  //query: "SELECT DISTINCT c.deviceId FROM c c",
+  // Query aus queries.js
+    query: dataQueries.deviceIdArray,
+    parameters: []
+  };
 
-        const deviceCount = {
-            query: "SELECT DISTINCT c.deviceId FROM c c",
-            parameters: []
-        };
-        
-        const { result: results } = await client.database(databaseId).container(containerId).items.query(deviceCount).toArray()
-        var jsonArray = JSON.stringify(results);
-        console.log('Results: ' + jsonArray);
-        var idArray = JSON.parse(jsonArray);
-        
-        
-         for(var i = 0; i < idArray.length; i++) {
-             deviceIdArray.push(idArray[i].deviceId);
-             deviceIdArray[i] = "'" + deviceIdArray[i] + "'";
-     }
-        
-        console.log('DeviceIdArray: ' + deviceIdArray);
-        console.log('Länge: ' + deviceIdArray.length)
-        
+  const { result: results } = await client
+    .database(databaseId)
+    .container(containerId)
+    .items.query(deviceCount)
+    .toArray();
+
+
+  var jsonArray = JSON.stringify(results);
+  var idArray = JSON.parse(jsonArray);
+
+  for (var i = 0; i < idArray.length; i++) {
+    lastIdArray.push(idArray[i].deviceId);
+    lastIdArray[i] = "'" + lastIdArray[i] + "'";
+  }
+  return lastIdArray;
 }
 
 function exit(message) {
@@ -53,18 +48,8 @@ function exit(message) {
   process.stdin.on("data", process.exit.bind(process, 0));
 }
 
-console.log('IdArray: ' + deviceIdArray); // Funktioniert nicht weil Datenbankabfrage asynchron ist --> module.exports exportiert leeres Array
+
+module.exports.getDeviceIdArray = getDeviceIdArray;
 
 
-  getDeviceIdArray()
-  .then(() => {
-    exit(`Completed successfully`);
-  })
-  .catch(error => {
-    exit(`Completed with error \${JSON.stringify(error)}`);
-  });
 
- 
-
-  
-  
