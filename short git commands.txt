@@ -32,3 +32,7 @@ bsp: git commit -m 'neuer code hinzugefügt'
 
 git push
 
+
+Prüfen ob Ordner git repository:
+	in Ordner --> git rev-parse --is-inside-work-tree
+
