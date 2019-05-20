@@ -18,25 +18,9 @@ namespace DeviceToCloudEventHub
     class Si7021_sensor
     {
         //Set the count of the rounded decimal number
-        private int accuracy = 2;
+        private static int accuracy = 2;
 
         private I2cDevice i2cDevice;
-
-        /*
-        //Default kosntructor for initilisation (need testing for working)
-        public Si7021_sensor()
-        {
-            //return i2c controller
-            string i2cDeviceSelector = I2cDevice.GetDeviceSelector();
-            //find I2C bus controller device with selector string
-            IReadOnlyList<DeviceInformation> devices = await DeviceInformation.FindAllAsync(i2cDeviceSelector);
-
-            // create the settings and specify the device adress
-            // device adress from data sheet (https://www.silabs.com/documents/public/data-sheets/Si7021-A20.pdf Page 40)
-            var si7021_settings = new I2cConnectionSettings(0x40);
-            i2cDevice = await I2cDevice.FromIdAsync(devices[0].Id, si7021_settings);
-        }
-        */
 
         //Setup device with i2c
         public async void Setup_device()
