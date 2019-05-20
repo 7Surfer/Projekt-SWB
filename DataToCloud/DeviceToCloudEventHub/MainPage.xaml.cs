@@ -115,7 +115,15 @@ namespace DeviceToCloudEventHub
             Debug.WriteLine("Message: " + payload);
 
             //Send to Cloud
-            await deviceClient.SendEventAsync(message);
+            try
+            {
+                await deviceClient.SendEventAsync(message);
+            }
+            catch ( Exception e)
+            {
+                Console.WriteLine("Error on Send Data. Check DeviceKey, DeviceID & HubURL");
+                Console.WriteLine(e);
+            }
         }
 
         //Quit app

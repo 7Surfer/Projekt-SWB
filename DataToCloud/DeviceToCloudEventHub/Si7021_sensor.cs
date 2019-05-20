@@ -71,8 +71,15 @@ namespace DeviceToCloudEventHub
             // Read humidity.
             // adress got from data sheet (https://www.silabs.com/documents/public/data-sheets/Si7021-A20.pdf Page 40)
             command[0] = 0xE5;
-            i2cDevice.WriteRead(command, humidityData);
-
+            try
+            {
+                i2cDevice.WriteRead(command, humidityData);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error on I2C device. Check cable connections");
+                Console.WriteLine(e);
+            }
             // Calculate and report the humidity.
             var rawHumidityReading = humidityData[0] << 8 | humidityData[1];
             var humidityRatio = rawHumidityReading / (float)65536;
