@@ -40,7 +40,7 @@ namespace DeviceToCloudEventHub
         private static int timer_intervall_ms = 5000;
         private string iotHubUri = "IoTHubHE.azure-devices.net";
         private string deviceId = "raspberryLuca";
-        private string deviceKey = "g4CutpBmuvrSWAWvKCfMAei+wMOUKMNbz/FRQ4BxuqI=";
+        private string deviceKey = "";
 
         private DispatcherTimer timer;
         Si7021_sensor si7021_sensor;
