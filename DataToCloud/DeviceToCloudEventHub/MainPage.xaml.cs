@@ -39,8 +39,8 @@ namespace DeviceToCloudEventHub
 
         private static int timer_intervall_ms = 5000;
         private string iotHubUri = "IoTHubHE.azure-devices.net";
+        private string deviceId = "raspberryLuca";
         private string deviceKey = "";
-        private string deviceId = "";
 
         private DispatcherTimer timer;
         Si7021_sensor si7021_sensor;
@@ -49,7 +49,7 @@ namespace DeviceToCloudEventHub
         public class Measurenent
         {
             public string DeviceId { get; set; }
-            public string Timestamp = DateTime.Now.ToString();
+            public string Timestamp = (DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds.ToString();
             public double Temperature { get; set; }
             public double Humidity { get; set; }
 
