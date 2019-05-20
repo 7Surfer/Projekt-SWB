@@ -49,7 +49,7 @@ namespace DeviceToCloudEventHub
         public class Measurenent
         {
             public string DeviceId { get; set; }
-            public string Timestamp = (DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds.ToString();
+            //public int Timestamp = (int)DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1)).TotalSeconds;
             public double Temperature { get; set; }
             public double Humidity { get; set; }
 
