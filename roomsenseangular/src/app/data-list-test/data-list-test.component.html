@@ -1,0 +1,30 @@
+<!-- <mat-accordion>
+  <mat-expansion-panel [expanded]="true">
+    <mat-expansion-panel-header>
+      <mat-panel-title>Daten aus Datenbank</mat-panel-title>
+      <mat-panel-description></mat-panel-description>
+    </mat-expansion-panel-header>
+    <span id="data" *ngFor="let dataEntry of data">
+      <button class="warning-rooms">{{ dataEntry.deviceId }}</button>
+      <p id="description">{{ dataEntry.temperature }}</p>
+    </span>
+  </mat-expansion-panel>
+</mat-accordion> -->
+
+<mat-accordion>
+  <mat-expansion-panel [expanded]="true">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Gerätename
+      </mat-panel-title>
+      <mat-panel-description>
+        Temperatur
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <span id="room" *ngFor="let dataEntry of data">
+      <p>{{ dataEntry.deviceId }}</p>
+      <p id="description">{{ dataEntry.temperature }}</p>
+      <p>{{ dataEntry.humidity }}</p>
+    </span>
+  </mat-expansion-panel>
+</mat-accordion>

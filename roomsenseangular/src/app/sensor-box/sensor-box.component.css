@@ -1,0 +1,35 @@
+:host {
+  float: right;
+  clear: right;
+  margin-right: 50px;
+  margin-top: 80px;
+  width: 25%;
+  max-height: 25%;
+}
+
+mat-expansion-panel-header {
+  color: #0299f7;
+}
+
+mat-panel-title {
+  color: #0299f7;
+}
+
+span {
+  display: inline-block;
+}
+
+p {
+  display: inline-block;
+  font-size: 12px;
+}
+
+#description {
+  float: right;
+  margin-left: 30px;
+  color: black;
+}
+
+#room {
+  color: #0299f7;
+}
