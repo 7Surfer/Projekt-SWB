@@ -12,6 +12,7 @@ import { TempHumDetailComponent } from './room-details/temp-hum-detail/temp-hum-
 import { DateTimeComponent } from './room-details/date-time/date-time.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 import {
@@ -40,7 +41,8 @@ import { SensorDataService } from './services/sensor-data.service';
     MatToolbarModule,
     MatButtonModule,
     MatExpansionModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [SensorDataService],
   bootstrap: [AppComponent]

@@ -1,17 +1,13 @@
-<!-- <mat-accordion>
-  <mat-expansion-panel [expanded]="true">
-    <mat-expansion-panel-header>
-      <mat-panel-title>Daten aus Datenbank</mat-panel-title>
-      <mat-panel-description></mat-panel-description>
-    </mat-expansion-panel-header>
-    <span id="data" *ngFor="let dataEntry of data">
-      <button class="warning-rooms">{{ dataEntry.deviceId }}</button>
-      <p id="description">{{ dataEntry.temperature }}</p>
-    </span>
-  </mat-expansion-panel>
-</mat-accordion> -->
+<ul>
+  <li *ngFor="let dataEntry of data">
+    <p>Gerät: {{dataEntry.deviceId}}</p>
+    <p>Temperatur: {{dataEntry.temperature}}</p>
+    <p>Luftfeuchtigkeit: {{dataEntry.humidity}}</p>
+  </li>
+</ul>
 
-<mat-accordion>
+
+<!-- <mat-accordion>
   <mat-expansion-panel [expanded]="true">
     <mat-expansion-panel-header>
       <mat-panel-title>
@@ -27,4 +23,4 @@
       <p>{{ dataEntry.humidity }}</p>
     </span>
   </mat-expansion-panel>
-</mat-accordion>
+</mat-accordion> -->
