@@ -11,3 +11,7 @@ p {
 display: inline-block;
 margin: 0% 2%;
 }
+
+div {
+  background-color: grey;
+}
