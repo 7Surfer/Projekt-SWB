@@ -1,0 +1,62 @@
+mat-toolbar {
+  height: 8rem;
+  background-color: #0299f7;
+  color: white;
+  font-size: 35px;
+  padding-bottom:35px;
+  box-shadow: 3px 7px 13px -1px rgba(0,0,0,0.21);
+  /* transparenz ändern */
+  /*opacity: 0.3*/
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+
+}
+
+span{
+  margin-right: 100px;
+}
+
+li {
+  float: left;
+  margin: 20px;
+
+}
+
+app-search-bar {
+
+  width: 50%;
+}
+
+#search {
+  width: 40%;
+  margin-left: 1%;
+}
+
+.header-spacer {
+  flex: 1 1 auto;
+}
+
+.title {
+  position: relative;
+  left: 2%;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+
+
