@@ -1,0 +1,103 @@
+mat-toolbar {
+  height: 8rem;
+  background-color:  rgb(0, 130, 187);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+  padding-right: 30px;
+  padding-left: 30px;
+  /* transparenz ändern */
+  /*opacity: 0.3*/
+}
+
+.title {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  color: white;
+  font-size: 2rem;
+  margin-left: 20px;
+  margin-right: 100px;
+  float: left;
+  margin: 35px;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bolder; 
+}
+
+a:hover{
+  color: #CBCBCB;
+}
+
+li {
+  margin: 20px;
+  float: left;
+}
+
+.header-spacer {
+  flex: 1 1 auto;
+}
+
+@media screen and (max-width: 600px) { /*verschwindet bei Mobile-Version*/
+  li { 
+    display: none;
+  }
+
+  mat-toolbar {
+    height: 20%;
+  }
+
+  .title {
+    margin-top: -10px;
+  }
+}
+/*
+a {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+
+}
+
+span{
+  margin-right: 100px;
+}
+
+li {
+  float: left;
+  margin: 20px;
+
+}
+
+app-search-bar {
+
+  width: 50%;
+}
+
+#search {
+  width: 40%;
+  margin-left: 1%;
+}
+
+.header-spacer {
+  flex: 1 1 auto;
+}
+
+.title {
+  position: relative;
+  left: 2%;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+}*/

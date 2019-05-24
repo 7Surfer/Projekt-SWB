@@ -1,0 +1,16 @@
+.main-box {
+  background-color: white;
+  border: none;
+  width: 55%;
+  height: 80%;
+  border-radius: 25px;
+  margin-top: -30px;
+  display: inline-block;
+  
+}
+
+@media screen and (max-width: 600px) { /*verschwindet bei Mobile-Version*/
+  .main-box { 
+    display: none;
+  }
+}

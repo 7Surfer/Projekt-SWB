@@ -1,0 +1,16 @@
+app-main-box {
+  position: relative;
+  left: 3%;
+  display: inline;
+}
+
+.full-screen {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+app-scrollable-list {
+  right: 3%;
+}
