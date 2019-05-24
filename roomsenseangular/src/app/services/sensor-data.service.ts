@@ -14,15 +14,14 @@ export class SensorDataService {
   private dataUpdated = new Subject<SensorData[]>();
 
   getData() {
-    return [{"deviceId":"raspberryLuca","temperature":25.76,"humidity":35.65,"timestamp":1558370924},
-    {"deviceId":"raspberryLuca","temperature":25.76,"humidity":35.67,"timestamp":1558370918},
-    {"deviceId":"raspberryLuca","temperature":25.76,"humidity":35.68,"timestamp":1558370913},
-    {"deviceId":"raspberryLuca","temperature":25.75,"humidity":35.73,"timestamp":1558370908},
-    {"deviceId":"raspberryLuca","temperature":25.75,"humidity":35.74,"timestamp":1558370903},
-    {"deviceId":"raspberryLuca","temperature":25.76,"humidity":35.78,"timestamp":1558370897}];
+    this.http.get<{message: string, data: SensorData[]}>('http://localhost:3000/api/data')
+      .subscribe((sensorData) => {
+        this.data = sensorData.data;
+        this.dataUpdated.next([...this.data]); // Damit data im Service nicht verändert werden kann
+      });
   }
 
-  getDateUpdateListener() {
+  getDataUpdateListener() {
     return this.dataUpdated.asObservable();
   }
 

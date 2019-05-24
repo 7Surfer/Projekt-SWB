@@ -12,14 +12,14 @@ import { Subscription } from 'rxjs';
 })
 export class DataListTestComponent implements OnInit, OnDestroy {
 
-  public data = [];
+  data: SensorData[] = [];
   private dataSubscription: Subscription;
 
   constructor(public sensorDataService: SensorDataService) { }
 
   ngOnInit() {
-    this.data = this.sensorDataService.getData();
-    this.dataSubscription = this.sensorDataService.getDateUpdateListener()
+    this.sensorDataService.getData();
+    this.dataSubscription = this.sensorDataService.getDataUpdateListener()
       .subscribe((data: SensorData[]) => {
           this.data = data;
       });

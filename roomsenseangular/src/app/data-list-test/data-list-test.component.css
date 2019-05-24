@@ -1,6 +1,6 @@
 :host {
   float: left;
-  width: 50%;
+  width: 60%;
   margin-top: 20px;
   margin-left: 50px;
 
@@ -13,5 +13,9 @@ margin: 0% 2%;
 }
 
 div {
-  background-color: grey;
+  background-color: rgb(236, 230, 230);
+}
+
+li {
+  margin: 1rem;
 }
