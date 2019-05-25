@@ -27,6 +27,6 @@ export class SensorDataService {
 
 
   errorHandler(error: HttpErrorResponse) {
-    return Observable.throw(error.message || 'Server Error!')
+    return Observable.throw(error.message || 'Server Error!');
   }
 }
