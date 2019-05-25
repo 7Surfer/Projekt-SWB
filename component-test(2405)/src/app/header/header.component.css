@@ -1,9 +1,9 @@
 mat-toolbar {
-  height: 8rem;
+  height:  150px;
   background-color:  rgb(0, 130, 187);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
-  padding-right: 30px;
-  padding-left: 30px;
+  padding-right: 35px;
+  padding-left: 35px;
   /* transparenz ändern */
   /*opacity: 0.3*/
 }
@@ -12,11 +12,10 @@ mat-toolbar {
   font-family: 'Open Sans', sans-serif;
   font-weight: bold;
   color: white;
-  font-size: 2rem;
-  margin-left: 20px;
-  margin-right: 100px;
+  font-size: 30px;
+  margin-right: 7vw;
   float: left;
-  margin: 35px;
+  margin-top: 0,5vh;
 }
 
 ul {
@@ -28,7 +27,7 @@ ul {
 a {
   text-decoration: none;
   color: white;
-  font-size: 16px;
+  font-size: 20px;
   font-family: 'Open Sans', sans-serif;
   font-weight: bolder; 
 }
@@ -38,7 +37,7 @@ a:hover{
 }
 
 li {
-  margin: 20px;
+  margin: 30px;
   float: left;
 }
 
@@ -46,17 +45,17 @@ li {
   flex: 1 1 auto;
 }
 
-@media screen and (max-width: 600px) { /*verschwindet bei Mobile-Version*/
+@media screen and (max-width: 600px) and (orientation: portrait) { /*verschwindet bei Mobile-Version*/
   li { 
     display: none;
   }
 
-  mat-toolbar {
-    height: 20%;
+  .title {
+    margin-top: -3vh;
   }
 
-  .title {
-    margin-top: -10px;
+  mat-toolbar {
+    padding-left: 35px;
   }
 }
 /*
