@@ -13,11 +13,8 @@ import { Subscription } from 'rxjs';
 export class DataListTestComponent implements OnInit, OnDestroy {
 
   data: SensorData [] = [];
-  testData = [{"deviceId":"raspberryLuca","temperature":25.76,"humidity":35.65,"_ts":1558370924},
-  {"deviceId":"raspberryLuca","temperature":25.76,"humidity":35.67,"_ts":1558370919},
-  {"deviceId":"raspberryLuca","temperature":25.76,"humidity":35.68,"_ts":1558370914},
-  {"deviceId":"raspberryLuca","temperature":25.75,"humidity":35.73,"_ts":1558370908},
-  {"deviceId":"raspberryLuca","temperature":25.75,"humidity":35.74,"_ts":1558370903},];
+  dataToDisplay: SensorData [];
+
 
   private dataSubscription: Subscription;
 
@@ -29,12 +26,15 @@ export class DataListTestComponent implements OnInit, OnDestroy {
     this.dataSubscription = this.sensorDataService.getDataUpdateListener()
       .subscribe((sentData: SensorData []) => {
         this.data = sentData;
-        console.log( Array.isArray(sentData) +  'Daten: ' + sentData);
+        //console.log( Array.isArray(sentData) +  'Daten: ' + sentData);
+        this.dataToDisplay = JSON.parse('[' + sentData + ']');
+        //console.log('Data to display: ' + this.dataToDisplay[0].deviceId);
       });
   }
 
   ngOnDestroy() {
     this.dataSubscription.unsubscribe();
+    this.dataToDisplay.length = 0;
   }
 
 

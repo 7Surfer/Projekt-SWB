@@ -24,18 +24,30 @@ app.use((req, res, next) => {
 
 
 
-
 app.get('/api/data', (req, res, next) => {
-  sensorData.getCurrentData().then((fetchedData) => {
-    console.log('\nFetched Data Parsed: ' + fetchedData);
-    res.status(201).send({
-      message: 'Data fetched successfully!',
-      data: fetchedData
+  sensorData.getCurrentData().then(fetchedFata => {
+    // let transformedData = JSON.stringify(JSON.parse(fetchedFata));
+    // console.log('Transformiert: ' + transformedData);
+    console.log(fetchedFata);
+    res.status(201).json({
+      message: 'Data fetched!',
+      data: fetchedFata
     });
-  }).catch((err) => {
-    console.log(err);
   });
 });
+
+
+// app.get('/api/data', (req, res, next) => {
+//   sensorData.getCurrentData().then((fetchedData) => {
+//     console.log('\nFetched Data Parsed: ' + fetchedData);
+//     res.status(201).send({
+//       message: 'Data fetched successfully!',
+//       data: fetchedData
+//     });
+//   }).catch((err) => {
+//     console.log(err);
+//   });
+// });
 
 
 

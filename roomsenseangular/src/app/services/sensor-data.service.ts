@@ -14,7 +14,7 @@ export class SensorDataService {
   private dataUpdated = new Subject<SensorData[]>();
 
   getData() {
-    this.http.get<{message: string, data: SensorData[]}>('http://localhost:3000/api/data')
+    this.http.get<{message: string, data: any}>('http://localhost:3000/api/data')
       .subscribe((sensorData) => {
         this.data = sensorData.data;
         this.dataUpdated.next([...this.data]); // Damit data im Service nicht verändert werden kann
