@@ -18,7 +18,8 @@ import { HttpClientModule } from '@angular/common/http';
 import {
         MatToolbarModule,
         MatButtonModule,
-        MatExpansionModule} from '@angular/material';
+        MatExpansionModule,
+        MatProgressSpinnerModule} from '@angular/material';
 import { DataListTestComponent } from './data-list-test/data-list-test.component';
 import { SensorDataService } from './services/sensor-data.service';
 
@@ -41,6 +42,7 @@ import { SensorDataService } from './services/sensor-data.service';
     MatToolbarModule,
     MatButtonModule,
     MatExpansionModule,
+    MatProgressSpinnerModule,
     FormsModule,
     HttpClientModule
   ],

@@ -1,5 +1,6 @@
 <div>
-<ul>
+  <mat-spinner *ngIf="isLoading"></mat-spinner>
+<ul *ngIf="!isLoading" >
   <li *ngFor="let dataEntry of dataToDisplay">
     <p>Gerät: {{dataEntry.deviceId}}</p>
     <p>Temperatur: {{dataEntry.temperature}}</p>

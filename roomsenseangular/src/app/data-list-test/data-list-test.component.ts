@@ -14,6 +14,7 @@ export class DataListTestComponent implements OnInit, OnDestroy {
 
   data: SensorData [] = [];
   dataToDisplay: SensorData [];
+  isLoading = false;
 
 
   private dataSubscription: Subscription;
@@ -23,12 +24,14 @@ export class DataListTestComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.sensorDataService.getData();
+    this.isLoading = true;
     this.dataSubscription = this.sensorDataService.getDataUpdateListener()
       .subscribe((sentData: SensorData []) => {
+        this.isLoading = false;
         this.data = sentData;
-        //console.log( Array.isArray(sentData) +  'Daten: ' + sentData);
+        // console.log( Array.isArray(sentData) +  'Daten: ' + sentData);
         this.dataToDisplay = JSON.parse('[' + sentData + ']');
-        //console.log('Data to display: ' + this.dataToDisplay[0].deviceId);
+        // console.log('Data to display: ' + this.dataToDisplay[0].deviceId);
       });
   }
 
