@@ -1,12 +1,12 @@
 .main-box {
   background-color: white;
   border: none;
-  width: 55%;
+  width: 60%;
   height: 80%;
   border-radius: 25px;
   margin-top: -3.5vh;
   display: inline-block;
-  
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2); 
 }
 
 @media screen and (max-width: 600px) { /*verschwindet bei Mobile-Version*/

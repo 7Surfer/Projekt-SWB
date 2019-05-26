@@ -14,3 +14,15 @@ app-main-box {
 app-scrollable-list {
   right: 3%;
 }
+
+app-warning {
+  position: relative;
+  left: 12%;
+  top: -43vh;
+}
+
+app-room {
+  position: relative;
+  left: 72%;
+  top: -38vh;
+}

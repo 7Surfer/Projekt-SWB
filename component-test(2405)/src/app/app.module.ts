@@ -9,6 +9,8 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
 import { MainBoxComponent } from './main-box/main-box.component';
 import { MatToolbarModule } from '@angular/material';
 import { ScrollableListComponent } from './scrollable-list/scrollable-list.component';
+import { WarningComponent } from './warning/warning.component';
+import { RoomComponent } from './room/room.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { ScrollableListComponent } from './scrollable-list/scrollable-list.compo
     HeaderComponent,
     SearchBarComponent,
     MainBoxComponent,
-    ScrollableListComponent
+    ScrollableListComponent,
+    WarningComponent,
+    RoomComponent
   ],
   imports: [
     BrowserModule,
