@@ -2,8 +2,8 @@ mat-toolbar {
   height:  150px;
   background-color:  rgb(0, 130, 187);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
-  padding-right: 35px;
-  padding-left: 35px;
+  padding-right: 50px;
+  padding-left: 50px;
   /* transparenz ändern */
   /*opacity: 0.3*/
 }
@@ -51,7 +51,7 @@ li {
   }
 
   .title {
-    margin-top: -3vh;
+    margin-top: -50px;
   }
 
   mat-toolbar {
