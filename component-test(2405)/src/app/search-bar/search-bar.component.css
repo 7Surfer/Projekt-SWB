@@ -26,8 +26,8 @@ input[type=text] {
   
   @media screen and (max-width: 600px) { /*verschieben bei Mobile-Version*/
     input[type=text] { 
-      margin-top: 75px;
-      margin-left: -70%;
+      margin-top: 45px;
+      margin-left: 30vw;
       width: 250px;
       height: 25px; 
     }
