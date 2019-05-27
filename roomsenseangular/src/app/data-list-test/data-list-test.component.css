@@ -19,3 +19,8 @@ div {
 li {
   margin: 1rem;
 }
+
+mat-spinner {
+  margin: auto;
+
+}

@@ -12,21 +12,32 @@ import { Subscription } from 'rxjs';
 })
 export class DataListTestComponent implements OnInit, OnDestroy {
 
-  data: SensorData[] = [];
+  data: SensorData [] = [];
+  dataToDisplay: SensorData [];
+  isLoading = false;
+
+
   private dataSubscription: Subscription;
 
   constructor(public sensorDataService: SensorDataService) { }
 
+
   ngOnInit() {
     this.sensorDataService.getData();
+    this.isLoading = true;
     this.dataSubscription = this.sensorDataService.getDataUpdateListener()
-      .subscribe((data: SensorData[]) => {
-          this.data = data;
+      .subscribe((sentData: SensorData []) => {
+        this.isLoading = false;
+        this.data = sentData;
+        // console.log( Array.isArray(sentData) +  'Daten: ' + sentData);
+        this.dataToDisplay = JSON.parse('[' + sentData + ']');
+        // console.log('Data to display: ' + this.dataToDisplay[0].deviceId);
       });
   }
 
   ngOnDestroy() {
     this.dataSubscription.unsubscribe();
+    this.dataToDisplay.length = 0;
   }
 
 

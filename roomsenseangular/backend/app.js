@@ -1,6 +1,11 @@
 const express = require('express');
+const bodyParser = require('body-parser');
+const sensorData = require("../backend/database/database");
 
 const app = express();
+
+
+app.use(bodyParser.json());
 
 //verhindert Browser Request nach Favicon, würde middlewares doppelt ausführen
 app.get('/favicon.ico', (req, res, next) => {
@@ -19,21 +24,30 @@ app.use((req, res, next) => {
 
 
 
-
-app.use('/api/data', (req, res, next) => {
-  const data = [
-    {"deviceId":"raspberryLuca","temperature":25.76, "humidity":35.65,"_ts":1558370924},
-    {"deviceId":"raspberryLuca","temperature":25.76,"humidity":35.67,"_ts":1558370919},
-    {"deviceId":"raspberryLuca","temperature":25.76,"humidity":35.68,"_ts":1558370914},
-    {"deviceId":"raspberryLuca","temperature":25.75,"humidity":35.73,"_ts":1558370908},
-    {"deviceId":"raspberryLuca","temperature":25.75,"humidity":35.74,"_ts":1558370903},
-    {"deviceId":"raspberryLuca","temperature":25.76,"humidity":35.78,"_ts":1558370898}
-  ];
-  res.status(200).json({
-    message: 'Data fetched successfully',
-    data: data
+app.get('/api/data', (req, res, next) => {
+  sensorData.getCurrentData().then(fetchedFata => {
+    // let transformedData = JSON.stringify(JSON.parse(fetchedFata));
+    // console.log('Transformiert: ' + transformedData);
+    console.log(fetchedFata);
+    res.status(201).json({
+      message: 'Data fetched!',
+      data: fetchedFata
+    });
   });
 });
+
+
+// app.get('/api/data', (req, res, next) => {
+//   sensorData.getCurrentData().then((fetchedData) => {
+//     console.log('\nFetched Data Parsed: ' + fetchedData);
+//     res.status(201).send({
+//       message: 'Data fetched successfully!',
+//       data: fetchedData
+//     });
+//   }).catch((err) => {
+//     console.log(err);
+//   });
+// });
 
 
 
