@@ -1,6 +1,6 @@
 app-main-box {
   position: relative;
-  left: 3%;
+  left: 50px;
   display: inline;
 }
 
@@ -17,12 +17,12 @@ app-scrollable-list {
 
 app-warning {
   position: relative;
-  left: 12%;
-  top: -43vh;
+  left: 200px;
+  top: -500px;
 }
 
 app-room {
   position: relative;
-  left: 72%;
-  top: -38vh;
+  left: 1200px;
+  top: -440px;
 }

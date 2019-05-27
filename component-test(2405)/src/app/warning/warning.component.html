@@ -1,1 +1,22 @@
-<div class='warning'></div>
+<!-- <div class='warning'>
+    <p>Warnungen/ Meldungen</p>
+    <table mat-table [dataSource]="dataWarning">
+        <ng-container matColumnDef="roomName">
+            <td mat-cell *matCellDef="let item">{{item.roomName}}</td>
+        </ng-container>
+        <ng-container matColumnDef="warningText">
+            <td mat-cell *matCellDef="let item">{{item.warningText}}</td>
+        </ng-container>
+
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>        
+    </table> 
+</div> -->
+
+<div class='warning'>
+    <p>Warnungen/ Meldungen</p>
+    <ul ui-scroll-viewport>
+        <li *ngFor="let dataEntry of data">
+            <button class="warning-rooms-button">{{dataEntry.id}}</button>
+        </li>
+    </ul>
+</div>

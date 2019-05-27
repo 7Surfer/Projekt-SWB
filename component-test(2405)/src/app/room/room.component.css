@@ -8,6 +8,25 @@
     box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
   }
   
+  p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    margin-left: 20px;
+    color: #0082BB; 
+  }
+
+  table {
+    width: 100%;
+  }
+
+  tr {
+    
+  }
+
+  tr:nth-child(odd) {
+    background-color: #EEEEEE;
+  }
+
   @media screen and (max-width: 600px) { /*verschwindet bei Mobile-Version*/
     .room { 
       
