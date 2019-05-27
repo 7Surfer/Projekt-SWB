@@ -4,11 +4,12 @@ import { DataListTestComponent } from './data-list-test/data-list-test.component
 import { HeaderComponent } from './header/header.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { MainPageComponent } from './display-components/main-page/main-page.component';
 
 const routes: Routes = [
-  {path: '', component: WarningBoxComponent},
-  //{path: '', component: SensorBoxComponent, outlet: 'secondary'},
-  {path: 'data', component: DataListTestComponent }
+  {path: '', component: MainPageComponent},
+  {path: 'data', component: DataListTestComponent },
+
 ];
 
 @NgModule({

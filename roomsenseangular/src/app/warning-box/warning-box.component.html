@@ -5,6 +5,6 @@
   <mat-panel-title>Warnungen / Meldungen</mat-panel-title>
   <mat-panel-description></mat-panel-description>
 </mat-expansion-panel-header>
-<span id='room' *ngFor="let room of rooms"> <button class='warning-rooms'>{{room.id}}</button>        <p id='description'>{{room.description}}</p> </span>
+<span id='room' *ngFor="let room of rooms"><button class='warning-rooms'  (click)='onRoomClicked()'>{{room.id}}</button><p id='description'>{{room.description}}</p> </span>
   </mat-expansion-panel>
 </mat-accordion>

@@ -16,7 +16,6 @@ export class DataListTestComponent implements OnInit, OnDestroy {
   dataToDisplay: SensorData [];
   isLoading = false;
 
-
   private dataSubscription: Subscription;
 
   constructor(public sensorDataService: SensorDataService) { }
@@ -32,6 +31,7 @@ export class DataListTestComponent implements OnInit, OnDestroy {
         // console.log( Array.isArray(sentData) +  'Daten: ' + sentData);
         this.dataToDisplay = JSON.parse('[' + sentData + ']');
         // console.log('Data to display: ' + this.dataToDisplay[0].deviceId);
+
       });
   }
 

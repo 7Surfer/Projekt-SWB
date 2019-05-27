@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-warning-box',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./warning-box.component.css']
 })
 export class WarningBoxComponent {
+
+  constructor(private router: Router) {}
 
   rooms = [
     { id: 'Raum 1', description: 'Temperatur: 22°C / Luftfeuchtigkeit: 50%', warning: 'Temperatur überschreitet Grenzwert' },
@@ -16,4 +19,11 @@ export class WarningBoxComponent {
     // { id: 'Raum 6', description: 'Temperatur: 20°C / Luftfeuchtigkeit: 67%', warning: 'Fehlermeldung'}
   ];
 
+  onRoomClicked() {
+    this.router.navigate(['rooms']);
+  }
+
 }
+
+
+

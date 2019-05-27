@@ -22,6 +22,7 @@ import {
         MatProgressSpinnerModule} from '@angular/material';
 import { DataListTestComponent } from './data-list-test/data-list-test.component';
 import { SensorDataService } from './services/sensor-data.service';
+import { MainPageComponent } from './display-components/main-page/main-page.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { SensorDataService } from './services/sensor-data.service';
     MainBoxComponent,
     TempHumDetailComponent,
     DateTimeComponent,
-    DataListTestComponent
+    DataListTestComponent,
+    MainPageComponent
   ],
   imports: [
     BrowserModule,
