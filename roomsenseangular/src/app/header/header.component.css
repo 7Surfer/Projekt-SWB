@@ -52,10 +52,10 @@ li {
 
   .title {
     margin-top: 0;
+    margin-left: -8vw;
   }
 
   mat-toolbar {
-    padding-left: 8vw;
     height: 17vh;
   }
 }
