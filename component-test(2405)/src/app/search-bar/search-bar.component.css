@@ -24,11 +24,8 @@ input[type=text] {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);  
   }
   
-  @media screen and (max-width: 600px) { /*verschieben bei Mobile-Version*/
+  @media only screen and (max-width: 600px) { /*verschieben bei Mobile-Version*/
     input[type=text] { 
-      margin-top: 45px;
-      margin-left: 30vw;
-      width: 250px;
-      height: 25px; 
+      display: none;
     }
   }

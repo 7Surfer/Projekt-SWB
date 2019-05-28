@@ -7,9 +7,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./sensor-box.component.css']
 })
 export class SensorBoxComponent {
-  rooms = [
-    { id: 'Raum 4', description: 'Temperatur: 21.5°C / Luftfeuchtigkeit:79%', warning: 'Fehlermeldung' },
-    { id: 'Raum 5', description: 'Temperatur: 29°C / Luftfeuchtigkeit: 10%', warning: 'Fehlermeldung' },
-    { id: 'Raum 6', description: 'Temperatur: 20°C / Luftfeuchtigkeit: 67%', warning: 'Fehlermeldung' }
-  ];
+  data = [
+    {id: 'Raum1', temperature: "2°C", humidity: "40%"},
+    {id: 'Raum2', temperature: "1°C", humidity: "40%"},
+    {id: 'Raum3', temperature: "2°C", humidity: "50%"},
+    {id: 'Raum4', temperature: "5°C", humidity: "40%"},
+    {id: 'Raum5', temperature: "2°C", humidity: "60%"},
+    {id: 'Raum6', description: 'Test6', },
+    {id: 'Raum7', description: 'Test7', },
+    {id: 'Raum8', description: 'Test8', },
+    {id: 'Raum9', description: 'Test9', },
+  ]
 }

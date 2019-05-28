@@ -10,14 +10,17 @@ export class WarningBoxComponent {
 
   constructor(private router: Router) {}
 
-  rooms = [
-    { id: 'Raum 1', description: 'Temperatur: 22°C / Luftfeuchtigkeit: 50%', warning: 'Temperatur überschreitet Grenzwert' },
-    { id: 'Raum 2', description: 'Temperatur: 25°C / Luftfeuchtigkeit: 54%', warning: 'Fehlermeldung'},
-    { id: 'Raum 3', description: 'Temperatur: 26°C / Luftfeuchtigkeit: 23%', warning: 'Fehlermeldung'},
-    // { id: 'Raum 4', description: 'Temperatur: 21.5°C / Luftfeuchtigkeit:79%', warning: 'Fehlermeldung'},
-    // { id: 'Raum 5', description: 'Temperatur: 29°C / Luftfeuchtigkeit: 10%', warning: 'Fehlermeldung'},
-    // { id: 'Raum 6', description: 'Temperatur: 20°C / Luftfeuchtigkeit: 67%', warning: 'Fehlermeldung'}
-  ];
+  data = [
+    {id: 'Raum1', description: 'Temperatur überschreitet Grenzwert', },
+    {id: 'Raum2', description: 'Fehlermeldung', },
+    {id: 'Raum3', description: 'Test3', },
+    {id: 'Raum4', description: 'Test4', },
+    {id: 'Raum5', description: 'Test5', },
+    {id: 'Raum6', description: 'Test6', },
+    {id: 'Raum7', description: 'Test7', },
+    {id: 'Raum8', description: 'Test8', },
+    {id: 'Raum9', description: 'Test9', },
+  ]
 
   onRoomClicked() {
     this.router.navigate(['rooms']);

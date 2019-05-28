@@ -51,13 +51,21 @@ li {
   }
 
   .title {
-    margin-top: -50px;
+    margin-top: 0;
   }
 
   mat-toolbar {
-    padding-left: 35px;
+    padding-left: 8vw;
+    height: 17vh;
   }
 }
+
+/* @media only screen and (min-width: 1200px) { 
+  .header-spacer {
+    flex: 0.99 1 auto;
+  }
+} */
+
 /*
 a {
   text-decoration: none;
