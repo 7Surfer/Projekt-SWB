@@ -20,7 +20,7 @@ export class WarningBoxComponent {
     {id: 'Raum7', description: 'Test7', },
     {id: 'Raum8', description: 'Test8', },
     {id: 'Raum9', description: 'Test9', },
-  ]
+  ];
 
   onRoomClicked() {
     this.router.navigate(['rooms']);
