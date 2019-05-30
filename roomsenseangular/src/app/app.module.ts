@@ -11,7 +11,7 @@ import { MainBoxComponent } from './main-box/main-box.component';
 import { TempHumDetailComponent } from './room-details/temp-hum-detail/temp-hum-detail.component';
 import { DateTimeComponent } from './room-details/date-time/date-time.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 
@@ -51,7 +51,8 @@ import { CreateRoomComponent } from './create-room/create-room.component';
     MatProgressSpinnerModule,
     FormsModule,
     HttpClientModule,
-    MatSelectModule
+    MatSelectModule,
+    ReactiveFormsModule
   ],
   providers: [SensorDataService],
   bootstrap: [AppComponent]
