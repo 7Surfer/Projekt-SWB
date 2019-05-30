@@ -19,10 +19,13 @@ import {
         MatToolbarModule,
         MatButtonModule,
         MatExpansionModule,
-        MatProgressSpinnerModule} from '@angular/material';
+        MatProgressSpinnerModule,
+        MatSelect,
+        MatSelectModule} from '@angular/material';
 import { DataListTestComponent } from './data-list-test/data-list-test.component';
 import { SensorDataService } from './services/sensor-data.service';
 import { MainPageComponent } from './display-components/main-page/main-page.component';
+import { CreateRoomComponent } from './create-room/create-room.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +38,8 @@ import { MainPageComponent } from './display-components/main-page/main-page.comp
     TempHumDetailComponent,
     DateTimeComponent,
     DataListTestComponent,
-    MainPageComponent
+    MainPageComponent,
+    CreateRoomComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +50,8 @@ import { MainPageComponent } from './display-components/main-page/main-page.comp
     MatExpansionModule,
     MatProgressSpinnerModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSelectModule
   ],
   providers: [SensorDataService],
   bootstrap: [AppComponent]

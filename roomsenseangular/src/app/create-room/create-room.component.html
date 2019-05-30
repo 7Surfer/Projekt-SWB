@@ -1,0 +1,18 @@
+<p>
+    create-room works!
+</p>
+  
+<button style="float: right;"  (click)="this.isButtonVisible = true" mat-raised-button>Neu</button>
+
+
+<div class="yourCssClass" *ngIf="this.isButtonVisible" >
+  <mat-form-field>
+    <mat-select placeholder="Raspberry">
+      <mat-option *ngFor="let raspberry of raspberrys" [value]="raspberry.value">
+        {{raspberry.viewValue}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <button (click)="this.isButtonVisible = false" mat-raised-button>Save</button>
+</div>
