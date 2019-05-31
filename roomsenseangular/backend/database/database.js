@@ -13,6 +13,7 @@ const containerId = config.container.id;
 
 var lastIdArray = [];
 var newDataArray = [];
+var idroom = [];
 
 // Query
 async function getDeviceIdArray() {
@@ -50,6 +51,23 @@ async function getCurrentData() {
   return newDataArray;
 }
 
+async function getdeviceIdroom() {
+
+  const { result: results } = await client
+    .database(databaseId)
+    .container(containerId)
+    .items.query(dataQueries.newRoomQuerry)
+    .toArray();
+
+  //console.log(results);
+
+  for (var queryResult of results) {
+    var resultString = JSON.stringify(queryResult);
+    idroom.push(resultString);
+  }
+  return idroom;
+}
+
 function exit(message) {
   console.log(message);
   console.log("Press any key to exit");
@@ -66,3 +84,4 @@ function exit(message) {
 
 module.exports.getDeviceIdArray = getDeviceIdArray;
 module.exports.getCurrentData = getCurrentData;
+module.exports.getdeviceIdroom = getdeviceIdroom;

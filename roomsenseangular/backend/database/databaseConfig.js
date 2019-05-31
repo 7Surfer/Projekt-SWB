@@ -11,5 +11,4 @@ config.container = {
     "id": "MeasuredData"
 };
 
-
 module.exports = config;

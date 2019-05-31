@@ -23,6 +23,13 @@ export class SensorDataService {
         /* this.dataUpdated.next(this.data); // Damit data im Service nicht verändert werden kann */
       });
   }
+  getDataroom() {
+    this.http.get<{message: string, data: any}>('http://localhost:3000/api/room')
+      .subscribe((sensorData) => {
+        this.data = sensorData.data;
+        this.dataUpdated.next([...this.data]);
+      });
+  }
 
   getDataUpdateListener() {
     return this.dataUpdated.asObservable();

@@ -1,18 +1,19 @@
-<p>
-    create-room works!
-</p>
-  
-<button style="float: right;"  (click)="this.isButtonVisible = true" mat-raised-button>Neu</button>
 
+<button style="float: right;"  (click)="new_click()" mat-raised-button>Neu</button>
 
-<div class="yourCssClass" *ngIf="this.isButtonVisible" >
+<form name="myform" [formGroup]="form" [hidden]="!new_room" >
+  <label for="name">Name</label>
+  <br>
+  <input name="input_room_name" formControlName="room_name" ng-model="somefield" required/>
+  <br>
+  <br>
   <mat-form-field>
-    <mat-select placeholder="Raspberry">
-      <mat-option *ngFor="let raspberry of raspberrys" [value]="raspberry.value">
-        {{raspberry.viewValue}}
+    <mat-label>Raspberry</mat-label>
+    <mat-select>
+      <mat-option *ngFor="let raspberry of raspberryarr" [value]="raspberry">
+        {{raspberry}}
       </mat-option>
     </mat-select>
   </mat-form-field>
-
-  <button (click)="this.isButtonVisible = false" mat-raised-button>Save</button>
-</div>
+  <button type="submit" (click)="onSubmit()" [disabled]="!form.valid" mat-raised-button> Save </button>
+</form>

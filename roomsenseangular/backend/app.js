@@ -35,6 +35,16 @@ app.get('/api/data', (req, res, next) => {
   });
 });
 
+app.get('/api/room', (req, res, next) => {
+  sensorData.getdeviceIdroom().then(fetchedFata => {
+    console.log(fetchedFata);
+    res.status(201).json({
+      message: 'Data fetched!',
+      data: fetchedFata
+    });
+  });
+});
+
 
 // app.get('/api/data', (req, res, next) => {
 //   sensorData.getCurrentData().then((fetchedData) => {

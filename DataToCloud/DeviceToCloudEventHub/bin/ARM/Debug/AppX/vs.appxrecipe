@@ -30,13 +30,13 @@
     <AppXManifest Include="C:\Users\Heinr\OneDrive\Desktop\SystecTest\ROOMsense\DataToCloud\DeviceToCloudEventHub\bin\ARM\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2019-05-20T16:33:40.351</Modified>
+      <Modified>2019-05-30T16:08:16.166</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Heinr\OneDrive\Desktop\SystecTest\ROOMsense\DataToCloud\DeviceToCloudEventHub\bin\ARM\Debug\DeviceToCloudEventHub.exe">
       <PackagePath>entrypoint\DeviceToCloudEventHub.exe</PackagePath>
-      <Modified>2019-05-20T16:33:39.462</Modified>
+      <Modified>2019-05-30T16:08:14.449</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Heinr\.nuget\packages\dotnetty.buffers\0.6.0\lib\netstandard1.3\DotNetty.Buffers.dll">
       <PackagePath>DotNetty.Buffers.dll</PackagePath>
@@ -120,53 +120,53 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Heinr\OneDrive\Desktop\SystecTest\ROOMsense\DataToCloud\DeviceToCloudEventHub\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
-      <Modified>2019-05-20T10:04:50.422</Modified>
+      <Modified>2019-05-30T11:30:37.630</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Heinr\OneDrive\Desktop\SystecTest\ROOMsense\DataToCloud\DeviceToCloudEventHub\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
-      <Modified>2019-05-20T10:04:50.410</Modified>
+      <Modified>2019-05-30T11:30:37.600</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Heinr\OneDrive\Desktop\SystecTest\ROOMsense\DataToCloud\DeviceToCloudEventHub\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2019-05-20T10:04:50.411</Modified>
+      <Modified>2019-05-30T11:30:37.601</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Heinr\OneDrive\Desktop\SystecTest\ROOMsense\DataToCloud\DeviceToCloudEventHub\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2019-05-20T10:04:50.412</Modified>
+      <Modified>2019-05-30T11:30:37.610</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Heinr\OneDrive\Desktop\SystecTest\ROOMsense\DataToCloud\DeviceToCloudEventHub\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2019-05-20T10:04:50.413</Modified>
+      <Modified>2019-05-30T11:30:37.611</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Heinr\OneDrive\Desktop\SystecTest\ROOMsense\DataToCloud\DeviceToCloudEventHub\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2019-05-20T10:04:50.414</Modified>
+      <Modified>2019-05-30T11:30:37.613</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Heinr\OneDrive\Desktop\SystecTest\ROOMsense\DataToCloud\DeviceToCloudEventHub\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2019-05-20T10:04:50.415</Modified>
+      <Modified>2019-05-30T11:30:37.614</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Heinr\OneDrive\Desktop\SystecTest\ROOMsense\DataToCloud\DeviceToCloudEventHub\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2019-05-20T10:04:50.416</Modified>
+      <Modified>2019-05-30T11:30:37.615</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Heinr\OneDrive\Desktop\SystecTest\ROOMsense\DataToCloud\DeviceToCloudEventHub\bin\ARM\Debug\DeviceToCloudEventHub.xr.xml">
       <PackagePath>DeviceToCloudEventHub.xr.xml</PackagePath>
-      <Modified>2019-05-20T10:04:50.694</Modified>
+      <Modified>2019-05-30T11:30:37.887</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Heinr\OneDrive\Desktop\SystecTest\ROOMsense\DataToCloud\DeviceToCloudEventHub\bin\ARM\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2019-05-20T16:33:39.216</Modified>
+      <Modified>2019-05-30T16:08:14.172</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Heinr\OneDrive\Desktop\SystecTest\ROOMsense\DataToCloud\DeviceToCloudEventHub\bin\ARM\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2019-05-20T16:33:39.216</Modified>
+      <Modified>2019-05-30T16:08:14.172</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.17763.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -174,11 +174,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Heinr\OneDrive\Desktop\SystecTest\ROOMsense\DataToCloud\DeviceToCloudEventHub\bin\ARM\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2019-05-20T10:08:08.775</Modified>
+      <Modified>2019-05-30T16:08:14.945</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Heinr\OneDrive\Desktop\SystecTest\ROOMsense\DataToCloud\DeviceToCloudEventHub\bin\ARM\Debug\Core\DeviceToCloudEventHub.exe">
       <PackagePath>DeviceToCloudEventHub.exe</PackagePath>
-      <Modified>2019-05-20T16:33:40.341</Modified>
+      <Modified>2019-05-30T16:08:16.150</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
