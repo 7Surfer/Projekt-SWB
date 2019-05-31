@@ -12,7 +12,7 @@ dataQueries.deviceCount = {
 dataQueries.lastTenSeconds = {
   // > @timestampInSeconds10 einfügen
   query:
-    "SELECT c.deviceId, c.temperature, c.humidity , c._ts FROM c c WHERE c._ts > 1558370897 ORDER BY c._ts DESC",
+    "SELECT c.deviceId, c.temperature, c.humidity , c._ts FROM c c WHERE c._ts > 1559243368 ORDER BY c._ts DESC",
   parameters: [
     {
       name: "@timestampInSeconds10",

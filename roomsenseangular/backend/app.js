@@ -26,9 +26,8 @@ app.use((req, res, next) => {
 
 app.get('/api/data', (req, res, next) => {
   sensorData.getCurrentData().then(fetchedFata => {
-    // let transformedData = JSON.stringify(JSON.parse(fetchedFata));
-    // console.log('Transformiert: ' + transformedData);
-    console.log(fetchedFata);
+
+    //console.log(fetchedFata);
     res.status(201).json({
       message: 'Data fetched!',
       data: fetchedFata
