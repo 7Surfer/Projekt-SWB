@@ -21,4 +21,10 @@ dataQueries.lastTenSeconds = {
   ]
 };
 
+dataQueries.newRoomQuerry = {
+  query: "SELECT DISTINCT m.deviceId, m.room FROM MeasuredData m",
+    parameters: []
+}
+
+
 module.exports = dataQueries;
