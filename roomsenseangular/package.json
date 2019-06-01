@@ -24,6 +24,7 @@
     "@angular/router": "~7.2.0",
     "@azure/cosmos": "^2.1.5",
     "body-parser": "^1.19.0",
+    "chart.js": "^2.8.0",
     "core-js": "^2.5.4",
     "express": "^4.17.0",
     "node-modules": "^1.0.1",
