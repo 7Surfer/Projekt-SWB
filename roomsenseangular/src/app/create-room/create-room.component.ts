@@ -1,8 +1,9 @@
-import { Component, OnInit, NgModule  } from '@angular/core';
-import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
+import { Component, OnInit, NgModule, } from '@angular/core';
+import { FormGroup, FormBuilder, Validators, FormControl, } from '@angular/forms';
 import { SensorData,Roomdata} from './../models/SensorData.model';
 import { SensorDataService } from '../services/sensor-data.service';
 import { Subscription } from 'rxjs';
+
 
 
 @Component({
@@ -14,12 +15,14 @@ import { Subscription } from 'rxjs';
 export class CreateRoomComponent implements OnInit {
   options: FormGroup;
   roomNameControl = new FormControl('', [Validators.required]);
-  raspberryControl = new FormControl('', [Validators.required])
+  raspberryControl = new FormControl('', [Validators.required]);
 
   getErrorMessage() {
     return this.roomNameControl.hasError('required') ? 'Bitte einen Namen vergeben' :
       '';
   }
+
+
 
   private new_room = false;           // enable/disable form
   private dataSubscription: Subscription;
