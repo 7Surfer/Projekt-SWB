@@ -27,6 +27,7 @@ async function getDeviceIdArray() {
   var jsonArray = JSON.stringify(results);
   var idArray = JSON.parse(jsonArray);
 
+  lastIdArray = [];
   for (var i = 0; i < idArray.length; i++) {
     lastIdArray.push(idArray[i].deviceId);
     lastIdArray[i] = "'" + lastIdArray[i] + "'";
@@ -44,6 +45,7 @@ async function getCurrentData() {
 
   //console.log(results);
 
+  newDataArray = [];
   for (var queryResult of results) {
     var resultString = JSON.stringify(queryResult);
     newDataArray.push(resultString);
