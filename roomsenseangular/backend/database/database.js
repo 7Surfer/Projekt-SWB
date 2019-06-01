@@ -60,7 +60,7 @@ async function getdeviceIdroom() {
     .toArray();
 
   //console.log(results);
-
+  idroom = [];
   for (var queryResult of results) {
     var resultString = JSON.stringify(queryResult);
     idroom.push(resultString);

@@ -21,7 +21,10 @@ import {
         MatExpansionModule,
         MatProgressSpinnerModule,
         MatSelect,
-        MatSelectModule} from '@angular/material';
+        MatSelectModule,
+        MatIconModule,
+        MatFormFieldModule,
+        MatInputModule,} from '@angular/material';
 import { DataListTestComponent } from './data-list-test/data-list-test.component';
 import { SensorDataService } from './services/sensor-data.service';
 import { MainPageComponent } from './display-components/main-page/main-page.component';
@@ -56,7 +59,10 @@ import { FloorplanComponent } from './floorplan/floorplan.component';
     FormsModule,
     HttpClientModule,
     MatSelectModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatIconModule,
+    MatFormFieldModule,
+    MatInputModule,
   ],
   providers: [SensorDataService],
   bootstrap: [AppComponent]

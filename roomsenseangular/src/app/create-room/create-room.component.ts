@@ -1,11 +1,8 @@
-import { Component, OnInit, NgModule } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Component, OnInit, NgModule  } from '@angular/core';
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { SensorData,Roomdata} from './../models/SensorData.model';
 import { SensorDataService } from '../services/sensor-data.service';
 import { Subscription } from 'rxjs';
-
-
-
 
 
 @Component({
@@ -15,27 +12,32 @@ import { Subscription } from 'rxjs';
 })
 
 export class CreateRoomComponent implements OnInit {
+  options: FormGroup;
+  roomNameControl = new FormControl('', [Validators.required]);
+  raspberryControl = new FormControl('', [Validators.required])
 
-  form: FormGroup;
+  getErrorMessage() {
+    return this.roomNameControl.hasError('required') ? 'Bitte einen Namen vergeben' :
+      '';
+  }
+
   private new_room = false;           // enable/disable form
   private dataSubscription: Subscription;
   data: Roomdata [] = [];
   dataToDisplay: Roomdata [];
   isLoading = false;
   public raspberryarr: string[] = []; // holds the options for the Dropdown menu
+  valid = false;
 
-  constructor(private formBuilder: FormBuilder,public sensorDataService: SensorDataService ) {}
+  constructor(public sensorDataService: SensorDataService ){}
 
   ngOnInit() {
-    //validation of room name (min 1 character)
-    this.form = this.formBuilder.group({
-      room_name: [null, [Validators.required, Validators.minLength(1)]],
-    });
-
+    this.valid = false;
   }
 
   //calls on Button new click
   new_click(){
+    this.valid = false;
     this.new_room = true;
     this.sensorDataService.getDataroom();
     this.isLoading = true;
