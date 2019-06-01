@@ -28,10 +28,11 @@ app.get('/api/data', (req, res, next) => {
   sensorData.getCurrentData().then(fetchedFata => {
 
     //console.log(fetchedFata);
-    res.status(201).json({
+    /* res.status(201).json({
       message: 'Data fetched!',
       data: fetchedFata
-    });
+    }); */
+    res.status(201).json(fetchedFata)
   });
 });
 

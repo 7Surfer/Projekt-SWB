@@ -13,7 +13,7 @@ const routes: Routes = [
   {path: '', component: MainPageComponent},
   {path: 'data', component: DataListTestComponent },
   {path: 'create-room', component: CreateRoomComponent },
-  {path: 'home', component: FloorplanComponent},
+  //{path: 'home', component: MainPageComponent},
 
   {path: '404', component: PageNotFoundComponent},
   {path: '**', redirectTo: '/404'},

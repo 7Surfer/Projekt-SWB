@@ -12,8 +12,8 @@ import { Subscription } from 'rxjs';
 })
 export class DataListTestComponent implements OnInit, OnDestroy {
 
-  data: SensorData [] = [];
-  dataToDisplay: SensorData [];
+  data: SensorData[] = [];
+  dataToDisplay: SensorData[];
   isLoading = false;
 
   private dataSubscription: Subscription;
@@ -22,24 +22,42 @@ export class DataListTestComponent implements OnInit, OnDestroy {
 
 
   ngOnInit() {
-    this.sensorDataService.getData();
+    /* this.sensorDataService.getData();
     this.isLoading = true;
     this.dataSubscription = this.sensorDataService.getDataUpdateListener()
       .subscribe((sentData: SensorData []) => {
         this.isLoading = false;
         this.data = sentData;
-        // console.log( Array.isArray(sentData) +  'Daten: ' + sentData);
+        console.log( Array.isArray(sentData) +  'Daten: ' + sentData);
         this.dataToDisplay = JSON.parse('[' + sentData + ']');
-        // console.log('Data to display: ' + this.dataToDisplay[0].deviceId);
+        console.log('Data to display: ' + this.dataToDisplay[0].deviceId);
 
-        window.localStorage.setItem('yannik', 'test1');
 
-      });
+      }); */
+    this.getData();
   }
 
   ngOnDestroy() {
-    this.dataSubscription.unsubscribe();
-    this.dataToDisplay.length = 0;
+    /* this.dataSubscription.unsubscribe();
+    this.dataToDisplay.length = 0; */
+  }
+
+
+  getData(): void {
+    this.sensorDataService.getData()
+      .subscribe(fetchedData => {
+        this.data = JSON.parse('[' + fetchedData + ']');
+
+        // Output Test
+        // console.log('Daten: ' + this.data);
+        for (let i = 0; i < this.data.length; i++) {
+          // console.log('Accessed Data:' + this.data[i].deviceId);
+          console.log('Stringified Data:' + JSON.stringify(this.data[i]));
+        }
+
+
+
+      });
   }
 
 

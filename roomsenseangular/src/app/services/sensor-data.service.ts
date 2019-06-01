@@ -1,7 +1,7 @@
 import { SensorData } from './../models/SensorData.model';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { Subject } from 'rxjs';
 import { EventEmitter } from 'events';
 import {  } from '@angular/core';
@@ -15,14 +15,21 @@ export class SensorDataService {
   private data: SensorData[] = [];
   private dataUpdated = new Subject<SensorData[]>();
 
-  getData() {
+  /* getData() {
     this.http.get<{message: string, data: any}>('http://localhost:3000/api/data')
       .subscribe((sensorData) => {
         this.data = sensorData.data;
         this.dataUpdated.next([...this.data]);
-        /* this.dataUpdated.next(this.data); // Damit data im Service nicht verändert werden kann */
+        this.dataUpdated.next(this.data); Damit data im Service nicht verändert werden kann
       });
+  } */
+
+  getData(): Observable<SensorData[]> {
+    return this.http.get<SensorData[]>('http://localhost:3000/api/data');
   }
+
+
+
   getDataroom() {
     this.http.get<{message: string, data: any}>('http://localhost:3000/api/room')
       .subscribe((sensorData) => {
