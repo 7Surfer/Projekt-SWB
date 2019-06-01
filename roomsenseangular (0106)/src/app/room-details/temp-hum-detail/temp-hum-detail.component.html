@@ -1,0 +1,18 @@
+<p>Werte in Raum 1</p>
+<div class="kreisTemp" *ngFor="let dataEntry of data"
+  [ngClass]="{
+    'inRange': dataEntry.temperature <= 25 && dataEntry.temperature >= 18,
+    'outRange': dataEntry.temperature > 25 || dataEntry.temperature < 18
+  }"
+>
+  <span class="temp">{{dataEntry.temperature}}°C</span>
+</div>
+
+<div class="kreisHum" *ngFor="let dataEntry of data"
+  [ngClass]="{
+    'inRange': dataEntry.humidity >= 40 && dataEntry.humidity <= 60,
+    'outRange': dataEntry.humidity < 40 || dataEntry.humidity > 60
+  }"
+>
+  <span class="hum">{{dataEntry.humidity}}%</span>
+</div>
