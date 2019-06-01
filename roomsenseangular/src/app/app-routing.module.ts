@@ -8,13 +8,17 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { MainPageComponent } from './display-components/main-page/main-page.component';
 import { CreateRoomComponent } from './create-room/create-room.component';
+import { TempHumDetailComponent } from './room-details/temp-hum-detail/temp-hum-detail.component';
 
 const routes: Routes = [
   {path: '', component: MainPageComponent},
   {path: 'data', component: DataListTestComponent },
   {path: 'create-room', component: CreateRoomComponent },
+
   //{path: 'home', component: MainPageComponent},
 
+  { path: 'home', component: FloorplanComponent },
+  {path: 'room-detail', component: TempHumDetailComponent},
   {path: '404', component: PageNotFoundComponent},
   {path: '**', redirectTo: '/404'},
 

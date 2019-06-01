@@ -9,6 +9,10 @@ export class TempHumDetailComponent implements OnInit {
 
   constructor() { }
 
+  data = [
+    {id: 'Raum1', temperature: "17", humidity: "40"}
+  ]
+
   ngOnInit() {
   }
 
