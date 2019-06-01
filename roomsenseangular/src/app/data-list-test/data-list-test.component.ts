@@ -32,6 +32,8 @@ export class DataListTestComponent implements OnInit, OnDestroy {
         this.dataToDisplay = JSON.parse('[' + sentData + ']');
         // console.log('Data to display: ' + this.dataToDisplay[0].deviceId);
 
+        window.localStorage.setItem('yannik', 'test1');
+
       });
   }
 

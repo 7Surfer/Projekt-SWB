@@ -26,6 +26,8 @@ import { DataListTestComponent } from './data-list-test/data-list-test.component
 import { SensorDataService } from './services/sensor-data.service';
 import { MainPageComponent } from './display-components/main-page/main-page.component';
 import { CreateRoomComponent } from './create-room/create-room.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { FloorplanComponent } from './floorplan/floorplan.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,9 @@ import { CreateRoomComponent } from './create-room/create-room.component';
     DateTimeComponent,
     DataListTestComponent,
     MainPageComponent,
-    CreateRoomComponent
+    CreateRoomComponent,
+    PageNotFoundComponent,
+    FloorplanComponent
   ],
   imports: [
     BrowserModule,

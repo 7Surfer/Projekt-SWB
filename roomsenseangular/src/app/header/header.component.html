@@ -1,9 +1,10 @@
 <mat-toolbar>
-  <span class='title'>RoomSense</span>
+  <!-- <span class='title'>RoomSense</span> -->
+  <a class='title' [routerLink]="['/home']" routerLinkActive="router-link-active">RoomSense</a>
   <span>
     <ul>
     <li>
-      <a  [routerLink]="['/routePath']" routerLinkActive="router-link-active">Home</a>
+      <a  [routerLink]="['/home']" routerLinkActive="router-link-active">Home</a>
     </li>
     <li>
         <a  [routerLink]="['/create-room']" routerLinkActive="router-link-active">Raumerstellung</a>
