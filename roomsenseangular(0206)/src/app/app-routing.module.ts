@@ -15,7 +15,7 @@ const routes: Routes = [
   {path: 'data', component: DataListTestComponent },
   {path: 'create-room', component: CreateRoomComponent },
 
-  // {path: 'home', component: MainPageComponent},
+  //{path: 'home', component: MainPageComponent},
 
   { path: 'home', component: FloorplanComponent },
   {path: 'room-detail', component: TempHumDetailComponent},

@@ -9,7 +9,7 @@ dataQueries.deviceCount = {
   parameters: []
 };
 
-dataQueries.dummyData = {
+dataQueries.lastTenSeconds = {
   // > @timestampInSeconds10 einfügen
   query:
     "SELECT c.deviceId, c.temperature, c.humidity , c._ts FROM c c WHERE c._ts > 1559243368 ORDER BY c._ts DESC",
@@ -25,19 +25,6 @@ dataQueries.newRoomQuerry = {
   query: "SELECT DISTINCT m.deviceId, m.room FROM MeasuredData m",
     parameters: []
 }
-
-
-dataQueries.latestData = {
-  // > @timestampInSeconds10 einfügen
-  query:
-  "SELECT c.deviceId, c.temperature, c.humidity , c._ts FROM c c WHERE c._ts >  @timestampInSeconds15 ORDER BY c._ts DESC", //  1559243368
-  parameters: [
-    {
-      name: "@timestampInSeconds15",
-      value: Math.floor((Date.now() / 1000) - 15)
-    }
-  ]
-};
 
 
 module.exports = dataQueries;
