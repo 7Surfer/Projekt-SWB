@@ -1,4 +1,7 @@
-<div>
+
+<button style="float: right;"  (click)="new_click()" mat-raised-button>Neu</button>
+
+<div [hidden]="!new_room">
   <br>
   <mat-form-field >
     <input matInput placeholder="Raum Name" [formControl]="roomNameControl" required>
@@ -16,16 +19,16 @@
     <mat-error *ngIf="raspberryControl.hasError('required')">Bitte einen Raspberry wählen</mat-error>
   </mat-form-field>
   <br>
-  <mat-checkbox [formControl]="messageControl"> Benachrichtigungen</mat-checkbox>
+  <mat-checkbox [(ngModel)]="enable_limit">Benachrichtigungen</mat-checkbox>
   <br>
   <mat-form-field >
-    <input matInput  #lowerplimit maxlength="3" placeholder="Unterer Grenzwert">
+    <input matInput  #lowerplimit maxlength="3" placeholder="Unterer Grenzwert" [disabled]="!enable_limit">
     <span matSuffix>°C</span>
     <mat-hint align="end">{{lowerplimit.value.length}} / 3</mat-hint>
   </mat-form-field>
   <br>
   <mat-form-field >
-    <input matInput #uplimit maxlength="3" placeholder="Oberer Grenzwert">
+    <input matInput #uplimit maxlength="3" placeholder="Oberer Grenzwert" [disabled]="!enable_limit">
     <span matSuffix>°C</span>
     <mat-hint align="end">{{uplimit.value.length}} / 3</mat-hint>
   </mat-form-field>

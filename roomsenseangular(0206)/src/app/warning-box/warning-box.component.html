@@ -1,0 +1,19 @@
+<div class='warning'>
+  <p>Warnungen/ Meldungen</p>
+  <ul ui-scroll-viewport>
+      <li *ngFor="let dataEntry of data">
+          <button class="warning-rooms-button">{{dataEntry.id}}</button>
+          <span class="description">{{dataEntry.description}}</span>
+      </li>
+  </ul>
+</div>
+
+<!-- <mat-accordion>
+  <mat-expansion-panel [expanded]=true>
+<mat-expansion-panel-header>
+  <mat-panel-title>Warnungen / Meldungen</mat-panel-title>
+  <mat-panel-description></mat-panel-description>
+</mat-expansion-panel-header>
+<span id='room' *ngFor="let room of rooms"><button class='warning-rooms'  (click)='onRoomClicked()'>{{room.id}}</button><p id='description'>{{room.description}}</p> </span>
+  </mat-expansion-panel>
+</mat-accordion> -->

@@ -1,0 +1,34 @@
+<mat-toolbar>
+  <!-- <span class='title'>RoomSense</span> -->
+  <a class='title' [routerLink]="['/home']" routerLinkActive="router-link-active">RoomSense</a>
+  <span>
+    <ul>
+    <li>
+      <a  [routerLink]="['/']" routerLinkActive="router-link-active">Home</a>
+    </li>
+    <li>
+        <a  [routerLink]="['/create-room']" routerLinkActive="router-link-active">Raumerstellung</a>
+    </li>
+    <li>
+      <a mat-button [routerLink]="['/data']" routerLinkActive="router-link-active">Daten</a>
+  </li>
+  </ul>
+  </span>
+  <span class='header-spacer'></span>
+  <span>
+    <app-search-bar></app-search-bar>
+  </span>
+</mat-toolbar>
+
+<!-- <mat-toolbar>
+  <span>ROOMSense</span>
+  <ul>
+    <li>
+      <a mat-button [routerLink]="['/']" routerLinkActive="router-link-active">Home</a>
+    </li>
+    <li>
+        <a mat-button [routerLink]="['/data']" routerLinkActive="router-link-active">Daten</a>
+    </li>
+  </ul>
+</mat-toolbar> -->
+

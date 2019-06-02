@@ -3,8 +3,6 @@ import { FormGroup, FormBuilder, Validators, FormControl, } from '@angular/forms
 import { SensorData,Roomdata} from './../models/SensorData.model';
 import { SensorDataService } from '../services/sensor-data.service';
 import { Subscription } from 'rxjs';
-import { Message } from '@angular/compiler/src/i18n/i18n_ast';
-import { MatSnackBar } from '@angular/material';
 
 
 
@@ -15,30 +13,35 @@ import { MatSnackBar } from '@angular/material';
 })
 
 export class CreateRoomComponent implements OnInit {
-  private dataSubscription: Subscription;
-
+  options: FormGroup;
   roomNameControl = new FormControl('', [Validators.required]);
   raspberryControl = new FormControl('', [Validators.required]);
-  messageControl = new FormControl();
-  createRoomForm: FormGroup;
-  valid = false;
-
-  data: Roomdata [] = [];
-  dataToDisplay: Roomdata [];
-  isLoading = false;
-  public raspberryarr: string[] = []; // holds the options for the Dropdown menu
-  
-
-  constructor(public sensorDataService: SensorDataService, public snackbar: MatSnackBar){}
 
   getErrorMessage() {
     return this.roomNameControl.hasError('required') ? 'Bitte einen Namen vergeben' :
       '';
   }
-  
+
+
+
+  private new_room = false;           // enable/disable form
+  private dataSubscription: Subscription;
+  data: Roomdata [] = [];
+  dataToDisplay: Roomdata [];
+  isLoading = false;
+  public raspberryarr: string[] = []; // holds the options for the Dropdown menu
+  valid = false;
+
+  constructor(public sensorDataService: SensorDataService ){}
 
   ngOnInit() {
     this.valid = false;
+  }
+
+  //calls on Button new click
+  new_click(){
+    this.valid = false;
+    this.new_room = true;
     this.sensorDataService.getDataroom();
     this.isLoading = true;
     this.dataSubscription = this.sensorDataService.getDataUpdateListener()
@@ -49,8 +52,6 @@ export class CreateRoomComponent implements OnInit {
         this.finished_subscription()
       });
   }
-
- 
 
   //process Data after it is recievd
   finished_subscription(){
@@ -83,13 +84,9 @@ export class CreateRoomComponent implements OnInit {
     }
   }
 
+  //disable form //neds database update (mabye double name check / nativ input error checks)
   onSubmit() {
-    let snackBarRef = this.snackbar.open('Raum ' + this.roomNameControl.value + ' erstellt', 'close', {duration: 5000});
-
-    this.roomNameControl.reset();
-    this.raspberryControl.reset();
-    this.messageControl.reset();
-    
+    this.new_room = false;
   }
   
 }

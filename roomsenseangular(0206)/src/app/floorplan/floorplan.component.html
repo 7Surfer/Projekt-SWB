@@ -1,0 +1,19 @@
+<p>Raumübersicht
+    <button class="create">  
+        <i class="fas fa-plus"></i>
+        <span class="createText">Raum hinzufügen</span> 
+    </button> 
+</p>
+
+<ul ui-scroll-viewport>
+    <li *ngFor="let dataEntry of data">
+        <button class="rooms-button">{{dataEntry.id}}</button>
+        <div class="verticalLine"></div>
+        <span class="description">Temperatur: {{dataEntry.temperature}}</span>
+        <span class="description">Luftfeuchte: {{dataEntry.humidity}}</span>
+        <span class="description">Sensor: raspberry2</span>
+        <button class="icon">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+    </li>
+</ul>
