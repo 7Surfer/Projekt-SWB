@@ -22,17 +22,19 @@ app.use((req, res, next) => {
   next();
 });
 
-
+let newDataToSend = [];
 
 app.get('/api/data', (req, res, next) => {
-  sensorData.getCurrentData().then(fetchedFata => {
+  newDataToSend = [];
+  sensorData.getCurrentData().then(fetchedData => {
 
     //console.log(fetchedFata);
     /* res.status(201).json({
       message: 'Data fetched!',
       data: fetchedFata
     }); */
-    res.status(201).json(fetchedFata)
+    newDataToSend = fetchedData;
+    res.status(201).json(newDataToSend) //fetchedData
   });
 });
 

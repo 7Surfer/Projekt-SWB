@@ -44,6 +44,7 @@ export class DataListTestComponent implements OnInit, OnDestroy {
 
 
   getData(): void {
+    this.data = [];
     this.sensorDataService.getData()
       .subscribe(fetchedData => {
         this.data = JSON.parse('[' + fetchedData + ']');

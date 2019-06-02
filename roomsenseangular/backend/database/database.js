@@ -46,10 +46,14 @@ async function getCurrentData() {
 
   //console.log(results);
 
-  newDataArray = [];
-  for (var queryResult of results) {
+  newDataArray.length = 0;
+  /* for (var queryResult of results) {
     var resultString = JSON.stringify(queryResult);
     newDataArray.push(resultString);
+  } */
+  for(let i = 0; i < results.length; i++) {
+    var resultString = JSON.stringify(results[i]);
+    newDataArray[i] = resultString;
   }
   return newDataArray;
 }
