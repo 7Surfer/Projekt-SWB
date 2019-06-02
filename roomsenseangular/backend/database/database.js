@@ -40,7 +40,8 @@ async function getCurrentData() {
   const { result: results } = await client
     .database(databaseId)
     .container(containerId)
-    .items.query(dataQueries.lastTenSeconds)
+/*     .items.query(dataQueries.dummyData)        // für Dummy Daten einkommentieren
+ */    .items.query(dataQueries.latestData)       //Neuesten Daten die aktuell gesendet werden
     .toArray();
 
   //console.log(results);
