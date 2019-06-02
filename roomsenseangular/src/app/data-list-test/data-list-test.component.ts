@@ -60,8 +60,4 @@ export class DataListTestComponent implements OnInit, OnDestroy {
 
       });
   }
-
-
-
-
 }

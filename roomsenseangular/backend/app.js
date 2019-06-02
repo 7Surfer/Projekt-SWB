@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const sensorData = require("../backend/database/database");
+const modifyData = require('./database/utils/modify');
 
 const app = express();
 
@@ -26,15 +27,26 @@ let newDataToSend = [];
 
 app.get('/api/data', (req, res, next) => {
   newDataToSend = [];
-  sensorData.getCurrentData().then(fetchedData => {
+  // Timestamp bei jedem Aufruf aktualisieren
+  let timestampInSeconds15 = Math.floor((Date.now() / 1000) - 7); // war -15
+  //console.log(timestampInSeconds15); Timestamp testen
+  sensorData.getCurrentData(timestampInSeconds15).then(fetchedData => {
 
     //console.log(fetchedFata);
     /* res.status(201).json({
       message: 'Data fetched!',
       data: fetchedFata
     }); */
-    newDataToSend = fetchedData;
+
+    // Nur neueste Daten der jeweiligen Geräte sensen
+    let newData = modifyData.getLatestEntries(fetchedData);
+
+    //newDataToSend.splice(0, newDataToSend.length);  Array leeren
+    newDataToSend = newData;
+
+    console.log(newDataToSend);
     res.status(201).json(newDataToSend) //fetchedData
+
   });
 });
 

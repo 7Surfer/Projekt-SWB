@@ -35,13 +35,14 @@ async function getDeviceIdArray() {
   return lastIdArray;
 }
 
-async function getCurrentData() {
+async function getCurrentData(timestamp) {
 
   const { result: results } = await client
     .database(databaseId)
     .container(containerId)
-/*     .items.query(dataQueries.dummyData)        // für Dummy Daten einkommentieren
- */    .items.query(dataQueries.latestData)       //Neuesten Daten die aktuell gesendet werden
+/*     .items.query(dataQueries.dummyData)        // für Dummy Daten einkommentieren */
+/*     .items.query(dataQueries.latestData)       Neuesten Daten die aktuell gesendet werden */
+    .items.query(`SELECT c.deviceId, c.temperature, c.humidity , c._ts FROM c c WHERE c._ts >  ${timestamp} ORDER BY c._ts DESC`)
     .toArray();
 
   //console.log(results);

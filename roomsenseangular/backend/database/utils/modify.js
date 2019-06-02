@@ -1,4 +1,4 @@
-let array =  [
+/* let array =  [
   "{\"deviceId\":\"sonja\",\"_ts\":1559309009}",
   "{\"deviceId\":\"yannik-rpi3\",\"_ts\":1559245236}",
   "{\"deviceId\":\"yannik-rpi3\",\"temperature\":23.86,\"humidity\":42.66,\"_ts\":1559243413}",
@@ -10,9 +10,9 @@ let array =  [
   "{\"deviceId\":\"yannik-rpi3\",\"temperature\":23.89,\"humidity\":42.68,\"_ts\":1559243383}",
   "{\"deviceId\":\"yannik-rpi3\",\"temperature\":23.88,\"humidity\":42.66,\"_ts\":1559243378}",
   "{\"deviceId\":\"yannik-rpi3\",\"temperature\":23.87,\"humidity\":42.68,\"_ts\":1559243373}"
-  ];
+  ]; */
 
-getLatestEntries(array);
+//getLatestEntries(array);
 
 function getLatestEntries(a) {
 
