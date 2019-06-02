@@ -84,6 +84,18 @@ function exit(message) {
   process.stdin.on("data", process.exit.bind(process, 0));
 }
 
+//test
+async function insertRoom(item){
+  console.log(item)
+  /*const { testa } = await client.
+  database(databaseId)
+  .container(containerId)
+  .items.create(item);*/
+}
+//test end
+
+
+
 // getCurrentData().then(() => {
 //   exit();
 // }).catch((error) => {
@@ -93,3 +105,4 @@ function exit(message) {
 module.exports.getDeviceIdArray = getDeviceIdArray;
 module.exports.getCurrentData = getCurrentData;
 module.exports.getdeviceIdroom = getdeviceIdroom;
+module.exports.insertRoom = insertRoom;

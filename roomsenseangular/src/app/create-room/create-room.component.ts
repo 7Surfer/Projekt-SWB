@@ -20,6 +20,8 @@ export class CreateRoomComponent implements OnInit {
   roomNameControl = new FormControl('', [Validators.required]);
   raspberryControl = new FormControl('', [Validators.required]);
   messageControl = new FormControl();
+  lowerControl = new FormControl();
+  upperControl = new FormControl();
   createRoomForm: FormGroup;
   valid = false;
 
@@ -83,13 +85,42 @@ export class CreateRoomComponent implements OnInit {
     }
   }
 
+  //test item
+  testitem = {
+    "newRoom":{
+      "room": "raum3",
+      "deviceId": "device3",
+      "lower": 20,
+      "upper": 20,
+      "notification": true
+    }
+  }
+
   onSubmit() {
     let snackBarRef = this.snackbar.open('Raum ' + this.roomNameControl.value + ' erstellt', 'close', {duration: 5000});
+    
+    //einkommentieren für reale Werte
+    /*
+    this.testitem.newRoom.room = this.roomNameControl.value;
+    this.testitem.newRoom.deviceId = this.raspberryControl.value;
+    this.testitem.newRoom.lower = this.lowerControl.value;
+    this.testitem.newRoom.upper = this.upperControl.value;
+    if (this.messageControl.value)
+      this.testitem.newRoom.notification = true;
+    else
+      this.testitem.newRoom.notification = false;
+    
+      console.log(this.testitem);
+    */
+
+    //Send Data to nodejs function "insertroom(string)"
+
 
     this.roomNameControl.reset();
     this.raspberryControl.reset();
     this.messageControl.reset();
-    
+    this.lowerControl.reset();
+    this.upperControl.reset();
   }
   
 }
