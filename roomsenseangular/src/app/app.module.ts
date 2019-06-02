@@ -25,7 +25,9 @@ import {
         MatIconModule,
         MatFormFieldModule,
         MatInputModule,
-        MatCheckboxModule,} from '@angular/material';
+        MatCheckboxModule,
+        MatCardModule,
+        MatSnackBarModule,} from '@angular/material';
 import { DataListTestComponent } from './data-list-test/data-list-test.component';
 import { SensorDataService } from './services/sensor-data.service';
 import { MainPageComponent } from './display-components/main-page/main-page.component';
@@ -65,6 +67,8 @@ import { FloorplanComponent } from './floorplan/floorplan.component';
     MatFormFieldModule,
     MatInputModule,
     MatCheckboxModule,
+    MatCardModule,
+    MatSnackBarModule,
   ],
   providers: [SensorDataService],
   bootstrap: [AppComponent]
