@@ -34,6 +34,7 @@ import { MainPageComponent } from './display-components/main-page/main-page.comp
 import { CreateRoomComponent } from './create-room/create-room.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { FloorplanComponent } from './floorplan/floorplan.component';
+import { CreateRoomYannikComponent } from './create-room-yannik/create-room-yannik.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { FloorplanComponent } from './floorplan/floorplan.component';
     MainPageComponent,
     CreateRoomComponent,
     PageNotFoundComponent,
-    FloorplanComponent
+    FloorplanComponent,
+    CreateRoomYannikComponent
   ],
   imports: [
     BrowserModule,

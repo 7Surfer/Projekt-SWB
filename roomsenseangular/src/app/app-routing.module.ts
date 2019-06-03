@@ -1,3 +1,4 @@
+import { CreateRoomYannikComponent } from './create-room-yannik/create-room-yannik.component';
 import { FloorplanComponent } from './floorplan/floorplan.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { SensorBoxComponent } from './sensor-box/sensor-box.component';
@@ -11,13 +12,14 @@ import { CreateRoomComponent } from './create-room/create-room.component';
 import { TempHumDetailComponent } from './room-details/temp-hum-detail/temp-hum-detail.component';
 
 const routes: Routes = [
-  {path: '', component: MainPageComponent},
+  {path: '', component: FloorplanComponent},
   {path: 'data', component: DataListTestComponent },
   {path: 'create-room', component: CreateRoomComponent },
+  {path: 'create-room-yannik', component: CreateRoomYannikComponent},
 
   // {path: 'home', component: MainPageComponent},
 
-  { path: 'home', component: FloorplanComponent },
+  { path: 'home', redirectTo: '/' },
   {path: 'room-detail', component: TempHumDetailComponent},
   {path: '404', component: PageNotFoundComponent},
   {path: '**', redirectTo: '/404'},

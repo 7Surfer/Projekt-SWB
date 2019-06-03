@@ -23,8 +23,24 @@ app.use((req, res, next) => {
   next();
 });
 
-let newDataToSend = [];
 
+
+
+app.post('api/create-room-yannik', (req, res, next) => {
+  /* const dataToStore = req.body;
+  console.log(dataToStore); */
+  res.status(201).json({
+    message: 'Data added successfully!'
+  });
+})
+
+
+
+
+
+
+
+let newDataToSend = [];
 app.get('/api/data', (req, res, next) => {
   newDataToSend = [];
   // Timestamp bei jedem Aufruf aktualisieren
@@ -59,6 +75,8 @@ app.get('/api/room', (req, res, next) => {
     });
   });
 });
+
+
 
 
 // app.get('/api/data', (req, res, next) => {

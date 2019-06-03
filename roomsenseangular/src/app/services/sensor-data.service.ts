@@ -5,6 +5,7 @@ import { Observable, of } from 'rxjs';
 import { Subject } from 'rxjs';
 import { EventEmitter } from 'events';
 import {  } from '@angular/core';
+import { RoomData } from '../models/RoomData.model';
 
 @Injectable({
   providedIn: 'root'
@@ -45,5 +46,20 @@ export class SensorDataService {
 
   errorHandler(error: HttpErrorResponse) {
     return Observable.throw(error.message || 'Server Error!');
+  }
+
+
+
+
+
+  // Raum-Sensor Belegung speichern Yannik
+  saveRoomInfo(deviceName: string, roomName: string, lowerLimit: number, upperLimit: number) {
+    const roomData: any = {deviceName: deviceName,
+                                roomName: roomName,
+                                lowerLimit: lowerLimit,
+                                upperLimit: upperLimit,
+                                timestamp: Math.floor((Date.now() / 1000) - 7)};
+    return this.http.post<any>('http://localhost:3000/api/create-room-yannik', roomData);
+
   }
 }

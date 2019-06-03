@@ -15,6 +15,7 @@ export class DataListTestComponent implements OnInit, OnDestroy {
   data: SensorData[] = [];
   dataToDisplay: SensorData[];
   isLoading = false;
+  isClicked = false;
 
   private dataSubscription: Subscription;
 
@@ -33,16 +34,19 @@ export class DataListTestComponent implements OnInit, OnDestroy {
         console.log('Data to display: ' + this.dataToDisplay[0].deviceId);
     }); */
 
+    this.isClicked = true;
 
-    /* this.getData(); */
-    setInterval(() => {
+   /*  setInterval(() => {
+      console.log('Es werden Daten empfangen!');
       this.getData();
-    }, 6000);
+    }, 6000); */
+
   }
 
   ngOnDestroy() {
     /* this.dataSubscription.unsubscribe();
     this.dataToDisplay.length = 0; */
+    this.isClicked = false;
   }
 
 
