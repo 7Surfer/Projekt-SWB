@@ -1,5 +1,6 @@
-<p class="heading">Raum hinzufügen</p>
 
+<p class="heading">Raum hinzufügen</p>
+<div class="main">
  <mat-form-field [color]="primary" appearance="outline" class="roomName">
     <mat-label>Raumbezeichnung</mat-label>
     <input matInput placeholder="Bitte geben Sie eine Raumbezeichnung ein" [formControl]="roomNameControl" required>
@@ -70,3 +71,4 @@
   <br>
   <button class="submit" type="submit" (click)="onSubmit()" [disabled]="roomNameControl.invalid || raspberryControl.invalid"> Speichern </button>
   <button class="escape" [routerLink]="['/floorplan']" routerLinkActive="router-link-active"> Abbrechen </button>
+</div>

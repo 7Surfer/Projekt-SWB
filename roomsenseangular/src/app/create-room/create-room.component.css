@@ -1,4 +1,10 @@
-@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+.main {
+    overflow-y: scroll;
+    scrollbar-color: #0082BB rgba(238, 238, 238, 0);
+    scrollbar-width: thin;
+    height: 80%;
+}
+
 .heading {
     font-family: 'Open Sans', sans-serif;
     font-size: 25px;
@@ -34,7 +40,8 @@
 .expTemp {
     width: 500px;
     margin-left: 30px;
-    box-shadow: none; 
+    box-shadow: none;
+    border: 1px solid #DFDEDE; 
 }
 
 .mat-expansion-panel-header {
@@ -55,7 +62,8 @@
 .expHum {
     width: 500px;
     margin-left: 30px;
-    box-shadow: none; 
+    box-shadow: none;
+    border: 1px solid #DFDEDE;  
 }
 
 .hum {
