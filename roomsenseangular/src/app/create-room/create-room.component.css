@@ -22,6 +22,11 @@
     font-family: 'Open Sans', sans-serif;
 }
 
+.expTemp ::placeholder{
+    color:  #707070;
+    font-family: 'Open Sans', sans-serif;
+}
+
 .mat-form-field mat-select {
     color: #EEEEEE;
 }
@@ -45,6 +50,18 @@
 
 .mat-action-row {
     margin-left: -45px;
+}
+
+.expHum {
+    width: 500px;
+    margin-left: 30px;
+    box-shadow: none; 
+}
+
+.hum {
+    font-family: 'Open Sans', sans-serif;
+    color: #707070;
+    font-size: 16px;
 }
 
 .mat-checkbox {

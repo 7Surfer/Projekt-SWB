@@ -20,8 +20,10 @@ export class CreateRoomComponent implements OnInit {
   roomNameControl = new FormControl('', [Validators.required]);
   raspberryControl = new FormControl('', [Validators.required]);
   messageControl = new FormControl();
-  lowerControl = new FormControl();
-  upperControl = new FormControl();
+  lowertempControl = new FormControl();
+  uppertempControl = new FormControl();
+  lowerhumiControl = new FormControl();
+  upperhumiControl = new FormControl();
   createRoomForm: FormGroup;
   valid = false;
 
@@ -90,8 +92,10 @@ export class CreateRoomComponent implements OnInit {
     "newRoom":{
       "room": "raum3",
       "deviceId": "device3",
-      "lower": 20,
-      "upper": 20,
+      "lowertemp": 20,
+      "uppertemp": 30,
+      "lowerhumi": 30,
+      "upperhumi": 60,
       "notification": true
     }
   }
@@ -102,16 +106,17 @@ export class CreateRoomComponent implements OnInit {
     //einkommentieren für reale Werte
     /*
     this.testitem.newRoom.room = this.roomNameControl.value;
-    this.testitem.newRoom.deviceId = this.raspberryControl.value;
-    this.testitem.newRoom.lower = this.lowerControl.value;
-    this.testitem.newRoom.upper = this.upperControl.value;
+    this.testitem.newRoom.lowertemp = this.lowertempControl.value;
+    this.testitem.newRoom.uppertemp = this.uppertempControl.value;
+    this.testitem.newRoom.lowerhumi = this.lowertempControl.value;
+    this.testitem.newRoom.upperhumi = this.uppertempControl.value;
     if (this.messageControl.value)
       this.testitem.newRoom.notification = true;
     else
       this.testitem.newRoom.notification = false;
-    
-      console.log(this.testitem);
     */
+    console.log(this.testitem);
+    
 
     //Send Data to nodejs function "insertroom(string)"
 
@@ -119,10 +124,12 @@ export class CreateRoomComponent implements OnInit {
     this.roomNameControl.reset();
     this.raspberryControl.reset();
     this.messageControl.reset();
-    this.lowerControl.reset();
-    this.upperControl.reset();
+    this.lowertempControl.reset();
+    this.uppertempControl.reset();
+    this.lowerhumiControl.reset();
+    this.upperhumiControl.reset();
+    
   }
-  
 }
 
 
