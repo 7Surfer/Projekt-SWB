@@ -1,0 +1,110 @@
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+.heading {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 25px;
+    margin-left: 30px;
+    color: #0082BB;
+  }
+
+.mat-form-field {
+    margin-left: 30px;
+    width: 500px;
+}
+
+.mat-form-field mat-label {
+    color:  #707070;
+    font-family: 'Open Sans', sans-serif;
+    vertical-align: middle; 
+}
+
+.mat-form-field input {
+    color:  #707070;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.expTemp ::placeholder{
+    color:  #707070;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.mat-form-field mat-select {
+    color: #EEEEEE;
+}
+
+.expTemp {
+    width: 500px;
+    margin-left: 30px;
+    box-shadow: none; 
+}
+
+.mat-expansion-panel-header {
+    padding-left: 10px;
+    padding-bottom: -10px;
+}
+
+.temp {
+    font-family: 'Open Sans', sans-serif;
+    color: #707070;
+    font-size: 16px;
+}
+
+.mat-action-row {
+    margin-left: -45px;
+}
+
+.expHum {
+    width: 500px;
+    margin-left: 30px;
+    box-shadow: none; 
+}
+
+.hum {
+    font-family: 'Open Sans', sans-serif;
+    color: #707070;
+    font-size: 16px;
+}
+
+.mat-checkbox {
+    font-family: 'Open Sans', sans-serif;
+    color: #707070;
+    padding-left: 30px;
+}
+
+::ng-deep .mat-checkbox-frame {
+    border-radius: 50% !important;
+}
+
+::ng-deep .mat-checkbox-background {
+    border-radius: 50% !important;
+}
+
+::ng-deep .mat-checkbox .mat-checkbox-frame {
+    border-color: #707070;
+  }
+
+.submit {
+      background-color: #0082BB;
+      border: none;
+      border-radius: 25px;
+      font-family: 'Open Sans', sans-serif;
+      color: white;
+      font-weight: 2px;
+      font-size: 15px;
+      margin-left: 30px;
+      padding: 10px 20px;
+  }
+
+  .escape {
+    background-color: #979797;
+    border: none;
+    border-radius: 25px;
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+    font-weight: 2px;
+    font-size: 15px;
+    margin-left: 30px;
+    padding: 10px 20px;
+}
+
+
+
