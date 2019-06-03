@@ -31,10 +31,13 @@ export class DataListTestComponent implements OnInit, OnDestroy {
         console.log( Array.isArray(sentData) +  'Daten: ' + sentData);
         this.dataToDisplay = JSON.parse('[' + sentData + ']');
         console.log('Data to display: ' + this.dataToDisplay[0].deviceId);
+    }); */
 
 
-      }); */
-    this.getData();
+    /* this.getData(); */
+    setInterval(() => {
+      this.getData();
+    }, 6000);
   }
 
   ngOnDestroy() {
@@ -44,7 +47,7 @@ export class DataListTestComponent implements OnInit, OnDestroy {
 
 
   getData(): void {
-    this.data = [];
+    /* this.data = []; */
     this.sensorDataService.getData()
       .subscribe(fetchedData => {
         this.data = JSON.parse('[' + fetchedData + ']');
@@ -56,8 +59,12 @@ export class DataListTestComponent implements OnInit, OnDestroy {
           console.log('Stringified Data:' + JSON.stringify(this.data[i]));
         }
 
+       /*  setInterval(() => {
+          console.log('Neues Intreval');
+        }, 6000); */
 
 
       });
   }
+
 }
