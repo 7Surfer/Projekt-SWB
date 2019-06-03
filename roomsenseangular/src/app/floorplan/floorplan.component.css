@@ -1,1 +1,151 @@
 
+ p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 25px;
+    margin-left: 30px;
+    color: #0082BB;
+  }
+  
+  .create{
+    display: inline;
+    width: 300px;
+    border: none;
+    background-color: white;
+    color: #7EBFDB;
+    vertical-align: middle;
+}
+
+.fas fa-plus {
+    
+    font-size: 15px;
+}
+
+.createText {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bolder;
+    margin-left: 10px;
+    font-size: 15px;
+    vertical-align: middle;
+    padding-bottom: 2px;
+}
+
+  .rooms-button{
+    background: none;
+    border: none;
+    color: #707070;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+  }
+  
+  .verticalLine{
+    display: inline;
+    border-left: 3px solid #CBCBCB;
+    font-size: 50px;
+    vertical-align: middle;
+    margin-left: 20px;
+    border-radius: 100px;
+  }
+
+  .description {
+    background: none;
+    border: none;
+    color: #0082BB;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    margin-left: 50px;
+  }
+
+  .icon{
+      margin-left: 150px;
+      margin-right: 50px; 
+      vertical-align: middle;
+      height: 50px;
+      width: 50px;
+      border: none;
+      background-color: #EEEEEE;
+      font-size: 25px;
+      color: #979797;
+  }
+  
+  ul {
+    list-style: none;
+    overflow: hidden;
+    overflow-y: scroll;
+    height: 80%;
+    margin-left: -40px;
+    list-style-position: outside;
+    scrollbar-color: #0082BB rgba(238, 238, 238, 0);
+    scrollbar-width: thin;
+  }
+  
+  ul li {
+    padding: 10px 0px 10px 15px;
+    background-color: #EEEEEE;
+    margin: 15px 30px 15px 30px;
+    border-radius: 15px;
+  }
+  
+  @media only screen and (max-width: 600px) { /*verschwindet bei Mobile-Version*/
+    .room {
+      display: none;
+    }
+  
+    ul {
+      height: 70%;
+      margin-left: -40px;
+    }
+  
+    p {
+      font-size: 4.5vw;
+    }
+  
+    .warning-rooms-button{
+      background: none;
+      border: none;
+      color: #0082BB;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 4vw;
+    }
+  
+    .description {
+      font-size: 3vw;
+      margin-left: 30px;
+    }
+  }
+  
+  /* :host {
+    float: right;
+    clear: right;
+    margin-right: 50px;
+    margin-top: 80px;
+    width: 25%;
+    max-height: 25%;
+  }
+  
+  mat-expansion-panel-header {
+    color: #0299f7;
+  }
+  
+  mat-panel-title {
+    color: #0299f7;
+  }
+  
+  span {
+    display: inline-block;
+  }
+  
+  p {
+    display: inline-block;
+    font-size: 12px;
+  }
+  
+  #description {
+    float: right;
+    margin-left: 30px;
+    color: black;
+  }
+  
+  #room {
+    color: #0299f7;
+  } */
+  
