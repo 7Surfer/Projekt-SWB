@@ -94,6 +94,14 @@
       padding: 10px 20px;
   }
 
+  .submit[type=submit]:enabled {
+      background-color: #0082BB;
+  }
+
+  .submit[type=submit]:disabled {
+      background-color: rgba(0, 130, 187, 0.35);
+  }
+
   .escape {
     background-color: #979797;
     border: none;
