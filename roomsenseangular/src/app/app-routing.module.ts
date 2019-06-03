@@ -13,7 +13,8 @@ import { TempHumDetailComponent } from './room-details/temp-hum-detail/temp-hum-
 const routes: Routes = [
   {path: '', component: MainPageComponent},
   {path: 'data', component: DataListTestComponent },
-  {path: 'create-room', component: CreateRoomComponent },
+  { path: 'create-room', component: CreateRoomComponent },
+  {path: 'floorplan', component: FloorplanComponent },
 
   // {path: 'home', component: MainPageComponent},
 

@@ -1,12 +1,15 @@
-<div>
-  <br>
-  <mat-form-field >
-    <input matInput placeholder="Raum Name" [formControl]="roomNameControl" required>
+<p class="heading">Raum hinzufügen</p>
+
+ <mat-form-field [color]="primary" appearance="outline" class="roomName">
+    <mat-label>Raumbezeichnung</mat-label>
+    <input matInput placeholder="Bitte geben Sie eine Raumbezeichnung ein" [formControl]="roomNameControl" required>
     <mat-error *ngIf="roomNameControl.invalid">{{getErrorMessage()}}</mat-error>
   </mat-form-field>
+
   <br>
-  <mat-form-field>
-    <mat-label>Raspberry</mat-label>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Wählen Sie einen Raspberry aus</mat-label>
     <mat-select [formControl]="raspberryControl" required>
       <mat-option>--</mat-option>
       <mat-option *ngFor="let raspberry of raspberryarr" [value]="raspberry" required>
@@ -16,20 +19,32 @@
     <mat-error *ngIf="raspberryControl.hasError('required')">Bitte einen Raspberry wählen</mat-error>
   </mat-form-field>
   <br>
-  <mat-checkbox [formControl]="messageControl"> Benachrichtigungen</mat-checkbox>
-  <br>
-  <mat-form-field >
-    <input [formControl]="lowerControl" matInput  #lowerplimit maxlength="3" placeholder="Unterer Grenzwert">
-    <span matSuffix>°C</span>
-    <mat-hint align="end">{{lowerplimit.value.length}} / 3</mat-hint>
-  </mat-form-field>
-  <br>
-  <mat-form-field >
-    <input [formControl]="upperControl" matInput #uplimit maxlength="3" placeholder="Oberer Grenzwert">
-    <span matSuffix>°C</span>
-    <mat-hint align="end">{{uplimit.value.length}} / 3</mat-hint>
-  </mat-form-field>
+  <mat-expansion-panel class="expTemp">
+    <mat-expansion-panel-header>
+      <mat-panel-title class="temp">Grenzwerte Temperatur</mat-panel-title>
+    </mat-expansion-panel-header>
+    <mat-action-row>
+      <mat-form-field appearance="outline">
+        <input [formControl]="lowerControl" matInput  #lowerplimit maxlength="3" placeholder="Unterer Grenzwert">
+        <span matSuffix>°C</span>
+        <mat-hint align="end">{{lowerplimit.value.length}} / 3</mat-hint>
+      </mat-form-field>
+    </mat-action-row>
+    <mat-action-row>
+      <mat-form-field appearance="outline">
+        <input [formControl]="upperControl" matInput #uplimit maxlength="3" placeholder="Oberer Grenzwert">
+        <span matSuffix>°C</span>
+        <mat-hint align="end">{{uplimit.value.length}} / 3</mat-hint>
+      </mat-form-field>
+    </mat-action-row>
+    
+  </mat-expansion-panel>
   
   <br>
-  <button type="submit" (click)="onSubmit()" [disabled]="roomNameControl.invalid || raspberryControl.invalid" mat-raised-button> Save </button>
-</div>
+  <mat-checkbox [formControl]="messageControl"> Benachrichtigungen</mat-checkbox>
+  <br>
+  
+  <br>
+  <br>
+  <button class="submit" type="submit" (click)="onSubmit()" [disabled]="roomNameControl.invalid || raspberryControl.invalid"> Speichern </button>
+  <button class="escape" [routerLink]="['/floorplan']" routerLinkActive="router-link-active"> Abbrechen </button>
