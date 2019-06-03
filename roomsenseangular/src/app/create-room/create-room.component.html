@@ -19,15 +19,27 @@
   <mat-checkbox [formControl]="messageControl"> Benachrichtigungen</mat-checkbox>
   <br>
   <mat-form-field >
-    <input [formControl]="lowerControl" matInput  #lowerplimit maxlength="3" placeholder="Unterer Grenzwert">
+    <input [formControl]="lowertempControl" type="number" matInput  #lowertempplimit maxlength="3" placeholder="Unterer Temperatur Grenzwert">
     <span matSuffix>°C</span>
-    <mat-hint align="end">{{lowerplimit.value.length}} / 3</mat-hint>
+    <mat-hint align="end">{{lowertempplimit.value.length}} / 3</mat-hint>
   </mat-form-field>
   <br>
   <mat-form-field >
-    <input [formControl]="upperControl" matInput #uplimit maxlength="3" placeholder="Oberer Grenzwert">
+    <input [formControl]="uppertempControl" type="number" matInput #uptemplimit maxlength="3" placeholder="Oberer Temperatur Grenzwert">
     <span matSuffix>°C</span>
-    <mat-hint align="end">{{uplimit.value.length}} / 3</mat-hint>
+    <mat-hint align="end">{{uptemplimit.value.length}} / 3</mat-hint>
+  </mat-form-field>
+  <br>
+  <mat-form-field >
+    <input [formControl]="lowerhumiControl" type="number" matInput #lowerhumilimit maxlength="3" placeholder="Unterer Feuchtigkeit Grenzwert">
+    <span matSuffix>°C</span>
+    <mat-hint align="end">{{lowerhumilimit.value.length}} / 3</mat-hint>
+  </mat-form-field>
+  <br>
+  <mat-form-field >
+    <input [formControl]="upperhumiControl" type="number" matInput #uphumilimit maxlength="3" placeholder="Oberer Feuchtigkeit Grenzwert">
+    <span matSuffix>°C</span>
+    <mat-hint align="end">{{uphumilimit.value.length}} / 3</mat-hint>
   </mat-form-field>
   
   <br>
