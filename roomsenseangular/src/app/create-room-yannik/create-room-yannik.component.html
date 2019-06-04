@@ -1,6 +1,6 @@
 <div class="example-container">
 
-  <form #roomForm='ngForm' novalidate>
+  <form (submit)='onAddRoom(roomForm)' #roomForm='ngForm' novalidate>
       <p>{{roomForm.value | json}}</p>
     <mat-form-field>
       <input matInput placeholder="Raumname" name='roomName' [(ngModel)]="roomName"/>
@@ -18,6 +18,6 @@
       <input matInput placeholder="Oberer Grenzwert" name='upperLimit' [(ngModel)]="upperLimit" />
     </mat-form-field>
 
-    <button mat-button class="btn btn-primary" type="submit" (click)='onAddRoom()'>Speichern</button>
+    <button mat-button type='submit' class="btn btn-primary" type="submit" >Speichern</button>
   </form>
 </div>

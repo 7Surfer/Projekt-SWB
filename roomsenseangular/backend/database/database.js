@@ -7,9 +7,10 @@ const client = new CosmosClient({
   endpoint: endpoint,
   auth: { masterKey: masterKey }
 });
-const HttpStatusCode = { NOTFOUND: 404 };
+const HttpStatusCodes = { NOTFOUND: 404 };
 const databaseId = config.database.id;
 const containerId = config.container.id;
+const containerId2 = config.containerId2;
 
 var lastIdArray = [];
 var newDataArray = [];
@@ -76,12 +77,37 @@ async function getdeviceIdroom() {
   return idroom;
 }
 
+
+// Daten speichern Yannik
+/* async function saveRoomData(itemBody) {
+  try {
+      // read the item to see if it exists
+      const { item } = await client.database(databaseId).container(containerId2).item(itemBody.id).read();
+      console.log(`Item with family id ${itemBody.id} already exists\n`);
+  }
+  catch (error) {
+     // create the family item if it does not exist
+     if (error.code === HttpStatusCodes.NOTFOUND) {
+         const { item } = await client.database(databaseId).container(containerId).items.create(itemBody);
+         console.log(`Created family item with id:\n${itemBody.id}\n`);
+     } else {
+         throw error;
+     }
+  }
+}; */
+
+
+
+
+
+
+
 function exit(message) {
   console.log(message);
-  console.log("Press any key to exit");
+  console.log('Press any key to exit');
   process.stdin.setRawMode(true);
   process.stdin.resume();
-  process.stdin.on("data", process.exit.bind(process, 0));
+  process.stdin.on('data', process.exit.bind(process, 0));
 }
 
 //test
@@ -106,3 +132,4 @@ module.exports.getDeviceIdArray = getDeviceIdArray;
 module.exports.getCurrentData = getCurrentData;
 module.exports.getdeviceIdroom = getdeviceIdroom;
 module.exports.insertRoom = insertRoom;
+//module.exports.saveRoomData = saveRoomData;

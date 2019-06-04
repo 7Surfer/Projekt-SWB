@@ -3,7 +3,7 @@ export interface IRoomData {
   roomName: string;
   upperLimit: number;
   lowerLimit: number;
-  ts: number;
+  //ts: number;
 }
 
 export class RoomData {

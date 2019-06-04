@@ -63,6 +63,8 @@ export class DataListTestComponent implements OnInit, OnDestroy {
           console.log('Stringified Data:' + JSON.stringify(this.data[i]));
         }
 
+
+        // Wieder einkommentieren
        /*  setInterval(() => {
           console.log('Neues Intreval');
         }, 6000); */

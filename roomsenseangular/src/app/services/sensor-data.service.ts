@@ -13,8 +13,11 @@ import { RoomData } from '../models/RoomData.model';
 export class SensorDataService {
   constructor(private http: HttpClient) { }
 
-  private data: SensorData[] = [];
-  private dataUpdated = new Subject<SensorData[]>();
+  data: SensorData[] = [];
+  dataUpdated = new Subject<any []>();
+
+  // Später vielleicht
+  fullData = [];
 
   /* getData() {
     this.http.get<{message: string, data: any}>('http://localhost:3000/api/data')
@@ -59,7 +62,11 @@ export class SensorDataService {
                                 lowerLimit: lowerLimit,
                                 upperLimit: upperLimit,
                                 timestamp: Math.floor((Date.now() / 1000) - 7)};
-    return this.http.post<any>('http://localhost:3000/api/create-room-yannik', roomData);
+
+    // Später ///////////////////////////////////////////////////////////////////
+    //this.dataUpdated.next([... this.fullData]);
+    /////////////////////////////////////////////////////////////////////////////
+    return this.http.post<{message: string}>('http://localhost:3000/api/create-room-yannik', roomData);
 
   }
 }
