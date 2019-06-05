@@ -11,6 +11,7 @@ const HttpStatusCodes = { NOTFOUND: 404 };
 const databaseId = config.database.id;
 const containerId = config.container.id;
 const containerIdroom = config.container.idroom;
+const containerIdroom2 = config.container.idroom2;
 
 var lastIdArray = [];
 var newDataArray = [];
@@ -119,6 +120,31 @@ async function getdeviceIdroom() {
 
 
 
+
+async function getRoomInfo() {
+
+  const { result: results } = await client
+    .database(databaseId)
+    .container(containerIdroom2)
+    .items.query(dataQueries.roomInfo)
+    .toArray();
+
+
+    console.log('Room Results: ' + results);
+  /* var jsonArray = JSON.stringify(results);
+  var idArray = JSON.parse(jsonArray); */
+
+  /* lastIdArray = [];
+  for (var i = 0; i < idArray.length; i++) {
+    lastIdArray.push(idArray[i].deviceId);
+    lastIdArray[i] = "'" + lastIdArray[i] + "'";
+  }
+  return lastIdArray; */
+}
+
+
+
+
 function exit(message) {
   console.log(message);
   console.log('Press any key to exit');
@@ -148,5 +174,6 @@ module.exports.getDeviceIdArray = getDeviceIdArray;
 module.exports.getDeviceIdRoomArray = getDeviceIdRoomArray;
 module.exports.getCurrentData = getCurrentData;
 module.exports.insertRoom = insertRoom;
+module.exports.getRoomInfo = getRoomInfo;
 //module.exports.saveRoomData = saveRoomData;
 //module.exports.getdeviceIdroom = getdeviceIdroom;

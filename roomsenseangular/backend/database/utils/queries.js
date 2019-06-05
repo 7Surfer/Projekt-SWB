@@ -25,7 +25,7 @@ dataQueries.dummyData = {
 dataQueries.latestData = {
   // > @timestampInSeconds10 einfügen
   query:
-  "SELECT c.deviceId, c.temperature, c.humidity , c._ts FROM c c WHERE c._ts >  @timestampInSeconds15 ORDER BY c._ts DESC", //  1559243368
+  "SELECT c.deviceId, c.temperature, c.humidity , c._ts FROM r r WHERE c._ts >  @timestampInSeconds15 ORDER BY c._ts DESC", //  1559243368
   parameters: [
     {
       name: "@timestampInSeconds15",
@@ -33,6 +33,13 @@ dataQueries.latestData = {
     }
   ]
 };
+
+
+dataQueries.roomInfo = {
+  query:
+  "SELECT c.deviceId, c.roomName, c.lowerTempLimit, c.upperTempLimit, c.lowerHumiLimit, c.upperHumiLimit, c.message FROM c c ORDER BY c._ts DESC",
+  parameters: []
+}
 
 
 module.exports = dataQueries;

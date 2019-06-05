@@ -1,7 +1,9 @@
 const sensorData = require("../database");
 const modifyData = require('./modify');
 
-sensorData
+
+// Device Id Array
+/* sensorData
   .getDeviceIdArray()
   .then(result => {
     console.log("\nDevice Id Array (alle Geräte die jemals Daten an DB gesendet haben): " + result);
@@ -9,7 +11,7 @@ sensorData
   })
   .catch(error => {
     console.log(error);
-  });
+  }); */
 
 
   /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -36,5 +38,15 @@ sensorData
   .catch(error => {
     console.log(error);
   });
+
+
+  // Raum Info
+  /* sensorData.getRoomInfo()
+  .then(result => {
+    console.log('Test Output Results: ' + result);
+  })
+  .catch(error => {
+    console.log(error);
+  }); */
 
 
