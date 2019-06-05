@@ -3,12 +3,8 @@ import { FormGroup, FormBuilder, Validators, FormControl, } from '@angular/forms
 import { SensorData, Devices} from './../models/SensorData.model';
 import { SensorDataService } from '../services/sensor-data.service';
 import { Subscription } from 'rxjs';
-import { Message } from '@angular/compiler/src/i18n/i18n_ast';
 import { MatSnackBar } from '@angular/material';
-import { once } from 'cluster';
-import { JsonPipe } from '@angular/common';
-import { deflateRaw } from 'zlib';
-import { delay } from 'q';
+
 
 
 
