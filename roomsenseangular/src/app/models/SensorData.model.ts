@@ -6,11 +6,6 @@ export interface SensorData {
   _ts: number;
 }
 
-export interface Roomdata {
+export interface Devices {
   deviceId: string;
-  timestamp: number;
-  temperature: number;
-  humidity: number;
-  _ts: number;
-  room: string;
 }

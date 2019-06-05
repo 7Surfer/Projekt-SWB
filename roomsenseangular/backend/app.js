@@ -38,6 +38,14 @@ app.post("/api/create-room-yannik", (req, res, next) => {
   });
 });
 
+app.post("/api/create-room", (req, res, next) => {
+  const dataToStore = req.body;
+  res.status(201).json({
+    message: "Data added successfully!"
+  });
+  sensorData.insertRoom(dataToStore);
+});
+
 let newDataToSend = [];
 app.get("/api/data", (req, res, next) => {
   newDataToSend = [];
@@ -55,6 +63,28 @@ app.get("/api/data", (req, res, next) => {
   });
 });
 
+
+app.get("/api/devices", (req, res, next) => {
+  sensorData.getDeviceIdArray().then(fetchedFata => {
+    //console.log(fetchedFata);
+    res.status(201).json({
+      message: "Data fetched!",
+      data: fetchedFata
+    });
+  });
+});
+
+app.get("/api/roomdevices", (req, res, next) => {
+  sensorData.getDeviceIdRoomArray().then(fetchedFata => {
+    //console.log(fetchedFata);
+    res.status(201).json({
+      message: "Data fetched!",
+      data: fetchedFata
+    });
+  });
+});
+
+/*
 app.get("/api/room", (req, res, next) => {
   sensorData.getdeviceIdroom().then(fetchedFata => {
     //console.log(fetchedFata);
@@ -64,6 +94,9 @@ app.get("/api/room", (req, res, next) => {
     });
   });
 });
+*/
+
+
 
 // app.get('/api/data', (req, res, next) => {
 //   sensorData.getCurrentData().then((fetchedData) => {

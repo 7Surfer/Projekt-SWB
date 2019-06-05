@@ -10,7 +10,7 @@ const client = new CosmosClient({
 const HttpStatusCodes = { NOTFOUND: 404 };
 const databaseId = config.database.id;
 const containerId = config.container.id;
-const containerId2 = config.containerId2;
+const containerIdroom = config.container.idroom;
 
 var lastIdArray = [];
 var newDataArray = [];
@@ -23,6 +23,25 @@ async function getDeviceIdArray() {
     .database(databaseId)
     .container(containerId)
     .items.query(dataQueries.deviceCount)
+    .toArray();
+
+  var jsonArray = JSON.stringify(results);
+  var idArray = JSON.parse(jsonArray);
+
+  lastIdArray = [];
+  for (var i = 0; i < idArray.length; i++) {
+    lastIdArray.push(idArray[i].deviceId);
+    lastIdArray[i] = "'" + lastIdArray[i] + "'";
+  }
+  return lastIdArray;
+}
+
+async function getDeviceIdRoomArray() {
+  const { result: results } = await client
+    .database(databaseId)
+    .container(containerIdroom)
+    //.container("MeasuredData")
+    .items.query(dataQueries.getDeviceIdArray)
     .toArray();
 
   var jsonArray = JSON.stringify(results);
@@ -60,6 +79,7 @@ async function getCurrentData(timestamp) {
   return newDataArray;
 }
 
+/*
 async function getdeviceIdroom() {
 
   const { result: results } = await client
@@ -76,7 +96,7 @@ async function getdeviceIdroom() {
   }
   return idroom;
 }
-
+*/
 
 // Daten speichern Yannik
 /* async function saveRoomData(itemBody) {
@@ -99,9 +119,6 @@ async function getdeviceIdroom() {
 
 
 
-
-
-
 function exit(message) {
   console.log(message);
   console.log('Press any key to exit');
@@ -110,26 +127,26 @@ function exit(message) {
   process.stdin.on('data', process.exit.bind(process, 0));
 }
 
-//test
+
 async function insertRoom(item){
   console.log(item)
-  /*const { testa } = await client.
-  database(databaseId)
-  .container(containerId)
-  .items.create(item);*/
+  const { testa } = await client
+    .database(databaseId)
+    .container(containerIdroom)
+    .items.create(item);
 }
-//test end
 
-
-
-// getCurrentData().then(() => {
-//   exit();
-// }).catch((error) => {
-//   console.log(error);
-// })
+/*
+ getCurrentData().then(() => {
+   exit();
+ }).catch((error) => {
+   console.log(error);
+ })
+*/
 
 module.exports.getDeviceIdArray = getDeviceIdArray;
+module.exports.getDeviceIdRoomArray = getDeviceIdRoomArray;
 module.exports.getCurrentData = getCurrentData;
-module.exports.getdeviceIdroom = getdeviceIdroom;
 module.exports.insertRoom = insertRoom;
 //module.exports.saveRoomData = saveRoomData;
+//module.exports.getdeviceIdroom = getdeviceIdroom;

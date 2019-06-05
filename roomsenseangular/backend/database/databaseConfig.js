@@ -8,7 +8,8 @@ config.database = {
 };
 
 config.container = {
-    "id": "MeasuredData"
+    "id": "MeasuredData",
+    "idroom" : "RoomInfo"
 };
 
 module.exports = config;

@@ -32,8 +32,23 @@ export class SensorDataService {
     return this.http.get<SensorData[]>('http://localhost:3000/api/data');
   }
 
+  getDevices() {
+    this.http.get<{message: string, data: any}>('http://localhost:3000/api/devices')
+      .subscribe((sensorData) => {
+        this.data = sensorData.data;
+        this.dataUpdated.next([...this.data]);
+      });
+  }
 
+  getRoomDevices() {
+    this.http.get<{message: string, data: any}>('http://localhost:3000/api/roomdevices')
+    .subscribe((sensordata) => {
+      this.data = sensordata.data;
+      this.dataUpdated.next([...this.data]);
+    });
+  }
 
+/*
   getDataroom() {
     this.http.get<{message: string, data: any}>('http://localhost:3000/api/room')
       .subscribe((sensorData) => {
@@ -41,6 +56,7 @@ export class SensorDataService {
         this.dataUpdated.next([...this.data]);
       });
   }
+*/
 
   getDataUpdateListener() {
     return this.dataUpdated.asObservable();
@@ -52,6 +68,19 @@ export class SensorDataService {
   }
 
 
+  saveRoom(deviceName: string, roomName: string, lowerTempLimit: number, upperTempLimit: number, lowerHumiLimit: number, upperHumiLimit: number, message: boolean, id: string){
+    const roomData: any = {
+      id: id,
+      deviceId: deviceName,
+      roomName: roomName,
+      lowerTempLimit: lowerTempLimit,
+      upperTempLimit: upperTempLimit,
+      lowerHumiLimit: lowerHumiLimit,
+      upperHumiLimit: upperHumiLimit,
+      message : message
+    };
+    return this.http.post<{message: string}>('http://localhost:3000/api/create-room', roomData);
+  }
 
 
 

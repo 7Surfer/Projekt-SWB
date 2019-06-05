@@ -21,11 +21,6 @@ dataQueries.dummyData = {
   ]
 };
 
-dataQueries.newRoomQuerry = {
-  query: "SELECT DISTINCT m.deviceId, m.room FROM MeasuredData m",
-    parameters: []
-}
-
 
 dataQueries.latestData = {
   // > @timestampInSeconds10 einfügen
