@@ -5,14 +5,15 @@
 
 input[type=text] {
     padding: 5px 20px 5px 20px;
-    width: 375px;
+    width: 22vw;
     height: 30px; 
       
     border: none;
     font-size: 15px;
     border-radius: 25px;
     color:#7EBFDB;
-    font-family: 'Open Sans', sans-serif;     
+    font-family: 'Open Sans', sans-serif;
+    vertical-align: middle;  
   }
   
   input[type="text"]::placeholder{

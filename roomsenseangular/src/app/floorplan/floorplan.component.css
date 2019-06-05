@@ -51,13 +51,12 @@
     border: none;
     color: #0082BB;
     font-family: 'Open Sans', sans-serif;
-    font-size: 16px;
-    margin-left: 50px;
+    font-size: 90%;
+    margin-left: 2.5vw;
   }
 
   .icon{
-      margin-left: 150px;
-      margin-right: 50px; 
+      margin-left: 6vw; 
       vertical-align: middle;
       height: 50px;
       width: 50px;
@@ -79,7 +78,7 @@
   }
   
   ul li {
-    padding: 10px 0px 10px 15px;
+    padding: 1vh 0px 1vh 1vw;
     background-color: #EEEEEE;
     margin: 15px 30px 15px 30px;
     border-radius: 15px;
@@ -88,28 +87,6 @@
   @media only screen and (max-width: 600px) { /*verschwindet bei Mobile-Version*/
     .room {
       display: none;
-    }
-  
-    ul {
-      height: 70%;
-      margin-left: -40px;
-    }
-  
-    p {
-      font-size: 4.5vw;
-    }
-  
-    .warning-rooms-button{
-      background: none;
-      border: none;
-      color: #0082BB;
-      font-family: 'Open Sans', sans-serif;
-      font-size: 4vw;
-    }
-  
-    .description {
-      font-size: 3vw;
-      margin-left: 30px;
     }
   }
   

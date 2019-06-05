@@ -5,7 +5,7 @@
     'outRange': dataEntry.temperature > 25 || dataEntry.temperature < 18
   }"
 >
-  <span class="temp">{{dataEntry.temperature}}°C</span>
+  <button [routerLink]="['/warning']" routerLinkActive="router-link-active" class="temp">{{dataEntry.temperature}}°C</button>
   <span id="descriptionTemp">Temperatur</span>
 </div>
 
@@ -15,6 +15,6 @@
     'outRange': dataEntry.humidity < 40 || dataEntry.humidity > 60
   }"
 >
-  <span class="hum">{{dataEntry.humidity}}%</span>
+  <button [routerLink]="['/warning']" routerLinkActive="router-link-active" class="hum">{{dataEntry.humidity}}%</button>
   <span id="descriptionHum">Luftfeuchtigkeit</span>
 </div>

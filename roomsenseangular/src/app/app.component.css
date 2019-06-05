@@ -3,19 +3,20 @@
     height: 100%;
     overflow-x: hidden;
     overflow-y: hidden;
+    background-color: #eeeeee;
   }
 
   app-warning-box {
     position: absolute;
     left: 72.5vw;
-    top: 12.5vh;
+    top: 13vh;
     display: inline;
   }
 
   app-sensor-box {
     position: absolute;
     left: 72.5vw;
-    top: 55vh;
+    top: 56vh;
     display: inline;
   }
 
@@ -26,7 +27,7 @@
     width: 60%;
     height: 80%;
     border-radius: 25px;
-    margin-top: -30px;
+    margin-top: -2vh;
     display: inline-block;
     box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
     margin-left: 50px;

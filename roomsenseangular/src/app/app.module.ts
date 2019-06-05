@@ -9,7 +9,6 @@ import { WarningBoxComponent } from './warning-box/warning-box.component';
 import { SensorBoxComponent } from './sensor-box/sensor-box.component';
 import { MainBoxComponent } from './main-box/main-box.component';
 import { TempHumDetailComponent } from './room-details/temp-hum-detail/temp-hum-detail.component';
-import { DateTimeComponent } from './room-details/date-time/date-time.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -35,6 +34,7 @@ import { CreateRoomComponent } from './create-room/create-room.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { FloorplanComponent } from './floorplan/floorplan.component';
 import { CreateRoomYannikComponent } from './create-room-yannik/create-room-yannik.component';
+import { WarningComponent } from './room-details/warning/warning.component';
 
 @NgModule({
   declarations: [
@@ -45,13 +45,13 @@ import { CreateRoomYannikComponent } from './create-room-yannik/create-room-yann
     SensorBoxComponent,
     MainBoxComponent,
     TempHumDetailComponent,
-    DateTimeComponent,
     DataListTestComponent,
     MainPageComponent,
     CreateRoomComponent,
     PageNotFoundComponent,
     FloorplanComponent,
-    CreateRoomYannikComponent
+    CreateRoomYannikComponent,
+    WarningComponent
   ],
   imports: [
     BrowserModule,
