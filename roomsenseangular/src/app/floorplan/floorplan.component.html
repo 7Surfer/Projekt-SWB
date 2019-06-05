@@ -7,7 +7,7 @@
 
 <ul ui-scroll-viewport>
     <li *ngFor="let dataEntry of data">
-        <button class="rooms-button">{{dataEntry.id}}</button>
+        <button [routerLink]="['/room-detail']" routerLinkActive="router-link-active" class="rooms-button">{{dataEntry.id}}</button>
         <div class="verticalLine"></div>
         <span class="description">Temperatur: {{dataEntry.temperature}}</span>
         <span class="description">Luftfeuchte: {{dataEntry.humidity}}</span>

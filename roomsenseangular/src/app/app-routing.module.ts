@@ -10,13 +10,17 @@ import { Routes, RouterModule } from '@angular/router';
 import { MainPageComponent } from './display-components/main-page/main-page.component';
 import { CreateRoomComponent } from './create-room/create-room.component';
 import { TempHumDetailComponent } from './room-details/temp-hum-detail/temp-hum-detail.component';
+import { WarningComponent } from './room-details/warning/warning.component';
 
 const routes: Routes = [
   {path: '', component: FloorplanComponent},
   {path: 'data', component: DataListTestComponent },
   {path: 'create-room', component: CreateRoomComponent },
   {path: 'create-room-yannik', component: CreateRoomYannikComponent},
-  {path: 'floorplan', component: FloorplanComponent },
+  { path: 'floorplan', component: FloorplanComponent },
+  { path: 'room-detail', component: TempHumDetailComponent},
+  { path: 'warning', component: WarningComponent },
+  
 
 
   // {path: 'home', component: MainPageComponent},

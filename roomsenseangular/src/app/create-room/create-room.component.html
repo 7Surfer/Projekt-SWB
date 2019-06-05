@@ -1,7 +1,7 @@
 
 <p class="heading">Raum hinzufügen</p>
 <div class="main">
- <mat-form-field [color]="primary" appearance="outline" class="roomName">
+ <mat-form-field appearance="outline" class="roomName">
     <mat-label>Raumbezeichnung</mat-label>
     <input matInput placeholder="Bitte geben Sie eine Raumbezeichnung ein" [formControl]="roomNameControl" required>
     <mat-error *ngIf="roomNameControl.invalid">{{getErrorMessage()}}</mat-error>
