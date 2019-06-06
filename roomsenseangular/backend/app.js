@@ -50,7 +50,7 @@ let newDataToSend = [];
 app.get("/api/data", (req, res, next) => {
   newDataToSend = [];
   // Timestamp bei jedem Aufruf aktualisieren
-  let timestampInSeconds15 = Math.floor(Date.now() / 1000 - 7); // war -15
+  let timestampInSeconds15 = Math.floor(Date.now() / 1000 - 30); // war -15
   //console.log(timestampInSeconds15); Timestamp testen
   sensorData.getCurrentData(timestampInSeconds15).then(fetchedData => {
     // Nur neueste Daten der jeweiligen Geräte senden

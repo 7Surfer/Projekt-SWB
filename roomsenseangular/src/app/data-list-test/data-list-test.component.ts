@@ -36,10 +36,13 @@ export class DataListTestComponent implements OnInit, OnDestroy {
 
     this.isClicked = true;
 
-   /*  setInterval(() => {
+
+// Einkommentieren um neueste Daten zu empfangen //////////////////////////////////////////////////////////
+    /* setInterval(() => {
       console.log('Es werden Daten empfangen!');
       this.getData();
-    }, 6000); */
+    }, 5000); */
+////////////////////////////////////////////////////////////////////////////////////////////////////////
 
   }
 
@@ -51,25 +54,13 @@ export class DataListTestComponent implements OnInit, OnDestroy {
 
 
   getData(): void {
-    /* this.data = []; */
     this.sensorDataService.getData()
       .subscribe(fetchedData => {
         this.data = JSON.parse('[' + fetchedData + ']');
-
-        // Output Test
-        // console.log('Daten: ' + this.data);
         for (let i = 0; i < this.data.length; i++) {
           // console.log('Accessed Data:' + this.data[i].deviceId);
           console.log('Stringified Data:' + JSON.stringify(this.data[i]));
         }
-
-
-        // Wieder einkommentieren
-       /*  setInterval(() => {
-          console.log('Neues Intreval');
-        }, 6000); */
-
-
       });
   }
 

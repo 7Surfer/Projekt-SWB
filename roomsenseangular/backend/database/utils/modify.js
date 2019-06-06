@@ -39,7 +39,7 @@ let newDataArray = [];
 let distInLen = distinctIndexes.length;
 
 for(let i = 0; i < distInLen; i++) {
-  newDataArray.push(a[i]);
+  newDataArray.push(a[distinctIndexes[i]]); //a[disinctIndexes[i]]
 }
 
 //console.log('New Data Array: ' + newDataArray);
