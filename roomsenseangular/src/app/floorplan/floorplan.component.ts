@@ -8,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class FloorplanComponent implements OnInit {
 
   constructor() { }
-  
+
+  searchBarInput: string;
+
   data = [
     {id: 'Raum1', temperature: "2°C", humidity: "40%"},
     {id: 'Raum2', temperature: "1°C", humidity: "40%"},

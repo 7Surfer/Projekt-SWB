@@ -1,12 +1,15 @@
 <p>Raumübersicht
-    <button [routerLink]="['/create-room']" routerLinkActive="router-link-active" class="create">  
+    <button [routerLink]="['/create-room']" routerLinkActive="router-link-active" class="create">
         <i class="fas fa-plus"></i>
-        <span class="createText">Raum hinzufügen</span> 
-    </button> 
+        <span class="createText">Raum hinzufügen</span>
+    </button>
 </p>
 
+<!--   Search Bar -->
+<input type="text" [(ngModel)]="searchBarInput">
+
 <ul ui-scroll-viewport>
-    <li *ngFor="let dataEntry of data">
+    <li *ngFor="let dataEntry of data | searchFilter: searchBarInput">
         <button [routerLink]="['/room-detail']" routerLinkActive="router-link-active" class="rooms-button">{{dataEntry.id}}</button>
         <div class="verticalLine"></div>
         <span class="description">Temperatur: {{dataEntry.temperature}}</span>

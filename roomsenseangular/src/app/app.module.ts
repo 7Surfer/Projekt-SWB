@@ -35,6 +35,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { FloorplanComponent } from './floorplan/floorplan.component';
 import { CreateRoomYannikComponent } from './create-room-yannik/create-room-yannik.component';
 import { WarningComponent } from './room-details/warning/warning.component';
+import { SearchFilterPipe } from './utils/pipes/search-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { WarningComponent } from './room-details/warning/warning.component';
     PageNotFoundComponent,
     FloorplanComponent,
     CreateRoomYannikComponent,
-    WarningComponent
+    WarningComponent,
+    SearchFilterPipe,
   ],
   imports: [
     BrowserModule,
