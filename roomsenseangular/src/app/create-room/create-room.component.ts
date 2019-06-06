@@ -16,8 +16,11 @@ import { MatSnackBar } from '@angular/material';
 
 export class CreateRoomComponent implements OnInit {
   private dataSubscription: Subscription;
-  private dataSubscription1: Subscription;
+  allDeviceData: Devices [] = [];
+  roomDeviceData: Devices [] = [];
+  Once: boolean;
 
+  //FormInputs and Validators
   roomNameControl = new FormControl('', [Validators.required]);
   raspberryControl = new FormControl('', [Validators.required]);
   messageControl = new FormControl();
@@ -26,16 +29,12 @@ export class CreateRoomComponent implements OnInit {
   lowerhumiControl = new FormControl();
   upperhumiControl = new FormControl();
   createRoomForm: FormGroup;
+  raspberryarr: string[] = []; // holds the options for the Dropdown menu
 
-  
-  allDeviceData: Devices [] = [];
-  roomDeviceData: Devices [] = [];
-  Once: boolean = true;
-  public raspberryarr: string[] = []; // holds the options for the Dropdown menu
-  
-  all_devices: Devices[] = [];     //contains all devices wich have send data
-  used_devices: Devices[] = [];    //contains all devicec wich are in set to a room
-  unused_devices: string[] = [];  //contains all devicec wich are not set to a room
+
+  all_devices: Devices[] = [];        //contains all devices wich have send data
+  used_devices: Devices[] = [];       //contains all devicec wich are in set to a room
+  unused_devices: string[] = [];      //contains all devicec wich are not set to a room
 
   constructor(public sensorDataService: SensorDataService,public sensorDataService1: SensorDataService, public snackbar: MatSnackBar){}
 
@@ -50,6 +49,7 @@ export class CreateRoomComponent implements OnInit {
 
   getDevices()
   {
+    this.Once = true;
     this.sensorDataService.getDevices();
     this.sensorDataService.getRoomDevices();
     this.dataSubscription = this.sensorDataService.getDataUpdateListener()
@@ -94,7 +94,7 @@ export class CreateRoomComponent implements OnInit {
       else
         unused_devices.push(all_devices[i]);
     }
-    console.log(unused_devices);
+    //console.log(unused_devices);
 
     //give data to drop down menu
     for (let i = 0; i < unused_devices.length; i++) {
@@ -102,18 +102,18 @@ export class CreateRoomComponent implements OnInit {
     }
   }
 
-  async onSubmit() {
-
+  onSubmit() {
     let snackBarRef = this.snackbar.open('Raum ' + this.roomNameControl.value + ' erstellt', 'close', {duration: 5000});
     let message : boolean;
     let id = "" + Math.floor((Date.now() / 1000) - 7);
+
     if (this.messageControl.value)
       message = true;
     else
     message = false;
     this.sensorDataService.saveRoom(this.raspberryControl.value, this.roomNameControl.value, this.lowertempControl.value, this.uppertempControl.value, this.lowerhumiControl.value, this.upperhumiControl.value, message, id)
       .subscribe((responseData) => {
-          console.log('Response from Server: ' + responseData.message);
+          //console.log('Response from Server: ' + responseData.message);
       })
 
 

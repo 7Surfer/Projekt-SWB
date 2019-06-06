@@ -80,25 +80,6 @@ async function getCurrentData(timestamp) {
   return newDataArray;
 }
 
-/*
-async function getdeviceIdroom() {
-
-  const { result: results } = await client
-    .database(databaseId)
-    .container(containerId)
-    .items.query(dataQueries.newRoomQuerry)
-    .toArray();
-
-  //console.log(results);
-  idroom = [];
-  for (var queryResult of results) {
-    var resultString = JSON.stringify(queryResult);
-    idroom.push(resultString);
-  }
-  return idroom;
-}
-*/
-
 // Daten speichern Yannik
 /* async function saveRoomData(itemBody) {
   try {

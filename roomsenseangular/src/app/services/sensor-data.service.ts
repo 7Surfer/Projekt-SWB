@@ -5,7 +5,6 @@ import { Observable, of } from 'rxjs';
 import { Subject } from 'rxjs';
 import { EventEmitter } from 'events';
 import {  } from '@angular/core';
-import { RoomData } from '../models/RoomData.model';
 
 @Injectable({
   providedIn: 'root'
@@ -48,16 +47,6 @@ export class SensorDataService {
     });
   }
 
-/*
-  getDataroom() {
-    this.http.get<{message: string, data: any}>('http://localhost:3000/api/room')
-      .subscribe((sensorData) => {
-        this.data = sensorData.data;
-        this.dataUpdated.next([...this.data]);
-      });
-  }
-*/
-
   getDataUpdateListener() {
     return this.dataUpdated.asObservable();
   }
@@ -79,6 +68,8 @@ export class SensorDataService {
       upperHumiLimit: upperHumiLimit,
       message : message
     };
+
+    //Post roomData to NodeJS
     return this.http.post<{message: string}>('http://localhost:3000/api/create-room', roomData);
   }
 
