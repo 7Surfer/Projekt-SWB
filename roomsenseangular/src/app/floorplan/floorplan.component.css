@@ -75,6 +75,7 @@
     list-style-position: outside;
     scrollbar-color: #0082BB rgba(238, 238, 238, 0);
     scrollbar-width: thin;
+    margin-top: -1vh;
   }
   
   ul li {

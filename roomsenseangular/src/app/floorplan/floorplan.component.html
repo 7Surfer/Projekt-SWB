@@ -5,8 +5,14 @@
     </button>
 </p>
 
+
 <!--   Search Bar -->
-<input type="text" [(ngModel)]="searchBarInput">
+<!-- <input type="text" [(ngModel)]="searchBarInput"> -->
+<span>
+    <app-search-bar></app-search-bar>
+</span>
+
+
 
 <ul ui-scroll-viewport>
     <li *ngFor="let dataEntry of data | searchFilter: searchBarInput">
