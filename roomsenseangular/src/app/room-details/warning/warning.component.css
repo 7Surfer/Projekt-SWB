@@ -1,0 +1,76 @@
+p{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bolder;
+    font-size: 20px;
+    margin-left: 2vw; 
+    color: #002B56;
+    margin-top: 30vh;
+}
+
+.warningLog {
+    height: 35vh;
+    width: 94%;
+    margin-top: -1vh;
+    margin-left: -0.5vw; 
+    border-radius: 25px;
+    margin-left: 2vw;
+    display: inline-block; 
+}
+
+.timestamp {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.9vw;
+    margin-left: 1vw;
+}  
+
+.verticalLine{
+    display: inline;
+    border-left: 3px solid #CBCBCB;
+    font-size: 40px;
+    vertical-align: middle;
+    margin-left: 20px;
+    border-radius: 100px;
+  }
+
+  .description {
+    background: none;
+    border: none;
+    color: #002B56;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.8vw;
+    margin-left: 2vw;
+  }
+  
+  .icon{
+    margin-left: vw; 
+    vertical-align: middle;
+    height: 50px;
+    width: 50px;
+    border: none;
+    background-color: none;
+    font-size: 25px;
+    color: #979797;
+}
+
+ul {
+    list-style: none;
+    overflow: hidden;
+    overflow-y: scroll;
+    height: 100%;
+    margin-left: -5px;
+    list-style-position: outside;
+    scrollbar-color: #0082BB rgba(238, 238, 238, 0);
+    scrollbar-width: thin;
+  }
+  
+   ul li {
+    padding: 10px 0px 10px 5px;
+    list-style: none;
+    margin-left: -40px;
+    border-radius: 12px;
+    
+  }
+  
+  ul li:nth-child(odd) {
+    background-color: #EEEEEE;
+  }
