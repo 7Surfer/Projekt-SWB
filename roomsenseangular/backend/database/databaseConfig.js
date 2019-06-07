@@ -10,8 +10,6 @@ config.database = {
 config.container = {
     "id": "MeasuredData",
     "idroom" : "RoomInfo",
-    "idroom2": "RoomInfo2",
-
 };
 
 module.exports = config;

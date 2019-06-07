@@ -1,3 +1,4 @@
+const chalk = require('chalk');
 const sensorData = require("../database");
 const modifyData = require('./modify');
 
@@ -28,7 +29,7 @@ const modifyData = require('./modify');
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Neueste Daten die aktuell gesendet werden
-  sensorData
+ /*  sensorData
   .getCurrentData()
   .then(result => {
     let newData = modifyData.getLatestEntries(result);
@@ -37,16 +38,16 @@ const modifyData = require('./modify');
   })
   .catch(error => {
     console.log(error);
-  });
+  }); */
 
 
   // Raum Info
-  /* sensorData.getRoomInfo()
+  sensorData.getRoomInfo()
   .then(result => {
-    console.log('Test Output Results: ' + result);
+    console.log(chalk.green('Test Output Results: ') + JSON.stringify(result));
   })
   .catch(error => {
     console.log(error);
-  }); */
+  }); 
 
 

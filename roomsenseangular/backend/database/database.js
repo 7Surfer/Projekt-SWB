@@ -99,19 +99,40 @@ async function getCurrentData(timestamp) {
 }; */
 
 
+/* async function getDeviceIdRoomArray() {
+  const { result: results } = await client
+    .database(databaseId)
+    .container(containerIdroom)
+    //.container("MeasuredData")
+    .items.query(dataQueries.getDeviceIdArray)
+    .toArray();
+
+  var jsonArray = JSON.stringify(results);
+  var idArray = JSON.parse(jsonArray);
+
+  lastIdArray = [];
+  for (var i = 0; i < idArray.length; i++) {
+    lastIdArray.push(idArray[i].deviceId);
+    lastIdArray[i] = "'" + lastIdArray[i] + "'";
+  }
+  return lastIdArray;
+} */
+
+
 
 
 
 async function getRoomInfo() {
-
   const { result: results } = await client
     .database(databaseId)
-    .container(containerIdroom2)
-    .items.query(dataQueries.roomInfo)
+    .container(containerIdroom)
+    .items.query(dataQueries.roomInfo, { enableCrossPartitionQuery: true }) // Cross Partition
     .toArray();
 
 
-    console.log('Room Results: ' + results);
+    console.log('Room Results: ' + JSON.stringify(results));
+
+    return results;
   /* var jsonArray = JSON.stringify(results);
   var idArray = JSON.parse(jsonArray); */
 
