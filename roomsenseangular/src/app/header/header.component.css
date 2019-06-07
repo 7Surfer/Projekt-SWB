@@ -53,11 +53,12 @@ li {
 
   .title {
     margin-top: 0;
-    margin-left: -5vw;
+    margin-left: -6vw;
+    font-size: 25px;
   }
 
   mat-toolbar {
-    height: 17vh;
+    height: 14vh;
   }
 }
 
