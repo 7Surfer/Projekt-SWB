@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const sensorData = require("../backend/database/database");
 const modifyData = require("./database/utils/modify");
+const chalk = require('chalk');
 
 const app = express();
 
@@ -62,6 +63,50 @@ app.get("/api/data", (req, res, next) => {
     res.status(201).json(newDataToSend); //fetchedData
   });
 });
+
+app.get("/api/fulldata", (req, res, next) => {
+  let fullData = [];
+  let fetchedSensorData;
+  let fetchedRoomData;
+  let timestampInSeconds15 = Math.floor(Date.now() / 1000 - 260000); // 30 260000 --> 3 Tage
+  sensorData.getCurrentData(timestampInSeconds15)
+    .then(fetchedData => {
+      fetchedSensorData = modifyData.getLatestEntries(fetchedData);
+      //console.log('Sensor Data is Array: ' + Array.isArray(fetchedData));
+      //console.log(chalk.green('Fetched Sensor Data: ') + fetchedSensorData);
+
+      //console.log('Fetched Sensor Data Accessed: ' + fetchedSensorData[0].deviceId);
+
+      return fetchedSensorData;
+    })
+      .then(fetchedSensorData => {
+
+    sensorData.getRoomInfo()
+    .then(fetchedRoom => {
+      //fetchedRoomData = JSON.stringify(fetchedRoom);
+      //console.log('IsArray: ' + Array.isArray(fetchedRoom))
+      //console.log(chalk.green('RoomData: ') + fetchedRoom);
+      //console.log('Access Device Id: ' + fetchedRoom[0].deviceId)
+
+      //console.log('Fetched Sensor Data vor Aufruf: ' + fetchedSensorData);
+      fullData = modifyData.mergeSensorAndRoom(fetchedSensorData, fetchedRoom)
+      //console.log('Full Data Logged: ' + JSON.stringify(fullData));
+      res.status(201).json(
+        /* {
+          sensorData: fetchedSensorData,
+          roomData: fetchedRoom
+        } */
+        {
+          fullData: fullData,
+        }
+      )
+    })
+    .catch(error => {
+      console.log(error);
+    });
+});
+
+}); //Neu
 
 
 app.get("/api/devices", (req, res, next) => {

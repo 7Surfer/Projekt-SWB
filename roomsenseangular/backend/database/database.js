@@ -73,10 +73,14 @@ async function getCurrentData(timestamp) {
     var resultString = JSON.stringify(queryResult);
     newDataArray.push(resultString);
   } */
-  for(let i = 0; i < results.length; i++) {
+
+
+  //auskommentiert
+  /* for(let i = 0; i < results.length; i++) {
     var resultString = JSON.stringify(results[i]);
     newDataArray[i] = resultString;
-  }
+  } */
+  newDataArray = results;
   return newDataArray;
 }
 
@@ -130,7 +134,7 @@ async function getRoomInfo() {
     .toArray();
 
 
-    console.log('Room Results: ' + JSON.stringify(results));
+    //console.log('Room Results: ' + JSON.stringify(results));
 
     return results;
   /* var jsonArray = JSON.stringify(results);

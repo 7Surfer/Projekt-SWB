@@ -13,6 +13,7 @@ import { Subscription } from 'rxjs';
 export class DataListTestComponent implements OnInit, OnDestroy {
 
   data: SensorData[] = [];
+  fullData: any[] = [];
   dataToDisplay: SensorData[];
   isLoading = false;
   isClicked = false;
@@ -44,6 +45,10 @@ export class DataListTestComponent implements OnInit, OnDestroy {
     }, 5000); */
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+
+
+this.getFullRoomData();
+
   }
 
   ngOnDestroy() {
@@ -53,7 +58,7 @@ export class DataListTestComponent implements OnInit, OnDestroy {
   }
 
 
-  getData(): void {
+ /*  getData(): void {
     this.sensorDataService.getData()
       .subscribe(fetchedData => {
         this.data = JSON.parse('[' + fetchedData + ']');
@@ -61,6 +66,27 @@ export class DataListTestComponent implements OnInit, OnDestroy {
           // console.log('Accessed Data:' + this.data[i].deviceId);
           console.log('Stringified Data:' + JSON.stringify(this.data[i]));
         }
+      });
+  } */
+
+
+  getFullRoomData(): void {
+    this.sensorDataService.getFullRoomData()
+      .subscribe(fetchedFullData => {
+        /* this.fullData = JSON.parse('[' + fetchedFullData + ']'); */
+        /* let fetchedFullDataDisplay = fetchedFullData; */
+        //let fetchedFullDataDisplay = JSON.stringify(fetchedFullData);
+        //fetchedFullDataDisplay = '[' + fetchedFullDataDisplay + ']';
+        /* var keys = Object.keys(fetchedFullData);
+        console.log('Keys: ' + keys);
+        console.log('Sensor Data: ' + fetchedFullDataDisplay.sensorData.deviceId)
+        console.log('Fetched Full Data: ' + fetchedFullDataDisplay);
+        console.log('Device Id: ' + fetchedFullData[0]); */
+
+        this.fullData = fetchedFullData.fullData;
+        //console.log('Sensor Data: ' + fetchedFullData);
+        //console.log('Fetched Full Data: ' + JSON.stringify(this.fullData));
+        console.log(this.fullData[0].room);
       });
   }
 

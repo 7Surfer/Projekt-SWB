@@ -27,9 +27,10 @@ export class SensorDataService {
       });
   } */
 
-  getData(): Observable<SensorData[]> {
+  // Wieder einkommentieren
+  /* getData(): Observable<SensorData[]> {
     return this.http.get<SensorData[]>('http://localhost:3000/api/data');
-  }
+  } */
 
   getDevices() {
     this.http.get<{message: string, data: any}>('http://localhost:3000/api/devices')
@@ -45,6 +46,11 @@ export class SensorDataService {
       this.data = sensordata.data;
       this.dataUpdated.next([...this.data]);
     });
+  }
+
+
+  getFullRoomData(): Observable<{fullData: any[]}> {
+    return this.http.get<{fullData: any[]}>('http://localhost:3000/api/fulldata'); // war any[]  <{sensorData: any[], roomData: any[]}>
   }
 
   getDataUpdateListener() {
