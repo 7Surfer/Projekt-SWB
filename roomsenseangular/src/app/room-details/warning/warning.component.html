@@ -1,3 +1,14 @@
-<p>
-  warning works!
-</p>
+<p>Fehlermeldungen</p>
+<div class="warningLog">
+    <ul ui-scroll-viewport>
+        <li *ngFor="let dataEntry of data">
+            <span class="timestamp">07.06.19 20:40</span>
+            <div class="verticalLine"></div>
+            <span class="description">{{dataEntry.description}}</span>
+            <!-- <button class="icon">
+              <i class="fas fa-check"></i>
+            </button> -->
+        </li>
+      </ul>
+</div>
+
