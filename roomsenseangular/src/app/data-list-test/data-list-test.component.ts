@@ -38,16 +38,19 @@ export class DataListTestComponent implements OnInit, OnDestroy {
     this.isClicked = true;
 
 
-// Einkommentieren um neueste Daten zu empfangen //////////////////////////////////////////////////////////
+    // Einkommentieren um neueste Daten zu empfangen //////////////////////////////////////////////////////////
     /* setInterval(() => {
       console.log('Es werden Daten empfangen!');
       this.getData();
     }, 5000); */
-////////////////////////////////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 
-this.getFullRoomData();
+    /* setInterval(() => {
+      console.log('Neue Daten empfangen!');
+      this.getFullRoomData();
+    }, 5000); */
 
   }
 
@@ -55,19 +58,20 @@ this.getFullRoomData();
     /* this.dataSubscription.unsubscribe();
     this.dataToDisplay.length = 0; */
     this.isClicked = false;
+    //console.log('Data List Test zerstöt!');
   }
 
 
- /*  getData(): void {
-    this.sensorDataService.getData()
-      .subscribe(fetchedData => {
-        this.data = JSON.parse('[' + fetchedData + ']');
-        for (let i = 0; i < this.data.length; i++) {
-          // console.log('Accessed Data:' + this.data[i].deviceId);
-          console.log('Stringified Data:' + JSON.stringify(this.data[i]));
-        }
-      });
-  } */
+  /*  getData(): void {
+     this.sensorDataService.getData()
+       .subscribe(fetchedData => {
+         this.data = JSON.parse('[' + fetchedData + ']');
+         for (let i = 0; i < this.data.length; i++) {
+           // console.log('Accessed Data:' + this.data[i].deviceId);
+           console.log('Stringified Data:' + JSON.stringify(this.data[i]));
+         }
+       });
+   } */
 
 
   getFullRoomData(): void {
@@ -75,8 +79,8 @@ this.getFullRoomData();
       .subscribe(fetchedFullData => {
         /* this.fullData = JSON.parse('[' + fetchedFullData + ']'); */
         /* let fetchedFullDataDisplay = fetchedFullData; */
-        //let fetchedFullDataDisplay = JSON.stringify(fetchedFullData);
-        //fetchedFullDataDisplay = '[' + fetchedFullDataDisplay + ']';
+        // let fetchedFullDataDisplay = JSON.stringify(fetchedFullData);
+        // fetchedFullDataDisplay = '[' + fetchedFullDataDisplay + ']';
         /* var keys = Object.keys(fetchedFullData);
         console.log('Keys: ' + keys);
         console.log('Sensor Data: ' + fetchedFullDataDisplay.sensorData.deviceId)
@@ -84,9 +88,10 @@ this.getFullRoomData();
         console.log('Device Id: ' + fetchedFullData[0]); */
 
         this.fullData = fetchedFullData.fullData;
-        //console.log('Sensor Data: ' + fetchedFullData);
-        //console.log('Fetched Full Data: ' + JSON.stringify(this.fullData));
+        // console.log('Sensor Data: ' + fetchedFullData);
+        // console.log('Fetched Full Data: ' + JSON.stringify(this.fullData));
         console.log(this.fullData[0].room);
+        console.log(JSON.stringify(this.fullData));
       });
   }
 

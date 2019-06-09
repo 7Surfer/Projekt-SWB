@@ -5,7 +5,7 @@
     margin-left: 30px;
     color: #0082BB;
   }
-  
+
   .create{
     display: inline;
     width: 300px;
@@ -16,7 +16,7 @@
 }
 
 .fas fa-plus {
-    
+
     font-size: 15px;
 }
 
@@ -36,7 +36,7 @@
     font-family: 'Open Sans', sans-serif;
     font-size: 20px;
   }
-  
+
   .verticalLine{
     display: inline;
     border-left: 3px solid #CBCBCB;
@@ -56,7 +56,7 @@
   }
 
   .icon{
-      margin-left: 6vw; 
+      margin-left: 6vw;
       vertical-align: middle;
       height: 50px;
       width: 50px;
@@ -65,7 +65,7 @@
       font-size: 25px;
       color: #979797;
   }
-  
+
   ul {
     list-style: none;
     overflow: hidden;
@@ -77,20 +77,46 @@
     scrollbar-width: thin;
     margin-top: -1vh;
   }
-  
+
   ul li {
     padding: 1vh 0px 1vh 1vw;
     background-color: #EEEEEE;
     margin: 15px 30px 15px 30px;
     border-radius: 15px;
   }
-  
+
+
+
+  input[type=text] {
+    position: relative;
+    padding: 5px 20px 5px 20px;
+    width: 22vw;
+    height: 30px;
+    display: inline-block;
+
+    border: none;
+    font-size: 15px;
+    border-radius: 25px;
+    color:#7EBFDB;
+    font-family: 'Open Sans', sans-serif;
+    vertical-align: middle;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+    margin-left: 33vw;
+    margin-top: -10.5vh;
+  }
+
+  input[type="text"]::placeholder{
+      color: #7EBFDB;
+      font-family: 'Open Sans', sans-serif;
+  }
+
   @media only screen and (max-width: 600px) { /*verschwindet bei Mobile-Version*/
     .room {
       display: none;
     }
   }
-  
+
   /* :host {
     float: right;
     clear: right;
@@ -99,31 +125,31 @@
     width: 25%;
     max-height: 25%;
   }
-  
+
   mat-expansion-panel-header {
     color: #0299f7;
   }
-  
+
   mat-panel-title {
     color: #0299f7;
   }
-  
+
   span {
     display: inline-block;
   }
-  
+
   p {
     display: inline-block;
     font-size: 12px;
   }
-  
+
   #description {
     float: right;
     margin-left: 30px;
     color: black;
   }
-  
+
   #room {
     color: #0299f7;
   } */
-  
+

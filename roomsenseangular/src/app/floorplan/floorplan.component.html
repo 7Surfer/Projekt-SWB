@@ -1,5 +1,5 @@
 <p>Raumübersicht
-    <button [routerLink]="['/create-room']" routerLinkActive="router-link-active" class="create">
+    <button class='add-button' [routerLink]="['/create-room']" routerLinkActive="router-link-active" class="create">
         <i class="fas fa-plus"></i>
         <span class="createText">Raum hinzufügen</span>
     </button>
@@ -9,20 +9,51 @@
 <!--   Search Bar -->
 <!-- <input type="text" [(ngModel)]="searchBarInput"> -->
 <span>
-    <app-search-bar></app-search-bar>
+    <!-- <app-search-bar></app-search-bar> -->
+    <input type="text" [(ngModel)]="searchBarInput" placeholder="Nach Raum suchen...">
 </span>
 
 
 
 <ul ui-scroll-viewport>
-    <li *ngFor="let dataEntry of data | searchFilter: searchBarInput">
-        <button [routerLink]="['/room-detail']" routerLinkActive="router-link-active" class="rooms-button">{{dataEntry.id}}</button>
+    <li *ngFor="let dataEntry of fullData | searchFilter: searchBarInput">
+        <button mat-button [routerLink]="['/room-detail']" routerLinkActive="router-link-active" class="rooms-button">{{dataEntry.room}}</button>
         <div class="verticalLine"></div>
-        <span class="description">Temperatur: {{dataEntry.temperature}}</span>
-        <span class="description">Luftfeuchte: {{dataEntry.humidity}}</span>
-        <span class="description">Sensor: raspberry2</span>
-        <button class="icon">
+        <span class="description">Temperatur: {{dataEntry.temp}}</span>
+        <span class="description">Luftfeuchte: {{dataEntry.hum}}</span>
+        <span class="description">Sensor: {{dataEntry.deviceId}}</span>
+        <button mat-button class="icon">
             <i class="fas fa-chevron-right"></i>
         </button>
     </li>
 </ul>
+
+
+
+
+
+<!--                                         Backup                                                                   -->
+<!-- <p>Raumübersicht
+  <button [routerLink]="['/create-room']" routerLinkActive="router-link-active" class="create">
+      <i class="fas fa-plus"></i>
+      <span class="createText">Raum hinzufügen</span>
+  </button>
+</p>
+<span>
+  <app-search-bar></app-search-bar>
+</span>
+
+
+
+<ul ui-scroll-viewport>
+  <li *ngFor="let dataEntry of data | searchFilter: searchBarInput">
+      <button [routerLink]="['/room-detail']" routerLinkActive="router-link-active" class="rooms-button">{{dataEntry.id}}</button>
+      <div class="verticalLine"></div>
+      <span class="description">Temperatur: {{dataEntry.temperature}}</span>
+      <span class="description">Luftfeuchte: {{dataEntry.humidity}}</span>
+      <span class="description">Sensor: raspberry2</span>
+      <button class="icon">
+          <i class="fas fa-chevron-right"></i>
+      </button>
+  </li>
+</ul> -->

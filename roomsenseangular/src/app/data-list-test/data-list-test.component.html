@@ -1,10 +1,12 @@
 <div>
   <mat-spinner *ngIf="isLoading"></mat-spinner>
-<ul *ngIf="!isLoading" >
-  <li *ngFor="let dataEntry of data"> <!-- let dataEntry of dataToDisplay -->
+<ul>
+  <li *ngFor="let dataEntry of fullData"> <!-- let dataEntry of dataToDisplay -->
     <p>Gerät: {{dataEntry.deviceId}}</p>
-    <p>Temperatur: {{dataEntry.temperature}}</p>
-    <p>Luftfeuchtigkeit: {{dataEntry.humidity}}</p>
+    <p>Raum: {{dataEntry.room}}</p>
+    <p>Temperatur: {{dataEntry.temp}}</p>
+    <p>Luftfeuchtigkeit: {{dataEntry.hum}}</p>
+    <p>Upper Temp: {{dataEntry.upperTemp}}</p>
   </li>
 </ul>
 </div>

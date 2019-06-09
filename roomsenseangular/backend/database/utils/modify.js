@@ -148,7 +148,7 @@ for (let z = 0; z < roomsLen; z++) {
   if (roomsWithData.indexOf(roomNames[z]) < 0) {
     roomsWithoutData.push(roomNames[z]);
     newData.push({
-      deviceId: null, // roomNames[z]
+      deviceId: roomNames[z], // roomNames[z] null
       room: roomData[z].roomName,
       temp: null,
       hum: null,
