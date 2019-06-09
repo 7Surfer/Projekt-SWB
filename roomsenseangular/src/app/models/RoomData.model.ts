@@ -6,3 +6,13 @@ export interface IRoomData {
   //ts: number;
 }
 
+export interface RoomSettings{
+  deviceId: string;
+  roomName: string;
+  lowerTempLimit: number;
+  upperTempLimit: number;
+  lowerHumiLimit: number;
+  upperHumiLimit: number;
+  message: boolean;
+}
+

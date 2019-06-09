@@ -41,7 +41,6 @@ async function getDeviceIdRoomArray() {
   const { result: results } = await client
     .database(databaseId)
     .container(containerIdroom)
-    //.container("MeasuredData")
     .items.query(dataQueries.getDeviceIdArray)
     .toArray();
 
@@ -54,6 +53,15 @@ async function getDeviceIdRoomArray() {
     lastIdArray[i] = "'" + lastIdArray[i] + "'";
   }
   return lastIdArray;
+}
+
+async function getRoomSettings() {
+  const { result: results } = await client
+    .database(databaseId)
+    .container(containerIdroom)
+    .items.query(dataQueries.getRoomSettings)
+    .toArray();
+  return results;
 }
 
 async function getCurrentData(timestamp) {
@@ -103,29 +111,6 @@ async function getCurrentData(timestamp) {
 }; */
 
 
-/* async function getDeviceIdRoomArray() {
-  const { result: results } = await client
-    .database(databaseId)
-    .container(containerIdroom)
-    //.container("MeasuredData")
-    .items.query(dataQueries.getDeviceIdArray)
-    .toArray();
-
-  var jsonArray = JSON.stringify(results);
-  var idArray = JSON.parse(jsonArray);
-
-  lastIdArray = [];
-  for (var i = 0; i < idArray.length; i++) {
-    lastIdArray.push(idArray[i].deviceId);
-    lastIdArray[i] = "'" + lastIdArray[i] + "'";
-  }
-  return lastIdArray;
-} */
-
-
-
-
-
 async function getRoomInfo() {
   const { result: results } = await client
     .database(databaseId)
@@ -147,6 +132,7 @@ async function getRoomInfo() {
   }
   return lastIdArray; */
 }
+
 
 
 
@@ -181,5 +167,6 @@ module.exports.getDeviceIdRoomArray = getDeviceIdRoomArray;
 module.exports.getCurrentData = getCurrentData;
 module.exports.insertRoom = insertRoom;
 module.exports.getRoomInfo = getRoomInfo;
+module.exports.getRoomSettings = getRoomSettings;
 //module.exports.saveRoomData = saveRoomData;
 //module.exports.getdeviceIdroom = getdeviceIdroom;

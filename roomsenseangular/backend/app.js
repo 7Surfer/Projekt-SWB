@@ -129,9 +129,8 @@ app.get("/api/roomdevices", (req, res, next) => {
   });
 });
 
-/*
-app.get("/api/room", (req, res, next) => {
-  sensorData.getdeviceIdroom().then(fetchedFata => {
+app.get("/api/roomSettings", (req, res, next) => {
+  sensorData.getRoomSettings().then(fetchedFata => {
     //console.log(fetchedFata);
     res.status(201).json({
       message: "Data fetched!",
@@ -139,7 +138,6 @@ app.get("/api/room", (req, res, next) => {
     });
   });
 });
-*/
 
 
 

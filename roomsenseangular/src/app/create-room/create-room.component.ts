@@ -36,7 +36,7 @@ export class CreateRoomComponent implements OnInit {
   used_devices: Devices[] = [];       //contains all devicec wich are in set to a room
   unused_devices: string[] = [];      //contains all devicec wich are not set to a room
 
-  constructor(public sensorDataService: SensorDataService,public sensorDataService1: SensorDataService, public snackbar: MatSnackBar){}
+  constructor(public sensorDataService: SensorDataService, public snackbar: MatSnackBar){}
 
   getErrorMessage() {
     return this.roomNameControl.hasError('required') ? 'Bitte einen Namen vergeben' :
