@@ -1,7 +1,7 @@
 import { SensorData } from './../models/SensorData.model';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
+import { Observable, of, interval } from 'rxjs';
 import { Subject } from 'rxjs';
 import { EventEmitter } from 'events';
 import {  } from '@angular/core';
@@ -10,6 +10,7 @@ import {  } from '@angular/core';
   providedIn: 'root'
 })
 export class SensorDataService {
+  private fullDataUpdated = new Subject<any>();
   constructor(private http: HttpClient) { }
 
   data: SensorData[] = [];
@@ -49,6 +50,11 @@ export class SensorDataService {
   }
 
 
+  /* getFullRoomData(): Observable<{fullData: any[]}> {
+    return this.http.get<{fullData: any[]}>('http://localhost:3000/api/fulldata'); // war any[]  <{sensorData: any[], roomData: any[]}>
+  } */
+
+  interval
   getFullRoomData(): Observable<{fullData: any[]}> {
     return this.http.get<{fullData: any[]}>('http://localhost:3000/api/fulldata'); // war any[]  <{sensorData: any[], roomData: any[]}>
   }
