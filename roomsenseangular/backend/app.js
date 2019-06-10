@@ -57,7 +57,6 @@ app.get("/api/data", (req, res, next) => {
     // Nur neueste Daten der jeweiligen Geräte senden
     let newData = modifyData.getLatestEntries(fetchedData);
 
-    //newDataToSend.splice(0, newDataToSend.length);  Array leeren
     newDataToSend = newData;
     console.log(newDataToSend);
     res.status(201).json(newDataToSend); //fetchedData
@@ -72,10 +71,6 @@ app.get("/api/fulldata", (req, res, next) => {
   sensorData.getCurrentData(timestampInSeconds15)
     .then(fetchedData => {
       fetchedSensorData = modifyData.getLatestEntries(fetchedData);
-      //console.log('Sensor Data is Array: ' + Array.isArray(fetchedData));
-      //console.log(chalk.green('Fetched Sensor Data: ') + fetchedSensorData);
-
-      //console.log('Fetched Sensor Data Accessed: ' + fetchedSensorData[0].deviceId);
 
       return fetchedSensorData;
     })

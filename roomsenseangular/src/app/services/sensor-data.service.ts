@@ -18,6 +18,7 @@ export class SensorDataService {
 
   // Später vielleicht
   fullData = [];
+  clickedRoom: string;
 
   /* getData() {
     this.http.get<{message: string, data: any}>('http://localhost:3000/api/data')
@@ -50,14 +51,10 @@ export class SensorDataService {
   }
 
 
-  /* getFullRoomData(): Observable<{fullData: any[]}> {
-    return this.http.get<{fullData: any[]}>('http://localhost:3000/api/fulldata'); // war any[]  <{sensorData: any[], roomData: any[]}>
-  } */
-
-  interval
-  getFullRoomData(): Observable<{fullData: any[]}> {
+   getFullRoomData(): Observable<{fullData: any[]}> {
     return this.http.get<{fullData: any[]}>('http://localhost:3000/api/fulldata'); // war any[]  <{sensorData: any[], roomData: any[]}>
   }
+
 
   getDataUpdateListener() {
     return this.dataUpdated.asObservable();
@@ -99,6 +96,16 @@ export class SensorDataService {
     //this.dataUpdated.next([... this.fullData]);
     /////////////////////////////////////////////////////////////////////////////
     return this.http.post<{message: string}>('http://localhost:3000/api/create-room-yannik', roomData);
+
+  }
+
+
+  storeClickedRoom(clickedRoom: string) {
+    this.clickedRoom = clickedRoom;
+    console.log('Click auf : ' + this.clickedRoom);
+  }
+
+  getClickedRoom() {
 
   }
 }

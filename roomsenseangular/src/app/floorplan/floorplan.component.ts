@@ -28,10 +28,11 @@ export class FloorplanComponent implements OnInit {
   ]
 
   ngOnInit() {
-    setInterval(() => {
+    this.getFullRoomData(); // Direkt am Anfang einmal aufrufen, dann im Intervall
+    /* setInterval(() => {
       console.log('Neue Daten empfangen!');
       this.getFullRoomData();
-    }, 5000);
+    }, 5000); */
   }
 
   getFullRoomData(): void {

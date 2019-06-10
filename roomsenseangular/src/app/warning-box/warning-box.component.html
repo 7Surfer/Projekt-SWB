@@ -1,10 +1,26 @@
-<div class='warning'>
+<div class="warning">
   <p>Warnungen/ Meldungen</p>
   <ul ui-scroll-viewport>
-      <li *ngFor="let dataEntry of data">
-          <button class="warning-rooms-button">{{dataEntry.id}}</button>
-          <span class="description">{{dataEntry.description}}</span>
-      </li>
+    <ng-container  *ngFor="let dataEntry of data">
+
+    <li *ngIf="dataEntry.temp > dataEntry.upperTemp">
+      <button class="warning-rooms-button">{{ dataEntry.id }}</button>
+      <span class="description" >Temperatur zu hoch</span>
+    </li>
+    <li *ngIf="dataEntry.temp < dataEntry.lowerTemp">
+        <button class="warning-rooms-button">{{ dataEntry.id }}</button>
+        <span class="description">Temperatur zu niedrig</span>
+    </li>
+    <li *ngIf="dataEntry.hum > dataEntry.upperHum">
+          <button class="warning-rooms-button">{{ dataEntry.id }}</button>
+          <span class="description">Feuchtigkeit zu hoch</span>
+    </li>
+    <li *ngIf="dataEntry.hum < dataEntry.lowerHum">
+        <button class="warning-rooms-button">{{ dataEntry.id }}</button>
+        <span class="description">Feuchtigkeit zu niedrig</span>
+  </li>
+
+    </ng-container>
   </ul>
 </div>
 
