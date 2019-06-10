@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { RoomSettings } from './../models/RoomData.model' ;
+import { SensorDataService } from '../services/sensor-data.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-warning-box',
@@ -7,8 +10,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./warning-box.component.css']
 })
 export class WarningBoxComponent {
+  public dataSubscription: Subscription;
+  roomSettings: RoomSettings[] = [];
 
-  constructor(private router: Router) {}
+
+  constructor(private router: Router, public sensorDataService: SensorDataService) {}
 
   data: any[] = [
     {id: 'Raum1', temp: 1, upperTemp: 0, lowerTemp: -3, hum: 65, upperHum: 67, lowerHum: 23},
@@ -22,10 +28,38 @@ export class WarningBoxComponent {
     {id: 'Raum9', temp: 9, upperTemp: 1, lowerTemp: 3, hum: 32, upperHum: 45, lowerHum: 30},
   ];
 
+
   onRoomClicked() {
     this.router.navigate(['rooms']);
   }
 
+  ngOnInit() {
+    this.getSettings();
+  }
+
+  getSettings(){
+    //Read room Data Settings
+    this.sensorDataService.getRoomSettings();
+    this.dataSubscription = this.sensorDataService.getDataUpdateListener()
+      .subscribe((sentData: RoomSettings []) => {
+        this.roomSettings = sentData;
+        this.update();
+      });
+  }
+  update(){
+    let raspberyIds: string[] = [];
+
+    //get raspberryIds from all rooms
+    for (let i = 0; i < this.roomSettings.length; i++) {
+      raspberyIds[i] = this.roomSettings[i].deviceId;
+    }
+    //console.log(raspberyIds);
+
+
+
+    //Check if Changed
+
+  }
 }
 
 

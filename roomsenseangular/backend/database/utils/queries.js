@@ -41,5 +41,8 @@ dataQueries.roomInfo = {
   parameters: []
 }
 
+dataQueries.getroomSettings = {
+  query: "SELECT c.deviceId, c.roomName, c.lowerTempLimit, c.upperTempLimit, c.lowerHumiLimit, c.upperHumiLimit, c.message FROM c"
+}
 
 module.exports = dataQueries;

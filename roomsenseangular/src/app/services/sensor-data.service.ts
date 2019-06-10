@@ -5,7 +5,7 @@ import { Observable, of, interval } from 'rxjs';
 import { Subject } from 'rxjs';
 import { EventEmitter } from 'events';
 import {  } from '@angular/core';
-
+import { RoomSettings } from './../models/RoomData.model' ;
 @Injectable({
   providedIn: 'root'
 })
@@ -14,6 +14,7 @@ export class SensorDataService {
   constructor(private http: HttpClient) { }
 
   data: SensorData[] = [];
+  roomData: RoomSettings[] = [];
   dataUpdated = new Subject<any []>();
 
   // Später vielleicht
@@ -49,6 +50,25 @@ export class SensorDataService {
       this.dataUpdated.next([...this.data]);
     });
   }
+
+  //start
+  getRoomSettings(){
+    console.log("getroom");
+    this.http.get<{message: string, data: any}>('http://localhost:3000/api/roomSettings')
+    .subscribe((sensordata) => {
+      this.roomData = sensordata.data;
+      this.dataUpdated.next([...this.roomData]);
+    });
+  }
+    /*
+  getRoomSettings(){
+    this.http.get<{message: string, data: any}>('http://localhost:3000/api/roomSettings')
+    .subscribe((sensordata) => {
+      this.roomData = sensordata.data;
+      console.log(this.roomData);
+    });
+  }*/
+  //end
 
 
    getFullRoomData(): Observable<{fullData: any[]}> {
