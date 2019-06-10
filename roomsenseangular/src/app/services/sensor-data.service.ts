@@ -51,15 +51,6 @@ export class SensorDataService {
     });
   }
 
-  //start
-  getRoomSettings(){
-    console.log("getroom");
-    this.http.get<{message: string, data: any}>('http://localhost:3000/api/roomSettings')
-    .subscribe((sensordata) => {
-      this.roomData = sensordata.data;
-      this.dataUpdated.next([...this.roomData]);
-    });
-  }
     /*
   getRoomSettings(){
     this.http.get<{message: string, data: any}>('http://localhost:3000/api/roomSettings')

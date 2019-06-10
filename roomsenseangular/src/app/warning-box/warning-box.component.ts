@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { RoomSettings } from './../models/RoomData.model' ;
 import { SensorDataService } from '../services/sensor-data.service';
 import { Subscription } from 'rxjs';
 
@@ -10,8 +9,6 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./warning-box.component.css']
 })
 export class WarningBoxComponent {
-  public dataSubscription: Subscription;
-  roomSettings: RoomSettings[] = [];
 
 
   constructor(private router: Router, public sensorDataService: SensorDataService) {}
@@ -34,31 +31,6 @@ export class WarningBoxComponent {
   }
 
   ngOnInit() {
-    this.getSettings();
-  }
-
-  getSettings(){
-    //Read room Data Settings
-    this.sensorDataService.getRoomSettings();
-    this.dataSubscription = this.sensorDataService.getDataUpdateListener()
-      .subscribe((sentData: RoomSettings []) => {
-        this.roomSettings = sentData;
-        this.update();
-      });
-  }
-  update(){
-    let raspberyIds: string[] = [];
-
-    //get raspberryIds from all rooms
-    for (let i = 0; i < this.roomSettings.length; i++) {
-      raspberyIds[i] = this.roomSettings[i].deviceId;
-    }
-    //console.log(raspberyIds);
-
-
-
-    //Check if Changed
-
   }
 }
 

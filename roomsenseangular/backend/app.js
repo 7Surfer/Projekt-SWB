@@ -124,16 +124,6 @@ app.get("/api/roomdevices", (req, res, next) => {
   });
 });
 
-app.get("/api/roomSettings", (req, res, next) => {
-  sensorData.getRoomSettings().then(fetchedFata => {
-    //console.log(fetchedFata);
-    res.status(201).json({
-      message: "Data fetched!",
-      data: fetchedFata
-    });
-  });
-});
-
 
 
 // app.get('/api/data', (req, res, next) => {
