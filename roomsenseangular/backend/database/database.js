@@ -55,15 +55,6 @@ async function getDeviceIdRoomArray() {
   return lastIdArray;
 }
 
-async function getRoomSettings() {
-  const { result: results } = await client
-    .database(databaseId)
-    .container(containerIdroom)
-    .items.query(dataQueries.getRoomSettings)
-    .toArray();
-  return results;
-}
-
 async function getCurrentData(timestamp) {
 
   const { result: results } = await client
@@ -182,7 +173,7 @@ module.exports.getDeviceIdRoomArray = getDeviceIdRoomArray;
 module.exports.getCurrentData = getCurrentData;
 module.exports.insertRoom = insertRoom;
 module.exports.getRoomInfo = getRoomInfo;
-module.exports.getRoomSettings = getRoomSettings;
+//module.exports.getRoomSettings = getRoomSettings;
 module.exports.getStatistic = getStatistic;
 //module.exports.saveRoomData = saveRoomData;
 //module.exports.getdeviceIdroom = getdeviceIdroom;

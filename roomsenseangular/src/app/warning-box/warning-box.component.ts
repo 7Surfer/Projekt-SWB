@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { RoomSettings } from './../models/RoomData.model';
 import { SensorDataService } from '../services/sensor-data.service';
@@ -9,15 +9,17 @@ import { Subscription } from 'rxjs';
   templateUrl: './warning-box.component.html',
   styleUrls: ['./warning-box.component.css']
 })
-export class WarningBoxComponent implements OnInit {
-  public dataSubscription: Subscription;
-  roomSettings: RoomSettings[] = [];
+
+
+export class WarningBoxComponent implements OnInit, OnDestroy {
 
 
   constructor(private router: Router, public sensorDataService: SensorDataService) { }
 
   fullData: any[] = [];
   private fullDataSubscription: Subscription;
+  public dataSubscription: Subscription;
+  roomSettings: RoomSettings[] = [];
 
 
   data: any[] = [
@@ -39,7 +41,7 @@ export class WarningBoxComponent implements OnInit {
         this.fullData = updatedFullData;
         console.log('Daten im Warning Box Component: ' + JSON.stringify(updatedFullData));
       });
-    this.sensorDataService.getFullRoomData();
+    //this.sensorDataService.getFullRoomData();
 
   }
 
@@ -47,9 +49,6 @@ export class WarningBoxComponent implements OnInit {
     this.router.navigate(['rooms']);
   }
 
-  /* ngOnInit() {
-    this.getSettings();
-  } */
 
   getSettings() {
     //Read room Data Settings
@@ -67,14 +66,8 @@ export class WarningBoxComponent implements OnInit {
     for (let i = 0; i < this.roomSettings.length; i++) {
       raspberyIds[i] = this.roomSettings[i].deviceId;
     }
-    //console.log(raspberyIds);
-
-
-
-    //Check if Changed
 
   }
-
 
   ngOnDestroy(): void {
     this.fullDataSubscription.unsubscribe();
