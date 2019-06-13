@@ -164,14 +164,41 @@ for (let z = 0; z < roomsLen; z++) {
 //console.log("\n\n\nNew Data: " + JSON.stringify(newData));
 
 return newData;
-
-
-
 }
+
 
 //mergeSensorAndRoom(sensorDummy, roomDummy);
 
+
+function getEvery20Temp(array) {
+  let arrayLen = array.length;
+  let statTemp = [];
+  /* console.log('Array Len: ' + arrayLen); */
+  for(let i = 1; i < arrayLen; i+=20){
+      statTemp.push(array[i].temperature);
+      //statHum.push(array[i].humidity);
+  }
+  /* console.log(statTemp);
+  console.log(statHum); */
+  return statTemp;
+  }
+
+  function getEvery20Hum(array) {
+    let arrayLen = array.length;
+    let statHum = [];
+    /* console.log('Array Len: ' + arrayLen); */
+    for(let i = 1; i < arrayLen; i+=20){
+        statHum.push(array[i].humidity);
+        //statHum.push(array[i].humidity);
+    }
+    /* console.log(statTemp);
+    console.log(statHum); */
+    return statHum;
+    }
+
 module.exports = {
   getLatestEntries: getLatestEntries,
-  mergeSensorAndRoom: mergeSensorAndRoom
+  mergeSensorAndRoom: mergeSensorAndRoom,
+  getEvery20Hum: getEvery20Hum,
+  getEvery20Temp: getEvery20Temp
 };

@@ -133,6 +133,21 @@ async function getRoomInfo() {
   return lastIdArray; */
 }
 
+// Statistiken
+async function getStatistic(deviceId) {
+  const { result: results } = await client
+    .database(databaseId)
+    .container(containerId)
+    .items.query(`SELECT TOP 100 c.temperature, c.humidity FROM c c WHERE c.deviceId = '${deviceId}' ORDER BY c._ts DESC`,
+      { enableCrossPartitionQuery: true }) // Cross Partition
+    .toArray();
+
+
+    //console.log('Room Results: ' + JSON.stringify(results));
+    let statisticArray = results;
+    return statisticArray;
+}
+
 
 
 
@@ -168,5 +183,6 @@ module.exports.getCurrentData = getCurrentData;
 module.exports.insertRoom = insertRoom;
 module.exports.getRoomInfo = getRoomInfo;
 module.exports.getRoomSettings = getRoomSettings;
+module.exports.getStatistic = getStatistic;
 //module.exports.saveRoomData = saveRoomData;
 //module.exports.getdeviceIdroom = getdeviceIdroom;

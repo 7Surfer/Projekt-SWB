@@ -52,7 +52,7 @@ export class CreateRoomComponent implements OnInit {
     this.Once = true;
     this.sensorDataService.getDevices();
     this.sensorDataService.getRoomDevices();
-    this.dataSubscription = this.sensorDataService.getDataUpdateListener()
+    /* this.dataSubscription = this.sensorDataService.getDataUpdateListener()
       .subscribe((sentData: Devices []) => {
         if(this.Once){
           this.roomDeviceData = sentData;
@@ -62,7 +62,7 @@ export class CreateRoomComponent implements OnInit {
           this.allDeviceData = sentData;
           this.finished_subscription();
         }
-      });
+      }); */
   }
 
   //process Data after it is recievd
@@ -80,7 +80,7 @@ export class CreateRoomComponent implements OnInit {
     }
     //console.log(all_devices);
 
-    //get all used devicec from querry  
+    //get all used devicec from querry
     for(let i = 0; i < this.roomDeviceData.length; i++)
     {
       used_devices[i] = "" + this.roomDeviceData[i];
@@ -121,7 +121,7 @@ export class CreateRoomComponent implements OnInit {
     const index: number = this.raspberryarr.indexOf(this.raspberryControl.value);
     if (index !== -1) {
         this.raspberryarr.splice(index, 1);
-    }  
+    }
 
     //clear Input fields
     this.roomNameControl.reset();

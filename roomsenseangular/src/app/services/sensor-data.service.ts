@@ -10,15 +10,15 @@ import { RoomSettings } from './../models/RoomData.model' ;
   providedIn: 'root'
 })
 export class SensorDataService {
-  private fullDataUpdated = new Subject<any>();
+  private fullDataUpdated = new Subject<any[]>();
   constructor(private http: HttpClient) { }
 
   data: SensorData[] = [];
   roomData: RoomSettings[] = [];
-  dataUpdated = new Subject<any []>();
+
 
   // Später vielleicht
-  fullData = [];
+  fullData: any[] = [];
   clickedRoom: string;
 
   /* getData() {
@@ -38,8 +38,9 @@ export class SensorDataService {
   getDevices() {
     this.http.get<{message: string, data: any}>('http://localhost:3000/api/devices')
       .subscribe((sensorData) => {
+        console.log('Daten vom Server erhalten!');
         this.data = sensorData.data;
-        this.dataUpdated.next([...this.data]);
+        this.fullDataUpdated.next([...this.data]);
       });
   }
 
@@ -47,7 +48,7 @@ export class SensorDataService {
     this.http.get<{message: string, data: any}>('http://localhost:3000/api/roomdevices')
     .subscribe((sensordata) => {
       this.data = sensordata.data;
-      this.dataUpdated.next([...this.data]);
+      this.fullDataUpdated.next([...this.data]);
     });
   }
 
@@ -57,7 +58,7 @@ export class SensorDataService {
     this.http.get<{message: string, data: any}>('http://localhost:3000/api/roomSettings')
     .subscribe((sensordata) => {
       this.roomData = sensordata.data;
-      this.dataUpdated.next([...this.roomData]);
+      this.fullDataUpdated.next([...this.roomData]);
     });
   }
     /*
@@ -71,13 +72,22 @@ export class SensorDataService {
   //end
 
 
-   getFullRoomData(): Observable<{fullData: any[]}> {
+  /*  getFullRoomData(): Observable<{fullData: any[]}> {
     return this.http.get<{fullData: any[]}>('http://localhost:3000/api/fulldata'); // war any[]  <{sensorData: any[], roomData: any[]}>
+  } */
+
+  getFullRoomData() {
+    this.http.get<{fullData: any[]}>('http://localhost:3000/api/fulldata') // war any[]  <{sensorData: any[], roomData: any[]}>
+      .subscribe(fetchedFullData => {
+        //console.log('getFullRommData im Service ausgeführt');
+        this.fullData = fetchedFullData.fullData;
+        this.fullDataUpdated.next([...this.fullData]);
+      });
   }
 
 
-  getDataUpdateListener() {
-    return this.dataUpdated.asObservable();
+  getFullDataUpdateListener() {
+    return this.fullDataUpdated.asObservable();
   }
 
 
@@ -127,5 +137,12 @@ export class SensorDataService {
 
   getClickedRoom() {
 
+  }
+
+
+
+  // Daten für Statistiken
+  getStatisticForClickedDevice(deviceId: string): Observable<any> {
+    return this.http.get('http://localhost:3000/api/statistic/' + deviceId);
   }
 }

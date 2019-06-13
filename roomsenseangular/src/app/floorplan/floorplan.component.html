@@ -17,7 +17,7 @@
 
 <ul ui-scroll-viewport>
     <li *ngFor="let dataEntry of fullData | searchFilter: searchBarInput">
-        <button mat-button [routerLink]="['/room-detail']" routerLinkActive="router-link-active" class="rooms-button">{{dataEntry.room}}</button>
+        <button mat-button [routerLink]="['/room-detail', dataEntry.deviceId]" routerLinkActive="router-link-active" class="rooms-button">{{dataEntry.room}}</button>
         <div class="verticalLine"></div>
         <span class="description">Temperatur: {{dataEntry.temp}}</span>
         <span class="description">Luftfeuchte: {{dataEntry.hum}}</span>

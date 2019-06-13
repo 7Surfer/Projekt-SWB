@@ -36,6 +36,7 @@ import { FloorplanComponent } from './floorplan/floorplan.component';
 import { CreateRoomYannikComponent } from './create-room-yannik/create-room-yannik.component';
 import { WarningComponent } from './room-details/warning/warning.component';
 import { SearchFilterPipe } from './utils/pipes/search-filter.pipe';
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -73,6 +74,8 @@ import { SearchFilterPipe } from './utils/pipes/search-filter.pipe';
     MatCheckboxModule,
     MatCardModule,
     MatSnackBarModule,
+    ChartsModule
+
   ],
   providers: [SensorDataService],
   bootstrap: [AppComponent]

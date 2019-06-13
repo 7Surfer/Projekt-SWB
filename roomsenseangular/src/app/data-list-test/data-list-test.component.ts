@@ -74,9 +74,9 @@ export class DataListTestComponent implements OnInit, OnDestroy {
    } */
 
 
-  getFullRoomData(): void {
-    this.sensorDataService.getFullRoomData()
-      .subscribe(fetchedFullData => {
+ // getFullRoomData(): void {
+   // this.sensorDataService.getFullRoomData()
+     // .subscribe(fetchedFullData => {
         /* this.fullData = JSON.parse('[' + fetchedFullData + ']'); */
         /* let fetchedFullDataDisplay = fetchedFullData; */
         // let fetchedFullDataDisplay = JSON.stringify(fetchedFullData);
@@ -87,12 +87,12 @@ export class DataListTestComponent implements OnInit, OnDestroy {
         console.log('Fetched Full Data: ' + fetchedFullDataDisplay);
         console.log('Device Id: ' + fetchedFullData[0]); */
 
-        this.fullData = fetchedFullData.fullData;
+     //   this.fullData = fetchedFullData.fullData;
         // console.log('Sensor Data: ' + fetchedFullData);
         // console.log('Fetched Full Data: ' + JSON.stringify(this.fullData));
-        console.log(this.fullData[0].room);
-        console.log(JSON.stringify(this.fullData));
-      });
-  }
+      //  console.log(this.fullData[0].room);
+        //console.log(JSON.stringify(this.fullData));
+      //});
+  //}
 
 }

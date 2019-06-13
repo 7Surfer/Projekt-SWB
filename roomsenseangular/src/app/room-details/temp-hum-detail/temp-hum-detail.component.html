@@ -1,24 +1,92 @@
-<p *ngFor="let dataEntry of data">Werte in {{dataEntry.id}}</p>
-<div class="kreisTemp" *ngFor="let dataEntry of data"
+<p *ngIf="clickedDeviceData">Werte in {{ clickedDeviceData.room }}</p>
+<div
+  *ngIf="clickedDeviceData"
+  class="kreisTemp"
+  [ngClass]="{
+    inRange: clickedDeviceData.temp <= clickedDeviceData.upperTemp && clickedDeviceData.temp >= clickedDeviceData.lowerTemp,
+    outRange: clickedDeviceData.temp > clickedDeviceData.upperTemp || clickedDeviceData.temp < clickedDeviceData.lowerTemp
+  }"
+>
+  <button *ngIf="clickedDeviceData"
+    [routerLink]="['/warning']"
+    routerLinkActive="router-link-active"
+    class="temp"
+  >
+    {{ clickedDeviceData.temp }}°C
+  </button>
+  <span id="descriptionTemp">Temperatur</span>
+</div>
+
+<div
+  *ngIf="clickedDeviceData"
+  class="kreisHum"
+  [ngClass]="{
+    inRange: clickedDeviceData.hum >= clickedDeviceData.lowerHumi && clickedDeviceData.hum <= clickedDeviceData.upperHumi,
+    outRange: clickedDeviceData.hum < clickedDeviceData.lowerHumi || clickedDeviceData.hum > clickedDeviceData.upperHumi
+  }"
+>
+  <button *ngIf="clickedDeviceData"
+    [routerLink]="['/warning']"
+    routerLinkActive="router-link-active"
+    class="hum"
+  >
+    {{ clickedDeviceData.hum }}%
+  </button>
+  <span id="descriptionHum">Luftfeuchtigkeit</span>
+</div>
+
+<!-- <div class=main-chart-div> -->
+  <!-- <app-warning></app-warning> -->
+  <div class="tempChart-div">
+    <canvas *ngIf="tempStatisticData" class="chart"
+      class="tempChart"
+      baseChart
+      [datasets]="tempChartData"
+      [labels]="tempChartLabels"
+      [options]="tempChartOptions"
+      [legend]="chartLegend"
+      [chartType]="tempChartType"
+    >
+    </canvas>
+    <!-- id="chart" width="10" height="10" -->
+  </div>
+  <div class="humChart-div">
+    <canvas *ngIf="humStatisticData"  class="chart"
+      class="humChart"
+      baseChart
+      [datasets]="humChartData"
+      [labels]="humChartLabels"
+      [options]="humChartOptions"
+      [legend]="chartLegend"
+      [chartType]="humChartType"
+    >
+    </canvas>
+  </div>
+<!-- </div> -->
+
+<!-- Backup -->
+
+<!-- <p *ngFor="let dataEntry of clickedDeviceData">Werte in {{dataEntry.room}}</p>
+<div class="kreisTemp" *ngFor="let dataEntry of clickedDeviceData"
   [ngClass]="{
     'inRange': dataEntry.temperature <= 25 && dataEntry.temperature >= 18,
     'outRange': dataEntry.temperature > 25 || dataEntry.temperature < 18
   }"
 >
-  <button [routerLink]="['/warning']" routerLinkActive="router-link-active" class="temp">{{dataEntry.temperature}}°C</button>
+  <button [routerLink]="['/warning']" routerLinkActive="router-link-active" class="temp">{{dataEntry.temp}}°C</button>
   <span id="descriptionTemp">Temperatur</span>
 </div>
 
-<div class="kreisHum" *ngFor="let dataEntry of data"
+<div class="kreisHum" *ngFor="let dataEntry of clickedDeviceData"
   [ngClass]="{
     'inRange': dataEntry.humidity >= 40 && dataEntry.humidity <= 60,
     'outRange': dataEntry.humidity < 40 || dataEntry.humidity > 60
   }"
 >
-  <button [routerLink]="['/warning']" routerLinkActive="router-link-active" class="hum">{{dataEntry.humidity}}%</button>
+  <button [routerLink]="['/warning']" routerLinkActive="router-link-active" class="hum">{{dataEntry.hum}}%</button>
   <span id="descriptionHum">Luftfeuchtigkeit</span>
 </div>
 
 <div>
   <app-warning></app-warning>
-</div>
+</div> -->

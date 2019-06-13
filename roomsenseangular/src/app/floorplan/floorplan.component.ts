@@ -1,6 +1,7 @@
 import { SensorDataService } from './../services/sensor-data.service';
 import { Component, OnInit } from '@angular/core';
 import { SensorData } from '../models/SensorData.model';
+import { Subscription, interval } from 'rxjs';
 
 @Component({
   selector: 'app-floorplan',
@@ -14,6 +15,9 @@ export class FloorplanComponent implements OnInit {
   searchBarInput: string;
   data: SensorData[] = [];
   fullData: any[] = [];
+  private fullDataSubscription: Subscription;
+  getDataInterval: any;
+
 
   dummyData = [
     {id: 'Raum1', temperature: "2°C", humidity: "40%"},
@@ -28,14 +32,25 @@ export class FloorplanComponent implements OnInit {
   ]
 
   ngOnInit() {
-    this.getFullRoomData(); // Direkt am Anfang einmal aufrufen, dann im Intervall
+    //this.getFullRoomData(); // Direkt am Anfang einmal aufrufen, dann im Intervall
     /* setInterval(() => {
       console.log('Neue Daten empfangen!');
       this.getFullRoomData();
     }, 5000); */
+
+    // Subject subscriben damit neueste Änderungen empfangen werden
+    this.fullDataSubscription = this.sensorDataService.getFullDataUpdateListener().subscribe((updatedFullData: any[]) => {
+      //console.log('Neuer Log im Floorplan Component: ' + JSON.stringify(updatedFullData));
+      this.fullData = updatedFullData;
+    });
+
+    // Bei Aufruf einmal neueste Daten abrufen, um Wartezeit auf neues Intervall zu verhindern, dann nach Subject richten
+    this.sensorDataService.getFullRoomData();
+
   }
 
-  getFullRoomData(): void {
+  // Funktioniert
+  /* getFullRoomData(): void {
     this.sensorDataService.getFullRoomData()
       .subscribe(fetchedFullData => {
         this.fullData = fetchedFullData.fullData;
@@ -44,7 +59,17 @@ export class FloorplanComponent implements OnInit {
         console.log(this.fullData[0].room);
         console.log(JSON.stringify(this.fullData));
       });
+  } */
+
+
+  ngOnDestroy(): void {
+    this.fullDataSubscription.unsubscribe();
+    clearInterval(this.getDataInterval);
+    console.log('Floorplan Intervall zerstört');
+
   }
+
+
 
 }
 

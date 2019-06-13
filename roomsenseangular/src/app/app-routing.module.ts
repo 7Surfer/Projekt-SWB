@@ -20,13 +20,13 @@ const routes: Routes = [
   { path: 'floorplan', component: FloorplanComponent },
   { path: 'room-detail', component: TempHumDetailComponent},
   { path: 'warning', component: WarningComponent },
-  
+
 
 
   // {path: 'home', component: MainPageComponent},
 
   { path: 'home', redirectTo: '/' },
-  {path: 'room-detail', component: TempHumDetailComponent},
+  {path: 'room-detail/:deviceId', component: TempHumDetailComponent},
   {path: '404', component: PageNotFoundComponent},
   {path: '**', redirectTo: '/404'},
 

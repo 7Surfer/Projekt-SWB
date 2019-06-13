@@ -1,22 +1,22 @@
 <div class="warning">
   <p>Warnungen/ Meldungen</p>
   <ul ui-scroll-viewport>
-    <ng-container  *ngFor="let dataEntry of data">
+    <ng-container  *ngFor="let dataEntry of fullData">
 
     <li *ngIf="dataEntry.temp > dataEntry.upperTemp">
-      <button class="warning-rooms-button">{{ dataEntry.id }}</button>
+      <button class="warning-rooms-button">{{ dataEntry.room }}</button>
       <span class="description" >Temperatur zu hoch</span>
     </li>
     <li *ngIf="dataEntry.temp < dataEntry.lowerTemp">
-        <button class="warning-rooms-button">{{ dataEntry.id }}</button>
+        <button class="warning-rooms-button">{{ dataEntry.room }}</button>
         <span class="description">Temperatur zu niedrig</span>
     </li>
-    <li *ngIf="dataEntry.hum > dataEntry.upperHum">
-          <button class="warning-rooms-button">{{ dataEntry.id }}</button>
+    <li *ngIf="dataEntry.hum > dataEntry.upperHumi">
+          <button class="warning-rooms-button">{{ dataEntry.romm }}</button>
           <span class="description">Feuchtigkeit zu hoch</span>
     </li>
-    <li *ngIf="dataEntry.hum < dataEntry.lowerHum">
-        <button class="warning-rooms-button">{{ dataEntry.id }}</button>
+    <li *ngIf="dataEntry.hum < dataEntry.lowerHumi">
+        <button class="warning-rooms-button">{{ dataEntry.room }}</button>
         <span class="description">Feuchtigkeit zu niedrig</span>
   </li>
 

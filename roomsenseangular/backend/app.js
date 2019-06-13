@@ -86,6 +86,7 @@ app.get("/api/fulldata", (req, res, next) => {
       //console.log('Fetched Sensor Data vor Aufruf: ' + fetchedSensorData);
       fullData = modifyData.mergeSensorAndRoom(fetchedSensorData, fetchedRoom)
       //console.log('Full Data Logged: ' + JSON.stringify(fullData));
+      console.log('Query ausgeführt!' + Date.now()/1000);
       res.status(201).json(
         /* {
           sensorData: fetchedSensorData,
@@ -132,6 +133,24 @@ app.get("/api/roomSettings", (req, res, next) => {
       data: fetchedFata
     });
   });
+});
+
+
+// Daten für Statistiken
+app.get("/api/statistic/:id", (req, res, next)=> {
+  let clickedDevice = req.params.id;
+  sensorData.getStatistic(clickedDevice).then(statisticData => {
+   // console.log('Statistic Data: ' + JSON.stringify(statisticData));
+    let tempStatistic = modifyData.getEvery20Temp(statisticData);
+    let humStatistic = modifyData.getEvery20Hum(statisticData);
+    /* console.log(tempStatistic);
+    console.log(humStatistic); */
+    res.status(200).json({
+      tempStatistic: tempStatistic,
+      humStatistic: humStatistic
+    });
+  })
+
 });
 
 
