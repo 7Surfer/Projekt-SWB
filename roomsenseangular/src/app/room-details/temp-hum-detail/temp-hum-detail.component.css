@@ -137,3 +137,10 @@ p {
   display: block;
 
 }
+
+.settings{
+  cursor: pointer;
+  display: inline;
+  float: right;     /* Ignore */
+  margin-right: 10px;
+}

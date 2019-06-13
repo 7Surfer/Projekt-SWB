@@ -11,6 +11,7 @@ import { RoomSettings } from './../models/RoomData.model' ;
 })
 export class SensorDataService {
   private fullDataUpdated = new Subject<any[]>();
+  private dataUpdated = new Subject<any []>();
   constructor(private http: HttpClient) { }
 
   data: SensorData[] = [];
@@ -40,7 +41,7 @@ export class SensorDataService {
       .subscribe((sensorData) => {
         console.log('Daten vom Server erhalten!');
         this.data = sensorData.data;
-        this.fullDataUpdated.next([...this.data]);
+        this.dataUpdated.next([...this.data]);
       });
   }
 
@@ -48,7 +49,7 @@ export class SensorDataService {
     this.http.get<{message: string, data: any}>('http://localhost:3000/api/roomdevices')
     .subscribe((sensordata) => {
       this.data = sensordata.data;
-      this.fullDataUpdated.next([...this.data]);
+      this.dataUpdated.next([...this.data]);
     });
   }
 
@@ -85,7 +86,9 @@ export class SensorDataService {
       });
   }
 
-
+  getDataUpdateListener() {
+    return this.dataUpdated.asObservable();
+  }
   getFullDataUpdateListener() {
     return this.fullDataUpdated.asObservable();
   }

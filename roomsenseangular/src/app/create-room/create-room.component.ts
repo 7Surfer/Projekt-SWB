@@ -52,7 +52,7 @@ export class CreateRoomComponent implements OnInit {
     this.Once = true;
     this.sensorDataService.getDevices();
     this.sensorDataService.getRoomDevices();
-    /* this.dataSubscription = this.sensorDataService.getDataUpdateListener()
+     this.dataSubscription = this.sensorDataService.getDataUpdateListener()
       .subscribe((sentData: Devices []) => {
         if(this.Once){
           this.roomDeviceData = sentData;
@@ -62,7 +62,7 @@ export class CreateRoomComponent implements OnInit {
           this.allDeviceData = sentData;
           this.finished_subscription();
         }
-      }); */
+      }); 
   }
 
   //process Data after it is recievd

@@ -37,6 +37,7 @@ import { CreateRoomYannikComponent } from './create-room-yannik/create-room-yann
 import { WarningComponent } from './room-details/warning/warning.component';
 import { SearchFilterPipe } from './utils/pipes/search-filter.pipe';
 import { ChartsModule } from 'ng2-charts';
+import { RoomsettingsComponent } from './roomsettings/roomsettings.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { ChartsModule } from 'ng2-charts';
     CreateRoomYannikComponent,
     WarningComponent,
     SearchFilterPipe,
+    RoomsettingsComponent,
   ],
   imports: [
     BrowserModule,

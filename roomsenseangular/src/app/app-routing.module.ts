@@ -11,6 +11,7 @@ import { MainPageComponent } from './display-components/main-page/main-page.comp
 import { CreateRoomComponent } from './create-room/create-room.component';
 import { TempHumDetailComponent } from './room-details/temp-hum-detail/temp-hum-detail.component';
 import { WarningComponent } from './room-details/warning/warning.component';
+import { RoomsettingsComponent } from './roomsettings/roomsettings.component';
 
 const routes: Routes = [
   {path: '', component: FloorplanComponent},
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'floorplan', component: FloorplanComponent },
   { path: 'room-detail', component: TempHumDetailComponent},
   { path: 'warning', component: WarningComponent },
+  { path: 'roomsettings', component: RoomsettingsComponent },
 
 
 
