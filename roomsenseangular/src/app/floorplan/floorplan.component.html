@@ -1,5 +1,5 @@
 <p>Raumübersicht
-    <button class='add-button' [routerLink]="['/create-room']" routerLinkActive="router-link-active" class="create">
+    <button mat-button class='add-button' [routerLink]="['/create-room']" routerLinkActive="router-link-active" class="create">
         <i class="fas fa-plus"></i>
         <span class="createText">Raum hinzufügen</span>
     </button>
@@ -22,7 +22,7 @@
         <span class="description">Temperatur: {{dataEntry.temp}}</span>
         <span class="description">Luftfeuchte: {{dataEntry.hum}}</span>
         <span class="description">Sensor: {{dataEntry.deviceId}}</span>
-        <button mat-button class="icon">
+        <button mat-button class="icon" [routerLink]="['/room-detail', dataEntry.deviceId]" routerLinkActive="router-link-active">
             <i class="fas fa-chevron-right"></i>
         </button>
     </li>

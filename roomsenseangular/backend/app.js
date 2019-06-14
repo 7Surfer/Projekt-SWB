@@ -78,13 +78,13 @@ app.get("/api/fulldata", (req, res, next) => {
 
     sensorData.getRoomInfo()
     .then(fetchedRoom => {
-      //fetchedRoomData = JSON.stringify(fetchedRoom);
       //console.log('IsArray: ' + Array.isArray(fetchedRoom))
       //console.log(chalk.green('RoomData: ') + fetchedRoom);
-      //console.log('Access Device Id: ' + fetchedRoom[0].deviceId)
 
-      //console.log('Fetched Sensor Data vor Aufruf: ' + fetchedSensorData);
-      fullData = modifyData.mergeSensorAndRoom(fetchedSensorData, fetchedRoom)
+
+      // Nur neueste Rauminfo für Sensoren
+      let latestRoomData = modifyData.getLatestEntries(fetchedRoom);
+      fullData = modifyData.mergeSensorAndRoom(fetchedSensorData, latestRoomData) // war fetchedRoom
       //console.log('Full Data Logged: ' + JSON.stringify(fullData));
       console.log('Query ausgeführt!' + Date.now()/1000);
       res.status(201).json(
