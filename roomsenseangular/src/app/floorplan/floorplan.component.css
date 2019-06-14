@@ -22,7 +22,6 @@
 
 .createText {
     font-family: 'Open Sans', sans-serif;
-    font-weight: bolder;
     margin-left: 10px;
     font-size: 15px;
     vertical-align: middle;
@@ -97,17 +96,17 @@
     border: none;
     font-size: 15px;
     border-radius: 25px;
-    color:#7EBFDB;
+    color: #707070;
     font-family: 'Open Sans', sans-serif;
     vertical-align: middle;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: #EEEEEE;
 
     margin-left: 33vw;
     margin-top: -10.5vh;
   }
 
   input[type="text"]::placeholder{
-      color: #7EBFDB;
+      color: #707070;
       font-family: 'Open Sans', sans-serif;
   }
 

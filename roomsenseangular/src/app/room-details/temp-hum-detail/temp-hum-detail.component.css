@@ -1,9 +1,28 @@
-p {
+.roomHeading {
     font-family: 'Open Sans', sans-serif;
     font-size: 25px;
     margin-left: 30px;
     color: #0082BB;
 }
+
+.goBack{
+  font-family: 'Open Sans', sans-serif;
+  display: inline-block;
+  border: none;
+  background-color: white;
+  color: #7EBFDB;
+  vertical-align: middle;
+  margin-left: 25vw;
+}
+
+.goBackText {
+  font-family: 'Open Sans', sans-serif;
+  margin-left: 10px;
+  font-size: 15px;
+  vertical-align: middle;
+  padding-bottom: 2px;
+}
+
 .kreisTemp{
     position: absolute;
     width: 120px;
@@ -63,11 +82,15 @@ p {
 }
 
 .inRange {
-    border: 8px solid #0082BB;
+    border: 8px solid #2E8B57;
 }
 
-.outRange {
+.outRangeHigh {
     border: 8px solid #BB002C;
+}
+
+.outRangeLow {
+  border: 8px solid #0082BB;
 }
 
 #descriptionTemp {
@@ -95,26 +118,33 @@ p {
 }
 
 .tempChart-div {
-  width: 320px;
+  width: 25vw;
   height: 250px;
   bottom: 0px;
   /* background-color: #d4d7db; */
   position: absolute;
  display: inline-block;
- margin-left: 5vw;
+ margin-left: 3vw;
 
 }
 
+.tempChart-div canvas{
+  margin-top: -5vh;
+}
+
 .humChart-div {
-  width: 320px;
+  width: 25vw;
   height: 250px;
   bottom: 0px;
   right: 0px;
  /*  background-color: #d4d7db; */
   position: absolute;
   display: inline-block;
-  margin-right: 5vw;
+  margin-right: 3vw;
+}
 
+.humChart-div canvas{
+    margin-top: -5vh;
 }
 
 .main-chart-div {

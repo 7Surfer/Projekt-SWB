@@ -1,10 +1,17 @@
-<p *ngIf="clickedDeviceData">Werte in {{ clickedDeviceData.room }}</p>
+<p *ngIf="clickedDeviceData" class="roomHeading">Werte in {{ clickedDeviceData.room }}
+  <button class='goBack' [routerLink]="['/floorplan']" routerLinkActive="router-link-active">
+    <i class="fas fa-arrow"></i>
+    <span class="goBackText">zurück zur Raumübersicht</span>
+  </button>
+</p>
+
 <div
   *ngIf="clickedDeviceData"
   class="kreisTemp"
   [ngClass]="{
     inRange: clickedDeviceData.temp <= clickedDeviceData.upperTemp && clickedDeviceData.temp >= clickedDeviceData.lowerTemp,
-    outRange: clickedDeviceData.temp > clickedDeviceData.upperTemp || clickedDeviceData.temp < clickedDeviceData.lowerTemp
+    outRangeHigh: clickedDeviceData.temp > clickedDeviceData.upperTemp,
+    outRangeLow: clickedDeviceData.temp < clickedDeviceData.lowerTemp
   }"
 >
   <button *ngIf="clickedDeviceData"
@@ -29,7 +36,8 @@
   class="kreisHum"
   [ngClass]="{
     inRange: clickedDeviceData.hum >= clickedDeviceData.lowerHumi && clickedDeviceData.hum <= clickedDeviceData.upperHumi,
-    outRange: clickedDeviceData.hum < clickedDeviceData.lowerHumi || clickedDeviceData.hum > clickedDeviceData.upperHumi
+    outRangeHigh: clickedDeviceData.hum > clickedDeviceData.lowerHumi,
+    outRangeLow: clickedDeviceData.hum < clickedDeviceData.upperHumi
   }"
 >
   <button *ngIf="clickedDeviceData"

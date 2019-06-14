@@ -4,6 +4,7 @@ import { Subscription } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 import { Chart } from 'chart.js';
 /* import * as Chart from 'chart.js'; */
+Chart.defaults.global.defaultFontFamily = "Open Sans";
 
 
 @Component({
@@ -33,14 +34,34 @@ export class TempHumDetailComponent implements OnInit, OnDestroy {
   public tempChartOptions = {
     scaleShowVerticalLines: false,
     responsive: true,
+    maintainAspectRatio: false,
     scales: {
       yAxes: [{
         ticks: {
           beginAtZero: false,
           max: this.minValueFromStatistics,
-          min: this.maxValueFromStatistics
+          min: this.maxValueFromStatistics,
+        } 
+        /* ticks: {
+          beginAtZero: false,
+          max: 35,
+          min: 0,
+        }  */
+      }],
+      xAxes: [{
+          gridLines: {
+          display: false
         }
       }]
+    },
+    legend: {
+      position: 'top',
+      labels: {
+        boxWidth: 7,
+        fontSize: 12,
+        fontStyle: 'normal',
+        usePointStyle: true
+      }
     }
   };
 
@@ -51,7 +72,7 @@ export class TempHumDetailComponent implements OnInit, OnDestroy {
   public chartLegend = 'true';
 
   public tempChartData = [
-    {data: this.tempStatisticData, label: 'Temperatur', backgroundColor: 'rgb(66, 188, 244)', borderColor: 'blue', pointBackgroundColor: 'blue'}
+    {data: this.tempStatisticData, label: 'Temperatur [°C]', backgroundColor: '#7EBFDB', borderColor: '#0082BB', pointBackgroundColor: '#0082BB'}
   ];
 
   /////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -60,6 +81,7 @@ export class TempHumDetailComponent implements OnInit, OnDestroy {
   public humChartOptions = {
     scaleShowVerticalLines: false,
     responsive: true,
+    maintainAspectRatio: false,
     scales: {
       yAxes: [{
         ticks: {
@@ -67,7 +89,21 @@ export class TempHumDetailComponent implements OnInit, OnDestroy {
           max: this.minValueFromStatistics,
           min: this.maxValueFromStatistics
         }
-      }]
+      }],
+      xAxes: [{
+        gridLines: {
+        display: false
+      }
+    }]
+    },
+    legend: {
+      position: 'top',
+      labels: {
+        boxWidth: 7,
+        fontSize: 12,
+        fontStyle: 'normal',
+        usePointStyle: true
+      }
     }
   };
 
@@ -78,7 +114,7 @@ export class TempHumDetailComponent implements OnInit, OnDestroy {
   public humChartLegend = 'true';
 
   public humChartData = [
-    {data: this.tempStatisticData, label: 'Luftfeuchtigkeit', backgroundColor: 'rgb(244, 83, 115)', borderColor: 'red', pointBackgroundColor: 'red'}
+    {data: this.tempStatisticData, label: 'Luftfeuchtigkeit [%]', backgroundColor: '#7EBFDB', borderColor: '#0082BB', pointBackgroundColor: '#0082BB'}
   ];
   //////////////////////////////////////////////////////////////////////////////////////////////////////////
 

@@ -12,7 +12,7 @@
         <span class="description">Temperatur zu niedrig</span>
     </li>
     <li *ngIf="dataEntry.hum > dataEntry.upperHumi">
-          <button class="warning-rooms-button">{{ dataEntry.romm }}</button>
+          <button class="warning-rooms-button">{{ dataEntry.room }}</button>
           <span class="description">Feuchtigkeit zu hoch</span>
     </li>
     <li *ngIf="dataEntry.hum < dataEntry.lowerHumi">
