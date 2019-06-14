@@ -45,9 +45,11 @@ const modifyData = require('./modify');
   sensorData.getRoomInfo()
   .then(result => {
     console.log(chalk.green('Test Output Results: ') + JSON.stringify(result));
+    let modifiedRoom = modifyData.getLatestEntries(result);
+    console.log(chalk.yellow('Modified: ' + JSON.stringify(modifiedRoom)));
   })
   .catch(error => {
     console.log(error);
-  }); 
+  });
 
 

@@ -147,7 +147,11 @@ function mergeSensorAndRoom(sensorData, roomData) {
 for (let z = 0; z < roomsLen; z++) {
   if (roomsWithData.indexOf(roomNames[z]) < 0) {
     roomsWithoutData.push(roomNames[z]);
-    newData.push({
+
+
+    // Einkommentieren, wenn alle gespeicherten Räume in der
+    // Übersicht angezeigt werden sollen anstatt nur die Räume der aktuellen Sensoren
+    /* newData.push({
       deviceId: roomNames[z], // roomNames[z] null
       room: roomData[z].roomName,
       temp: null,
@@ -157,7 +161,7 @@ for (let z = 0; z < roomsLen; z++) {
       upperHum: roomData[z].upperHumiLimit,
       lowerHum: roomData[z].lowerHumiLimit,
       _ts: null,
-    });
+    }); */
   }
 }
 
