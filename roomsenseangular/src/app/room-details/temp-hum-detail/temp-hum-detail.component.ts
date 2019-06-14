@@ -18,7 +18,7 @@ export class TempHumDetailComponent implements OnInit, OnDestroy {
   humStatisticData: any[];
   tempStatisticData: any[] = [0, 0, 0, 0, 0];
   fullData: any[] = [];
-  clickedDeviceData: any = [];
+  clickedDeviceData: any;
   private fullDataSubscription: Subscription;
   clickedDeviceId: any;
 
@@ -96,6 +96,9 @@ export class TempHumDetailComponent implements OnInit, OnDestroy {
       //console.log('Gecklickte Daten: ' + JSON.stringify(this.clickedDeviceData));
     });
 
+    // Bei Initialisierung um Warten auf Intervall zu vermeiden
+    this.sensorDataService.getFullRoomData();
+
     this.route.paramMap.subscribe(params => {
       this.clickedDeviceId = params.get('deviceId');
       this.getStatistic(this.clickedDeviceId);
@@ -128,7 +131,7 @@ export class TempHumDetailComponent implements OnInit, OnDestroy {
         // Chart erst dann zeichnen wenn Werte da sind
         //this.drawTempChart(this.tempStatisticData);
         this.updateTempData(this.tempStatisticData);
-        this.updatehumData(this.humStatisticData);
+        this.updateHumData(this.humStatisticData);
 
 
       });
@@ -141,7 +144,7 @@ export class TempHumDetailComponent implements OnInit, OnDestroy {
     this.tempChartOptions.scales.yAxes[0].ticks.min = Math.min.apply(Math, data);
   }
 
-  updatehumData(data: any[]) {
+  updateHumData(data: any[]) {
     console.log('Chart geupdated!');
     this.humChartData[0].data = data;
     this.humChartOptions.scales.yAxes[0].ticks.max = Math.max.apply(Math, data);

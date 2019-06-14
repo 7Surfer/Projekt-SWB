@@ -2,7 +2,7 @@
   <p>Raumübersicht</p>
   <ul ui-scroll-viewport>
       <li *ngFor="let dataEntry of fullData">
-          <button class="warning-rooms-button" (click)='onRoomItemClick($event, dataEntry)'>{{dataEntry.room}}</button>
+          <button mat-button class="warning-rooms-button" (click)='onRoomItemClick($event, dataEntry)' [routerLink]="['/room-detail', dataEntry.deviceId]">{{dataEntry.room}}</button>
           <span class="description">Temperatur: {{dataEntry.temp}}</span>
           <span class="description">Luftfeuchte: {{dataEntry.hum}}</span>
       </li>

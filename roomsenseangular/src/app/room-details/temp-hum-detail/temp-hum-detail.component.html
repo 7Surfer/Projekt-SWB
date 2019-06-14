@@ -20,7 +20,7 @@
 <!--W.I.P-->
 <mat-icon class="settings"
 [routerLink]="['/roomsettings']"
-> settings 
+> settings
 </mat-icon>
 <!--W.I.P-->
 
@@ -45,7 +45,7 @@
 <!-- <div class=main-chart-div> -->
   <!-- <app-warning></app-warning> -->
   <div class="tempChart-div">
-    <canvas *ngIf="tempStatisticData" class="chart"
+    <canvas *ngIf="clickedDeviceData" class="chart"
       class="tempChart"
       baseChart
       [datasets]="tempChartData"
@@ -58,7 +58,7 @@
     <!-- id="chart" width="10" height="10" -->
   </div>
   <div class="humChart-div">
-    <canvas *ngIf="humStatisticData"  class="chart"
+    <canvas *ngIf="clickedDeviceData"  class="chart"
       class="humChart"
       baseChart
       [datasets]="humChartData"
