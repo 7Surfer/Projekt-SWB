@@ -129,7 +129,7 @@ async function getStatistic(deviceId) {
   const { result: results } = await client
     .database(databaseId)
     .container(containerId)
-    .items.query(`SELECT TOP 100 c.temperature, c.humidity FROM c c WHERE c.deviceId = '${deviceId}' ORDER BY c._ts DESC`,
+    .items.query(`SELECT TOP 100 c.temperature, c.humidity, c._ts FROM c c WHERE c.deviceId = '${deviceId}' ORDER BY c._ts DESC`,
       { enableCrossPartitionQuery: true }) // Cross Partition
     .toArray();
 

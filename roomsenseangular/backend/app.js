@@ -67,7 +67,7 @@ app.get("/api/fulldata", (req, res, next) => {
   let fullData = [];
   let fetchedSensorData;
   let fetchedRoomData;
-  let timestampInSeconds15 = Math.floor(Date.now() / 1000 - 260000); // 30 260000 --> 3 Tage
+  let timestampInSeconds15 = Math.floor(Date.now() / 1000 - 260000); // 30 260000 ~ 3 Tage
   sensorData.getCurrentData(timestampInSeconds15)
     .then(fetchedData => {
       fetchedSensorData = modifyData.getLatestEntries(fetchedData);
@@ -131,13 +131,16 @@ app.get("/api/statistic/:id", (req, res, next)=> {
   let clickedDevice = req.params.id;
   sensorData.getStatistic(clickedDevice).then(statisticData => {
    // console.log('Statistic Data: ' + JSON.stringify(statisticData));
-    let tempStatistic = modifyData.getEvery20Temp(statisticData);
-    let humStatistic = modifyData.getEvery20Hum(statisticData);
+    let tempStatistic = modifyData.getEvery20Temp(statisticData.reverse());
+    let humStatistic = modifyData.getEvery20Hum(statisticData.reverse());
+    let timeStatisticTemp = modifyData.getEvery20Time(statisticData);
+    let timeStatistic = timeStatisticTemp.reverse();
     /* console.log(tempStatistic);
     console.log(humStatistic); */
     res.status(200).json({
       tempStatistic: tempStatistic,
-      humStatistic: humStatistic
+      humStatistic: humStatistic,
+      timeStatistic: timeStatistic
     });
   })
 

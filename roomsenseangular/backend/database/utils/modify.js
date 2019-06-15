@@ -200,9 +200,23 @@ function getEvery20Temp(array) {
     return statHum;
     }
 
+    function getEvery20Time(array) {
+      let arrayLen = array.length;
+      let statTime = [];
+      /* console.log('Array Len: ' + arrayLen); */
+      for(let i = 1; i < arrayLen; i+=20){
+          statTime.push(array[i]._ts);
+          //statHum.push(array[i].humidity);
+      }
+      /* console.log(statTemp);
+      console.log(statHum); */
+      return statTime;
+      }
+
 module.exports = {
   getLatestEntries: getLatestEntries,
   mergeSensorAndRoom: mergeSensorAndRoom,
   getEvery20Hum: getEvery20Hum,
-  getEvery20Temp: getEvery20Temp
+  getEvery20Temp: getEvery20Temp,
+  getEvery20Time: getEvery20Time
 };
