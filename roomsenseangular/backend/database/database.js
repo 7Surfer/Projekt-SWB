@@ -189,12 +189,13 @@ testitem = {
   "_ts": 1560697246
 };
 
+/*
 async function deleteItem(item){
   await client
   .database(databaseId)
   .container(containerIdroom)
   .item(testitem.id).delete(testitem);
-}
+}*/
 
 
 

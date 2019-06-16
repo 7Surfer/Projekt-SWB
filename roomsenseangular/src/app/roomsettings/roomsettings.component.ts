@@ -71,6 +71,6 @@ export class RoomsettingsComponent implements OnInit {
 
   }
   onDelete(){
-    console.log("delet");
+    
   }
 }
