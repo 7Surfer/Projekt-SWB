@@ -70,4 +70,7 @@ export class RoomsettingsComponent implements OnInit {
   onSubmit(){
 
   }
+  onDelete(){
+    console.log("delet");
+  }
 }

@@ -173,13 +173,37 @@ async function insertRoom(item){
     .items.create(item);
 }
 
-/*
- getCurrentData().then(() => {
+testitem = {
+  "id": "1",
+  "deviceId": "Luca",
+  "roomName": "raum",
+  "lowerTempLimit": 12,
+  "upperTempLimit": 13,
+  "lowerHumiLimit": 30,
+  "upperHumiLimit": 35,
+  "message": true,
+  "_rid": "-Rs0AI+o4CUjAAAAAAAAAA==",
+  "_self": "dbs/-Rs0AA==/colls/-Rs0AI+o4CU=/docs/-Rs0AI+o4CUjAAAAAAAAAA==/",
+  "_etag": "\"da009165-0000-0d00-0000-5d06599e0000\"",
+  "_attachments": "attachments/",
+  "_ts": 1560697246
+};
+
+async function deleteItem(item){
+  await client
+  .database(databaseId)
+  .container(containerIdroom)
+  .item(testitem.id).delete(testitem);
+}
+
+
+
+  deleteItem().then(() => {
    exit();
  }).catch((error) => {
    console.log(error);
  })
-*/
+
 
 module.exports.getDeviceIdArray = getDeviceIdArray;
 module.exports.getDeviceIdRoomArray = getDeviceIdRoomArray;

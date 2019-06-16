@@ -50,15 +50,6 @@ export class WarningBoxComponent implements OnInit, OnDestroy {
   }
 
 
-  getSettings() {
-    //Read room Data Settings
-    this.sensorDataService.getRoomSettings();
-    /* this.dataSubscription = this.sensorDataService.getDataUpdateListener()
-      .subscribe((sentData: RoomSettings []) => {
-        this.roomSettings = sentData;
-        this.update();
-      }); */
-  }
   update() {
     let raspberyIds: string[] = [];
 
