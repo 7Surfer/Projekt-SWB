@@ -34,6 +34,11 @@ dataQueries.latestData = {
   ]
 };
 
+dataQueries.getroomSettings = {
+  query:
+  "SELECT c.id, c.deviceId, c.roomName, c.lowerTempLimit, c.upperTempLimit, c.lowerHumiLimit, c.upperHumiLimit, c.message FROM c c ORDER BY c._ts DESC",
+  parameters: []
+}
 
 dataQueries.roomInfo = {
   query:

@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FormGroup, Validators, FormControl, } from '@angular/forms';
 import { SensorDataService } from '../services/sensor-data.service';
 import { Subscription } from 'rxjs';
 import { RoomSettings } from './../models/RoomData.model';
 import { ComponentFactoryResolver } from '@angular/core/src/render3';
-
+import { MatSnackBar } from '@angular/material';
 @Component({
   selector: 'app-roomsettings',
   templateUrl: './roomsettings.component.html',
@@ -23,7 +23,7 @@ export class RoomsettingsComponent implements OnInit {
 
   allDeviceData: RoomSettings [] = [];
   private dataSubscription: Subscription;
-  constructor(private route: ActivatedRoute, public sensorDataService: SensorDataService) { }
+  constructor(private route: ActivatedRoute, public sensorDataService: SensorDataService, public snackbar: MatSnackBar, public router: Router) { }
 
   id: string;
   currentRoom : RoomSettings;
@@ -70,7 +70,26 @@ export class RoomsettingsComponent implements OnInit {
   onSubmit(){
 
   }
+  
   onDelete(){
-    
+    let snackBarRef = this.snackbar.open('Raum ' + this.roomNameControl.value + ' gelöscht', 'close', {duration: 5000});
+    let message : boolean;
+    if (this.messageControl.value)
+      message = true;
+    else
+    message = false;
+
+    //set roomname length to 10 characters
+    var roomname = ""+ this.roomNameControl.value;
+    if(roomname.length<10)
+      for(let i = roomname.length; i<10;i++)
+        roomname = roomname + ' ';
+
+    this.sensorDataService.deleteRoom(this.raspberryControl.value, roomname, this.lowertempControl.value, this.uppertempControl.value, this.lowerhumiControl.value, this.upperhumiControl.value, message, this.currentRoom.id)
+      .subscribe((responseData) => {
+          console.log('Response from Server: ' + responseData.message);
+      })
+
+    this.router.navigateByUrl('/');
   }
 }
