@@ -21,7 +21,7 @@ const routes: Routes = [
   { path: 'floorplan', component: FloorplanComponent },
   { path: 'room-detail', component: TempHumDetailComponent},
   { path: 'warning', component: WarningComponent },
-  { path: 'roomsettings', component: RoomsettingsComponent },
+  { path: 'roomsettings/:deviceId', component: RoomsettingsComponent },
 
 
 

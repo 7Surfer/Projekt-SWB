@@ -107,7 +107,6 @@ app.get("/api/fulldata", (req, res, next) => {
 
 app.get("/api/devices", (req, res, next) => {
   sensorData.getDeviceIdArray().then(fetchedFata => {
-    //console.log(fetchedFata);
     res.status(201).json({
       message: "Data fetched!",
       data: fetchedFata
@@ -117,7 +116,16 @@ app.get("/api/devices", (req, res, next) => {
 
 app.get("/api/roomdevices", (req, res, next) => {
   sensorData.getDeviceIdRoomArray().then(fetchedFata => {
-    //console.log(fetchedFata);
+    res.status(201).json({
+      message: "Data fetched!",
+      data: fetchedFata
+    });
+  });
+});
+
+
+app.get("/api/allrooms", (req, res, next) => {
+  sensorData.getAllRooms().then(fetchedFata => {
     res.status(201).json({
       message: "Data fetched!",
       data: fetchedFata

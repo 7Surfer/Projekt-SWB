@@ -1,3 +1,78 @@
-<p>
-  roomsettings works!
-</p>
+<p class="heading">Raum Einstellungen</p>
+<div class="main">
+
+  <mat-form-field appearance="outline" class="roomName">
+    <mat-label>Raumbezeichnung</mat-label>
+    <input matInput placeholder="Bitte geben Sie eine Raumbezeichnung ein" [formControl]="roomNameControl" maxlength="10" required>
+    <mat-hint align="end">{{roomNameControl.value.length}} / 10</mat-hint>
+    <mat-error *ngIf="roomNameControl.invalid">{{getErrorMessage()}}</mat-error>
+  </mat-form-field>
+
+  <br>
+
+  <mat-form-field appearance="outline" class="roomName">
+    <mat-label>Raspberry</mat-label>
+    <input matInput [formControl]="raspberryControl" required>
+  </mat-form-field>
+
+  <br>
+
+  <mat-expansion-panel class="expTemp">
+      <mat-expansion-panel-header>
+        <mat-panel-title class="temp">Grenzwerte Temperatur</mat-panel-title>
+      </mat-expansion-panel-header>
+      <mat-action-row>
+          <mat-form-field >
+              <input [formControl]="lowertempControl" type="number" matInput  #lowertempplimit maxlength="3" placeholder="Unterer Temperatur Grenzwert">
+              <span matSuffix>°C</span>
+              <mat-hint align="end">{{lowertempplimit.value.length}} / 3</mat-hint>
+            </mat-form-field>
+      </mat-action-row>
+      <mat-action-row>
+          <mat-form-field >
+              <input [formControl]="uppertempControl" type="number" matInput #uptemplimit maxlength="3" placeholder="Oberer Temperatur Grenzwert">
+              <span matSuffix>°C</span>
+              <mat-hint align="end">{{uptemplimit.value.length}} / 3</mat-hint>
+            </mat-form-field>
+      </mat-action-row>
+  </mat-expansion-panel>
+
+  <br>
+
+  <mat-expansion-panel class="expHum">
+      <mat-expansion-panel-header>
+        <mat-panel-title class="hum">Grenzwerte Luftfeuchtigkeit</mat-panel-title>
+      </mat-expansion-panel-header>
+      <mat-action-row>
+          <mat-form-field >
+              <input [formControl]="lowerhumiControl" type="number" matInput #lowerhumilimit maxlength="3" placeholder="Unterer Feuchtigkeit Grenzwert">
+              <span matSuffix>%</span>
+              <mat-hint align="end">{{lowerhumilimit.value.length}} / 3</mat-hint>
+            </mat-form-field>
+      </mat-action-row>
+      <mat-action-row>
+          <mat-form-field >
+              <input [formControl]="upperhumiControl" type="number" matInput #uphumilimit maxlength="3" placeholder="Oberer Feuchtigkeit Grenzwert">
+              <span matSuffix>%</span>
+              <mat-hint align="end">{{uphumilimit.value.length}} / 3</mat-hint>
+            </mat-form-field>
+      </mat-action-row>
+    </mat-expansion-panel>
+
+    <br>
+
+    <mat-checkbox [formControl]="messageControl"> Benachrichtigungen</mat-checkbox>
+  
+    <br>
+
+    <button class="submit" type="submit" (click)="onSubmit()"> Aktualisieren </button>
+    <button class="submit" type="delete"> Löschen </button>
+    <button class="escape" [routerLink]="'/room-detail/'+raspberryControl.value" routerLinkActive="router-link-active"> Abbrechen </button>
+    <br>
+  
+
+
+
+
+
+</div>
