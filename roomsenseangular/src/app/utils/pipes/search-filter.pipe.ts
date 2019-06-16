@@ -1,18 +1,18 @@
 import { PipeTransform, Pipe } from '@angular/core';
 
-@Pipe ({
+@Pipe({
   name: 'searchFilter'
 })
-export class SearchFilterPipe implements PipeTransform{
+export class SearchFilterPipe implements PipeTransform {
 
-  transform(fullData: any[], searchBarInput: string): any [] {
+  transform(fullData: any[], searchBarInput: string): any[] {
+
     if (!fullData || !searchBarInput) {
       return fullData;
     }
-
+    console.log('Full Data in Pipe: ' + JSON.stringify(fullData));
     return fullData.filter(dataEntry =>
-      dataEntry.room.toLowerCase().indexOf(searchBarInput.toLowerCase()) !== -1);
-
+      dataEntry.room !== null && dataEntry.room !== undefined && dataEntry.room.toLowerCase().indexOf(searchBarInput.toLowerCase()) !== -1);
   }
 }
 
