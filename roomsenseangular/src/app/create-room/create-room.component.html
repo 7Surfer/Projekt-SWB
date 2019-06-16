@@ -3,7 +3,8 @@
 <div class="main">
  <mat-form-field appearance="outline" class="roomName">
     <mat-label>Raumbezeichnung</mat-label>
-    <input matInput placeholder="Bitte geben Sie eine Raumbezeichnung ein" [formControl]="roomNameControl" required>
+    <input matInput placeholder="Bitte geben Sie eine Raumbezeichnung ein" [formControl]="roomNameControl" maxlength="10" required>
+    <mat-hint align="end">{{roomNameControl.value.length}} / 10</mat-hint>
     <mat-error *ngIf="roomNameControl.invalid">{{getErrorMessage()}}</mat-error>
   </mat-form-field>
 

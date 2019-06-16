@@ -111,7 +111,14 @@ export class CreateRoomComponent implements OnInit {
       message = true;
     else
     message = false;
-    this.sensorDataService.saveRoom(this.raspberryControl.value, this.roomNameControl.value, this.lowertempControl.value, this.uppertempControl.value, this.lowerhumiControl.value, this.upperhumiControl.value, message, id)
+
+    //set roomname length to 10 characters
+    var roomname = ""+ this.roomNameControl.value;
+    if(roomname.length<10)
+      for(let i = roomname.length; i<10;i++)
+        roomname = roomname + ' ';
+    
+    this.sensorDataService.saveRoom(this.raspberryControl.value, roomname, this.lowertempControl.value, this.uppertempControl.value, this.lowerhumiControl.value, this.upperhumiControl.value, message, id)
       .subscribe((responseData) => {
           //console.log('Response from Server: ' + responseData.message);
       })
@@ -122,7 +129,7 @@ export class CreateRoomComponent implements OnInit {
     if (index !== -1) {
         this.raspberryarr.splice(index, 1);
     }
-
+    
     //clear Input fields
     this.roomNameControl.reset();
     this.raspberryControl.reset();
