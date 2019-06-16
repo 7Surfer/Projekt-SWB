@@ -55,6 +55,14 @@ app.post("/api/delete-room", (req, res, next) => {
   sensorData.deleteItem(dataToStore);
 });
 
+app.post("/api/update-room", (req, res, next) => {
+  const dataToStore = req.body;
+  res.status(201).json({
+    message: "Data added successfully!"
+  });
+  sensorData.updateItem(dataToStore);
+});
+
 let newDataToSend = [];
 app.get("/api/data", (req, res, next) => {
   newDataToSend = [];

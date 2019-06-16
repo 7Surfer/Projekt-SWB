@@ -68,7 +68,26 @@ export class RoomsettingsComponent implements OnInit {
   }
 
   onSubmit(){
+    let snackBarRef = this.snackbar.open('Raum ' + this.roomNameControl.value + ' gespeichert', 'close', {duration: 5000});
+    let message : boolean;
+    if (this.messageControl.value)
+      message = true;
+    else
+    message = false;
 
+    //set roomname length to 10 characters
+    var roomname = ""+ this.roomNameControl.value;
+    if(roomname.length<10)
+      for(let i = roomname.length; i<10;i++)
+        roomname = roomname + ' ';
+
+    this.sensorDataService.updateRoom(this.raspberryControl.value, roomname, this.lowertempControl.value, this.uppertempControl.value, this.lowerhumiControl.value, this.upperhumiControl.value, message, this.currentRoom.id)
+      .subscribe((responseData) => {
+          console.log('Response from Server: ' + responseData.message);
+      })
+
+    //send back to home page
+    this.router.navigateByUrl('/');
   }
   
   onDelete(){
@@ -90,6 +109,7 @@ export class RoomsettingsComponent implements OnInit {
           console.log('Response from Server: ' + responseData.message);
       })
 
+    //send back to home page
     this.router.navigateByUrl('/');
   }
 }

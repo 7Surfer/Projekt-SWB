@@ -183,8 +183,17 @@ async function deleteItem(item){
 }
 
 
+async function updateItem(item){
+  await client
+  .database(databaseId)
+  .container(containerIdroom)
+  .item(item.id, item.id)
+  .replace(item)
+}
+
+
 /*
-  deleteItem().then(() => {
+  updateItem().then(() => {
    exit();
  }).catch((error) => {
    console.log(error);
@@ -198,6 +207,7 @@ module.exports.insertRoom = insertRoom;
 module.exports.getRoomInfo = getRoomInfo;
 module.exports.getAllRooms = getAllRooms;
 module.exports.deleteItem = deleteItem;
+module.exports.updateItem = updateItem;
 //module.exports.getRoomSettings = getRoomSettings;
 module.exports.getStatistic = getStatistic;
 //module.exports.saveRoomData = saveRoomData;

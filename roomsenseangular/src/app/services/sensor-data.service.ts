@@ -130,6 +130,22 @@ export class SensorDataService {
     return this.http.post<{message: string}>('http://localhost:3000/api/delete-room', roomData);
   }
 
+  updateRoom(deviceName: string, roomName: string, lowerTempLimit: number, upperTempLimit: number, lowerHumiLimit: number, upperHumiLimit: number, message: boolean, id: string){
+    const roomData: any = {
+      id: id,
+      deviceId: deviceName,
+      roomName: roomName,
+      lowerTempLimit: lowerTempLimit,
+      upperTempLimit: upperTempLimit,
+      lowerHumiLimit: lowerHumiLimit,
+      upperHumiLimit: upperHumiLimit,
+      message : message
+    };
+
+    //Post roomData to NodeJS
+    return this.http.post<{message: string}>('http://localhost:3000/api/update-room', roomData);
+  }
+
 
   // Raum-Sensor Belegung speichern Yannik
   saveRoomInfo(deviceName: string, roomName: string, lowerLimit: number, upperLimit: number) {
