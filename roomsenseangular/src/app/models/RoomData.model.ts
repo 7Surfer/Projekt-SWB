@@ -7,6 +7,7 @@ export interface IRoomData {
 }
 
 export interface RoomSettings{
+  id: string;
   deviceId: string;
   roomName: string;
   lowerTempLimit: number;

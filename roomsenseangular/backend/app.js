@@ -47,6 +47,14 @@ app.post("/api/create-room", (req, res, next) => {
   sensorData.insertRoom(dataToStore);
 });
 
+app.post("/api/delete-room", (req, res, next) => {
+  const dataToStore = req.body;
+  res.status(201).json({
+    message: "Data added successfully!"
+  });
+  sensorData.deleteItem(dataToStore);
+});
+
 let newDataToSend = [];
 app.get("/api/data", (req, res, next) => {
   newDataToSend = [];

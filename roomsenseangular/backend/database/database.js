@@ -59,7 +59,7 @@ async function getAllRooms() {
   const { result: results } = await client
     .database(databaseId)
     .container(containerIdroom)
-    .items.query(dataQueries.getRoomInfo, { enableCrossPartitionQuery: true })
+    .items.query(dataQueries.getroomSettings, { enableCrossPartitionQuery: true })
     .toArray();
 
     var jsonArray = JSON.stringify(results);
@@ -173,38 +173,23 @@ async function insertRoom(item){
     .items.create(item);
 }
 
-testitem = {
-  "id": "1",
-  "deviceId": "Luca",
-  "roomName": "raum",
-  "lowerTempLimit": 12,
-  "upperTempLimit": 13,
-  "lowerHumiLimit": 30,
-  "upperHumiLimit": 35,
-  "message": true,
-  "_rid": "-Rs0AI+o4CUjAAAAAAAAAA==",
-  "_self": "dbs/-Rs0AA==/colls/-Rs0AI+o4CU=/docs/-Rs0AI+o4CUjAAAAAAAAAA==/",
-  "_etag": "\"da009165-0000-0d00-0000-5d06599e0000\"",
-  "_attachments": "attachments/",
-  "_ts": 1560697246
-};
 
-/*
 async function deleteItem(item){
   await client
   .database(databaseId)
   .container(containerIdroom)
-  .item(testitem.id).delete(testitem);
-}*/
+  .item(item.id, item.id)
+  .delete(item);
+}
 
 
-
+/*
   deleteItem().then(() => {
    exit();
  }).catch((error) => {
    console.log(error);
  })
-
+*/
 
 module.exports.getDeviceIdArray = getDeviceIdArray;
 module.exports.getDeviceIdRoomArray = getDeviceIdRoomArray;
@@ -212,6 +197,7 @@ module.exports.getCurrentData = getCurrentData;
 module.exports.insertRoom = insertRoom;
 module.exports.getRoomInfo = getRoomInfo;
 module.exports.getAllRooms = getAllRooms;
+module.exports.deleteItem = deleteItem;
 //module.exports.getRoomSettings = getRoomSettings;
 module.exports.getStatistic = getStatistic;
 //module.exports.saveRoomData = saveRoomData;
