@@ -47,8 +47,16 @@ namespace DeviceToCloudEventHub
             // adress got from data sheet (https://www.silabs.com/documents/public/data-sheets/Si7021-A20.pdf Page 18)
             // Read temperature.
             command[0] = 0xE3;
-            i2cDevice.WriteRead(command, temperatureData);
 
+            try
+            {
+                i2cDevice.WriteRead(command, temperatureData);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error on I2C device. Check cable connections");
+                Console.WriteLine(e);
+            }
             // Calculate and report the temperature.
             var rawTempReading = temperatureData[0] << 8 | temperatureData[1];
             var tempRatio = rawTempReading / (float)65536;
