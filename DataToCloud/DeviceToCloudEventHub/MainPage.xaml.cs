@@ -49,7 +49,6 @@ namespace DeviceToCloudEventHub
         public class Measurenent
         {
             public string DeviceId { get; set; }
-            //public int Timestamp = (int)DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1)).TotalSeconds;
             public double Temperature { get; set; }
             public double Humidity { get; set; }
 
@@ -77,7 +76,6 @@ namespace DeviceToCloudEventHub
         }
         private async Task Start()
         {
-            //change after testing to default construcktor
             si7021_sensor.Setup_device();
 
             // Start the polling timer.
@@ -94,7 +92,6 @@ namespace DeviceToCloudEventHub
             //Get Data from Sensor
             temperature = si7021_sensor.Get_temperature();
             humidity = si7021_sensor.Get_humidity();
-            //Villeicht ändern auf array übergabe um nur 1 Funktionsaufruf zu haben
 
             //Call function to send data to cloud
             Send_data(temperature, humidity);

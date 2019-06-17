@@ -31,7 +31,7 @@ namespace DeviceToCloudEventHub
             IReadOnlyList<DeviceInformation> devices = await DeviceInformation.FindAllAsync(i2cDeviceSelector);
 
             // create the settings and specify the device adress
-            // device adress from data sheet (https://www.silabs.com/documents/public/data-sheets/Si7021-A20.pdf Page 40)
+            // device adress from data sheet (https://www.silabs.com/documents/public/data-sheets/Si7021-A20.pdf Page 18)
             var si7021_settings = new I2cConnectionSettings(0x40);
             i2cDevice = await I2cDevice.FromIdAsync(devices[0].Id, si7021_settings);
         }
@@ -44,7 +44,7 @@ namespace DeviceToCloudEventHub
             var temperatureData = new byte[2];
 
 
-            // adress got from data sheet (https://www.silabs.com/documents/public/data-sheets/Si7021-A20.pdf Page 40)
+            // adress got from data sheet (https://www.silabs.com/documents/public/data-sheets/Si7021-A20.pdf Page 18)
             // Read temperature.
             command[0] = 0xE3;
             i2cDevice.WriteRead(command, temperatureData);
@@ -69,7 +69,7 @@ namespace DeviceToCloudEventHub
             var humidityData = new byte[2];
 
             // Read humidity.
-            // adress got from data sheet (https://www.silabs.com/documents/public/data-sheets/Si7021-A20.pdf Page 40)
+            // adress got from data sheet (https://www.silabs.com/documents/public/data-sheets/Si7021-A20.pdf Page 18)
             command[0] = 0xE5;
             try
             {
