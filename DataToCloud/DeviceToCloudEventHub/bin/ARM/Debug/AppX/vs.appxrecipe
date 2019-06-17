@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <Machine>DESKTOP-DAQ85SS</Machine>
+    <Machine>LUCA</Machine>
     <WindowsUser>Heinr</WindowsUser>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetOsVersion>10.0</TargetOsVersion>
@@ -19,7 +19,7 @@
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
     <LayoutDir>C:\Users\Heinr\OneDrive\Desktop\SystecTest\ROOMsense\DataToCloud\DeviceToCloudEventHub\bin\ARM\Debug\AppX</LayoutDir>
-    <RegisteredManifestChecksum>4278CDBCFDC866D545AE4A234C9970083A47DD62908613D57A806F33F5F78718</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>43BE30CA23C2A4CF397E850593015FA1DA1E157F7E37DF3F7C788645CB0B9E0B</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>f1905d1f-95be-4b59-9a39-2a6ccad68d99_1.0.0.0_arm__27wbqbf9v9ghe</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>f1905d1f-95be-4b59-9a39-2a6ccad68d99_27wbqbf9v9ghe!App</RegisteredUserModeAppID>
     <RegisteredPackageID>f1905d1f-95be-4b59-9a39-2a6ccad68d99</RegisteredPackageID>
@@ -30,13 +30,13 @@
     <AppXManifest Include="C:\Users\Heinr\OneDrive\Desktop\SystecTest\ROOMsense\DataToCloud\DeviceToCloudEventHub\bin\ARM\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2019-05-30T16:08:16.166</Modified>
+      <Modified>2019-06-17T10:32:55.221</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Heinr\OneDrive\Desktop\SystecTest\ROOMsense\DataToCloud\DeviceToCloudEventHub\bin\ARM\Debug\DeviceToCloudEventHub.exe">
       <PackagePath>entrypoint\DeviceToCloudEventHub.exe</PackagePath>
-      <Modified>2019-05-30T16:08:14.449</Modified>
+      <Modified>2019-06-17T10:32:49.899</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Heinr\.nuget\packages\dotnetty.buffers\0.6.0\lib\netstandard1.3\DotNetty.Buffers.dll">
       <PackagePath>DotNetty.Buffers.dll</PackagePath>
@@ -120,53 +120,53 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Heinr\OneDrive\Desktop\SystecTest\ROOMsense\DataToCloud\DeviceToCloudEventHub\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
-      <Modified>2019-05-30T11:30:37.630</Modified>
+      <Modified>2019-06-16T22:23:56.109</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Heinr\OneDrive\Desktop\SystecTest\ROOMsense\DataToCloud\DeviceToCloudEventHub\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
-      <Modified>2019-05-30T11:30:37.600</Modified>
+      <Modified>2019-06-16T22:23:56.097</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Heinr\OneDrive\Desktop\SystecTest\ROOMsense\DataToCloud\DeviceToCloudEventHub\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2019-05-30T11:30:37.601</Modified>
+      <Modified>2019-06-16T22:23:56.098</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Heinr\OneDrive\Desktop\SystecTest\ROOMsense\DataToCloud\DeviceToCloudEventHub\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2019-05-30T11:30:37.610</Modified>
+      <Modified>2019-06-16T22:23:56.099</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Heinr\OneDrive\Desktop\SystecTest\ROOMsense\DataToCloud\DeviceToCloudEventHub\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2019-05-30T11:30:37.611</Modified>
+      <Modified>2019-06-16T22:23:56.101</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Heinr\OneDrive\Desktop\SystecTest\ROOMsense\DataToCloud\DeviceToCloudEventHub\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2019-05-30T11:30:37.613</Modified>
+      <Modified>2019-06-16T22:23:56.102</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Heinr\OneDrive\Desktop\SystecTest\ROOMsense\DataToCloud\DeviceToCloudEventHub\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2019-05-30T11:30:37.614</Modified>
+      <Modified>2019-06-16T22:23:56.102</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Heinr\OneDrive\Desktop\SystecTest\ROOMsense\DataToCloud\DeviceToCloudEventHub\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2019-05-30T11:30:37.615</Modified>
+      <Modified>2019-06-16T22:23:56.103</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Heinr\OneDrive\Desktop\SystecTest\ROOMsense\DataToCloud\DeviceToCloudEventHub\bin\ARM\Debug\DeviceToCloudEventHub.xr.xml">
       <PackagePath>DeviceToCloudEventHub.xr.xml</PackagePath>
-      <Modified>2019-05-30T11:30:37.887</Modified>
+      <Modified>2019-06-16T22:23:56.378</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Heinr\OneDrive\Desktop\SystecTest\ROOMsense\DataToCloud\DeviceToCloudEventHub\bin\ARM\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2019-05-30T16:08:14.172</Modified>
+      <Modified>2019-06-17T10:32:49.587</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Heinr\OneDrive\Desktop\SystecTest\ROOMsense\DataToCloud\DeviceToCloudEventHub\bin\ARM\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2019-05-30T16:08:14.172</Modified>
+      <Modified>2019-06-17T10:32:49.587</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.17763.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -174,11 +174,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Heinr\OneDrive\Desktop\SystecTest\ROOMsense\DataToCloud\DeviceToCloudEventHub\bin\ARM\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2019-05-30T16:08:14.945</Modified>
+      <Modified>2019-06-17T10:32:52.001</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Heinr\OneDrive\Desktop\SystecTest\ROOMsense\DataToCloud\DeviceToCloudEventHub\bin\ARM\Debug\Core\DeviceToCloudEventHub.exe">
       <PackagePath>DeviceToCloudEventHub.exe</PackagePath>
-      <Modified>2019-05-30T16:08:16.150</Modified>
+      <Modified>2019-06-17T10:32:55.206</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

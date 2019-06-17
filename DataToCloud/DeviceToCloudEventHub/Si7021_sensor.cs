@@ -57,12 +57,10 @@ namespace DeviceToCloudEventHub
                 Console.WriteLine("Error on I2C device. Check cable connections");
                 Console.WriteLine(e);
             }
-            // Calculate and report the temperature.
+            // Calculate the temperature.
             var rawTempReading = temperatureData[0] << 8 | temperatureData[1];
             var tempRatio = rawTempReading / (float)65536;
-            double temperature = (-46.85 + (175.72 * tempRatio)) * 9 / 5 + 32;
-            //calculate from fahrenheit into Celcius
-            temperature = (temperature - 32) / 1.8; //(F - 32) ÷ 1.8
+            double temperature = -46.85 + (175.72 * tempRatio);
             //round to 2 decimal
             temperature = Math.Round(temperature, accuracy);
 
@@ -88,7 +86,7 @@ namespace DeviceToCloudEventHub
                 Console.WriteLine("Error on I2C device. Check cable connections");
                 Console.WriteLine(e);
             }
-            // Calculate and report the humidity.
+            // Calculate the humidity.
             var rawHumidityReading = humidityData[0] << 8 | humidityData[1];
             var humidityRatio = rawHumidityReading / (float)65536;
             double humidity = -6 + (125 * humidityRatio);
