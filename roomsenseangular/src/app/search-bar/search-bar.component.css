@@ -6,9 +6,9 @@
 input[type=text] {
     position: relative; 
     padding: 5px 20px 5px 20px;
-    width: 22vw;
+    width: 10vw;
+    -webkit-width: 10vw;
     height: 30px; 
-    display: inline-block;
       
     border: none;
     font-size: 15px;
@@ -18,8 +18,9 @@ input[type=text] {
     vertical-align: middle;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);  
     
-    margin-left: 33vw;
-    margin-top: -10.5vh;
+    margin-right: 1vw;
+    margin-top: 0vh;
+    float: right;
   }
   
   input[type="text"]::placeholder{

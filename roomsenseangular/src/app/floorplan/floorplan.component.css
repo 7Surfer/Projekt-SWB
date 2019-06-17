@@ -7,25 +7,18 @@
   }
 
   .create{
-    display: inline;
-    width: 300px;
     border: none;
     background-color: white;
     color: #7EBFDB;
+    font-size: 1.6vh;
+    margin-left: 3vw;
     vertical-align: middle;
-}
-
-.fas fa-plus {
-
-    font-size: 15px;
 }
 
 .createText {
     font-family: 'Open Sans', sans-serif;
     margin-left: 10px;
-    font-size: 15px;
-    vertical-align: middle;
-    padding-bottom: 2px;
+    font-size: 1.6vh;
 }
 
   .rooms-button{
@@ -33,7 +26,8 @@
     border: none;
     color: #707070;
     font-family: 'Open Sans', sans-serif;
-    font-size: 20px;
+    font-size: 2.1vh;
+    vertical-align: middle;
   }
 
   .verticalLine{
@@ -41,7 +35,7 @@
     border-left: 3px solid #CBCBCB;
     font-size: 50px;
     vertical-align: middle;
-    margin-left: 20px;
+    margin-left: 15px;
     border-radius: 100px;
   }
 
@@ -51,14 +45,16 @@
     color: #0082BB;
     font-family: 'Open Sans', sans-serif;
     font-size: 90%;
-    margin-left: 2.5vw;
+    margin-left: 2vw;
+    vertical-align: middle;
   }
 
   .icon{
-      margin-left: 6vw;
+      float: right;
+      margin-right: 2.5vw;
       vertical-align: middle;
-      height: 50px;
-      width: 50px;
+      margin-top: 11px;
+      -moz-margin-before: 12px;
       border: none;
       background-color: #EEEEEE;
       font-size: 25px;
@@ -77,11 +73,16 @@
     margin-top: -1vh;
   }
 
+  ul::-webkit-scrollbar{
+    background-color: #0082BB;
+    width: 7px;
+  }
+
   ul li {
     padding: 1vh 0px 1vh 1vw;
     background-color: #EEEEEE;
     margin: 15px 30px 15px 30px;
-    border-radius: 15px;
+    border-radius: 20px;
   }
 
 
@@ -89,20 +90,19 @@
   input[type=text] {
     position: relative;
     padding: 5px 20px 5px 20px;
-    width: 22vw;
-    height: 30px;
-    display: inline-block;
+    width: 20vw;
+    height: 3.5vh;
 
     border: none;
-    font-size: 15px;
+    font-size: 1.6vh;
     border-radius: 25px;
     color: #707070;
     font-family: 'Open Sans', sans-serif;
     vertical-align: middle;
     background-color: #EEEEEE;
 
-    margin-left: 33vw;
-    margin-top: -10.5vh;
+    margin-right: 2.5vw;
+    float: right;
   }
 
   input[type="text"]::placeholder{

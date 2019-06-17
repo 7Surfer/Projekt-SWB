@@ -8,14 +8,14 @@
 
   app-warning-box {
     position: absolute;
-    left: 72.5vw;
+    left: 71vw;
     top: 13vh;
     display: inline;
   }
 
   app-sensor-box {
     position: absolute;
-    left: 72.5vw;
+    left: 71vw;
     top: 56vh;
     display: inline;
   }

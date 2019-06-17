@@ -1,17 +1,23 @@
 <p>Raumübersicht
-    <button mat-button class='add-button' [routerLink]="['/create-room']" routerLinkActive="router-link-active" class="create">
+    <button mat-button [routerLink]="['/create-room']" routerLinkActive="router-link-active" class="create">
         <i class="fas fa-plus"></i>
         <span class="createText">Raum hinzufügen</span>
     </button>
+    <!--   Search Bar -->
+<!-- <input type="text" [(ngModel)]="searchBarInput"> -->
+    <span>
+        <!-- <app-search-bar></app-search-bar> -->
+        <input type="text" [(ngModel)]="searchBarInput" placeholder="Nach Raum suchen...">
+    </span>
 </p>
 
 
 <!--   Search Bar -->
 <!-- <input type="text" [(ngModel)]="searchBarInput"> -->
-<span>
-    <!-- <app-search-bar></app-search-bar> -->
+<!-- <span>
+    <app-search-bar></app-search-bar>
     <input type="text" [(ngModel)]="searchBarInput" placeholder="Nach Raum suchen...">
-</span>
+</span> -->
 
 
 

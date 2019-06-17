@@ -5,31 +5,47 @@
     color: #0082BB;
 }
 
-.goBack{
+.settings{
   font-family: 'Open Sans', sans-serif;
-  display: inline-block;
   border: none;
   background-color: white;
   color: #7EBFDB;
   vertical-align: middle;
-  margin-left: 25vw;
+  margin-left: 3vw;
+  font-size: 15px;
+}
+
+.settingsText {
+  font-family: 'Open Sans', sans-serif;
+  margin-left: 10px;
+  font-size: 15px;
+}
+
+.goBack{
+  font-family: 'Open Sans', sans-serif;
+  border: none;
+  background-color: white;
+  color: #0082BB;
+  vertical-align: middle;
+  font-size: 15px;
+  float: right;
+  margin-right: 1vw;
+  margin-top: 1vh;
 }
 
 .goBackText {
   font-family: 'Open Sans', sans-serif;
   margin-left: 10px;
   font-size: 15px;
-  vertical-align: middle;
-  padding-bottom: 2px;
 }
 
 .kreisTemp{
     position: absolute;
-    width: 120px;
-    height: 120px;
-    -moz-border-radius: 100px;
-    -webkit-border-radius: 100px;
-    border-radius: 100px;
+    width: 7.5vw;
+    height: 7.5vw;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
 
     margin-left: 30px;
     margin-top: 30px;
@@ -38,14 +54,14 @@
 
 .temp {
     display: table-cell;
-    width: 120px;
-    height: 120px;
-    -moz-border-radius: 100px;
-    -webkit-border-radius: 100px;
-    border-radius: 100px;
+    width: 7.5vw;
+    height: 7.5vw;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
     font-family: 'Oswald', sans-serif;
     color: #002B56;
-    font-size: 33px;
+    font-size: 3.5vh;
     text-align: center;
     vertical-align: middle;
     border: none;
@@ -55,30 +71,62 @@
 
 .kreisHum{
     position: absolute;
-    width: 120px;
-    height: 120px;
-    -moz-border-radius: 100px;
-    -webkit-border-radius: 100px;
-    border-radius: 100px;
-    margin-left: 220px;
+    width: 7.5vw;
+    height: 7.5vw;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    margin-left: 15vw;
     margin-top: 30px;
 }
 
 .hum {
     display: table-cell;
-    width: 120px;
-    height: 120px;
-    -moz-border-radius: 100px;
-    -webkit-border-radius: 100px;
-    border-radius: 100px;
+    width: 7.5vw;
+    height: 7.5vw;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
     font-family: 'Oswald', sans-serif;
     color: #002B56;
-    font-size: 33px;
+    font-size: 3.5vh;
     text-align: center;
     vertical-align: middle;
     border: none;
     box-shadow: 1px 2px 2px 1px rgba(0, 0, 0, 0.1);
     background-color: white;
+}
+
+.descriptionTemp {
+  position: relative;
+  display:block;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: 'Oswald', sans-serif;
+  font-size: 2vh;
+  color: #002B56;
+  text-align: center;
+  box-sizing: border-box;
+  padding-top: 2vh;
+  -webkit-padding-before: 2vh;
+  -moz-padding-before: 2vh;
+}
+
+.descriptionHum {
+position: relative;
+display:block;
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+font-family: 'Oswald', sans-serif;
+font-size: 2vh;
+color: #002B56;
+text-align: center;
+box-sizing: border-box;
+padding-top: 2vh;
+  -webkit-padding-before: 2vh;
+  -moz-padding-before: 2vh;
 }
 
 .inRange {
@@ -93,28 +141,61 @@
   border: 8px solid #0082BB;
 }
 
-#descriptionTemp {
-    position: relative;
-    font-family: 'Oswald', sans-serif;
-    font-size: 20px;
-    color: #002B56;
-    text-align: center;
-    vertical-align: middle;
-    box-sizing: border-box;
-    padding-top: 30px;
-    padding-left: 12px;
+.limit {
+  display: inline-block;
+  margin-left: 32vw;
+  margin-top: 4.5vh;
+  font-family: 'Oswald', sans-serif;
+  font-size: 2vh;
+  color: #002B56;
 }
 
-#descriptionHum {
-    position: relative;
-    font-family: 'Oswald', sans-serif;
-    font-size: 20px;
-    color: #002B56;
-    text-align: center;
-    vertical-align: middle;
-    box-sizing: border-box;
-    padding-top: 30px;
-    padding-right: 5px;
+.low {
+  display: inline-block;
+  margin-left: 2vw;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.8vh;
+  color: #002B56;
+}
+
+.lowText{
+  padding-left: 10px;
+  font-weight: lighter;
+}
+
+.high {
+  display: inline-block;
+  margin-left: 2vw;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.8vh;
+  color: #002B56;
+}
+
+.highText{
+  padding-left: 10px;
+  font-weight: lighter;
+}
+
+.updated {
+  display: inline-block;
+  margin-left: 32vw;
+  margin-top: 4.5vh;
+  font-family: 'Oswald', sans-serif;
+  font-size: 2vh;
+  color: #002B56;
+  font-weight: lighter;
+}
+
+.updatedText{
+  padding-left: 10px;
+}
+
+.time{
+  padding-left: 5px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 2vh;
+  color: #002B56;
+  font-weight: lighter;
 }
 
 .tempChart-div {
@@ -166,11 +247,4 @@
 .humChart {
   display: block;
 
-}
-
-.settings{
-  cursor: pointer;
-  display: inline;
-  float: right;     /* Ignore */
-  margin-right: 10px;
 }

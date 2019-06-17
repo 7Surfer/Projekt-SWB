@@ -1,7 +1,7 @@
 .warning {
   background-color: white;
   border: none;
-  width: 24.5vw;
+  width: 26vw;
   height: 37vh;
   border-radius: 25px;
   display: inline-block;
@@ -21,6 +21,9 @@ p {
   color: #0082BB;
   font-family: 'Open Sans', sans-serif;
   font-size: 1.0vw;
+  
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
 }
 
 .description {
@@ -29,7 +32,9 @@ p {
   color: #002B56;
   font-family: 'Open Sans', sans-serif;
   font-size: 0.8vw;
-  margin-left: 2vw;
+  margin-left: 1vw;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
 }
 
 ul {
@@ -43,8 +48,13 @@ ul {
   scrollbar-width: thin;
 }
 
+ul::-webkit-scrollbar{
+  background-color: #0082BB;
+  width: 7px;
+}
+
  ul li {
-  padding: 15px 0px 15px 15px;
+  padding: 10px 0px 10px 10px;
 }
 
 ul li:nth-child(odd) {

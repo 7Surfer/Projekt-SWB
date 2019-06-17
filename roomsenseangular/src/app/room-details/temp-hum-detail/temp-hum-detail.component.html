@@ -1,8 +1,14 @@
 <p *ngIf="clickedDeviceData" class="roomHeading">Werte in {{ clickedDeviceData.room }}
-  <button class='goBack' [routerLink]="['/floorplan']" routerLinkActive="router-link-active">
-    <i class="fas fa-arrow"></i>
-    <span class="goBackText">zurück zur Raumübersicht</span>
+    <button class="settings" [routerLink]="['/roomsettings', clickedDeviceData.deviceId]">
+      <i class="fas fa-cog"></i> 
+    <span class="settingsText">Einstellungen</span>
   </button>
+    <!--W.I.P-->
+  <button class='goBack' [routerLink]="['/floorplan']" routerLinkActive="router-link-active">
+    <i class="fas fa-arrow-circle-left"></i>
+    <span class="goBackText">Raumübersicht</span>
+  </button>
+  <!--W.I.P-->
 </p>
 
 <div
@@ -21,15 +27,8 @@
   >
     {{ clickedDeviceData.temp }}°C
   </button>
-  <span id="descriptionTemp">Temperatur</span>
+  <span class="descriptionTemp">Temperatur</span>
 </div>
-
-<!--W.I.P-->
-<mat-icon class="settings"
-[routerLink]="['/roomsettings', clickedDeviceData.deviceId]"
-> settings
-</mat-icon>
-<!--W.I.P-->
 
 <div
   *ngIf="clickedDeviceData"
@@ -47,8 +46,43 @@
   >
     {{ clickedDeviceData.hum }}%
   </button>
-  <span id="descriptionHum">Luftfeuchtigkeit</span>
+  <span class="descriptionHum">Luftfeuchtigkeit</span>
 </div>
+
+<!--Temperatur Grenzwerte-->
+<div *ngIf="clickedDeviceData">
+    <span class="limit">Temperatur</span>
+    <span class="high">
+        <i class="fas fa-arrow-up"></i>
+        <span class="highText">{{clickedDeviceData.upperTemp}}°C</span>
+    </span>
+    <span class="low">
+        <i class="fas fa-arrow-down"></i>
+        <span class="lowText">{{clickedDeviceData.lowerTemp}}°C</span>
+    </span>
+</div>
+
+<!--Luftfeuchtigkeit Grenzwerte-->
+<div *ngIf="clickedDeviceData">
+  <span class="limit">Luftfeuchtigkeit</span>
+    <span class="high">
+        <i class="fas fa-arrow-up"></i>
+        <span class="highText">{{clickedDeviceData.upperHumi}}%</span>
+    </span>
+    <span class="low">
+        <i class="fas fa-arrow-down"></i>
+        <span class="lowText">{{clickedDeviceData.lowerHumi}}%</span>
+    </span>
+</div>
+
+<!--zuletzt aktualisiert-->
+<div *ngIf="clickedDeviceData">
+    <span class="updated">
+        <i class="fas fa-sync-alt"></i>
+        <span class="updatedText">zuletzt aktualisiert um</span>
+    </span>
+    <span class="time">{{convertedTimes[4]}}</span>
+  </div>
 
 <!-- <div class=main-chart-div> -->
   <!-- <app-warning></app-warning> -->

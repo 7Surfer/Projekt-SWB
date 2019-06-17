@@ -6,6 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-temperature = 21.6;
-
+  temperature = 21.6; 
 }
