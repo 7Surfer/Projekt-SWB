@@ -84,6 +84,15 @@
     <span class="time">{{convertedTimes[4]}}</span>
   </div>
 
+<!--sensor-->
+<div *ngIf="clickedDeviceData">
+  <span class="sensor">
+    <i class="fab fa-raspberry-pi"></i>
+      <span class="sensorText">zugehöriger Sensor:</span>
+  </span>
+  <span class="deviceID">{{clickedDeviceId}}</span>
+</div>
+
 <!-- <div class=main-chart-div> -->
   <!-- <app-warning></app-warning> -->
   <div class="tempChart-div">

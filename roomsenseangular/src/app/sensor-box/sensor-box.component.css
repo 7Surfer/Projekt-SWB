@@ -29,7 +29,16 @@ p {
   color: #002B56;
   font-family: 'Open Sans', sans-serif;
   font-size: 0.8vw;
-  margin-left: 1vw;
+  margin-left: 0.7vw;
+}
+
+.descriptionB {
+  background: none;
+  border: none;
+  color: #002B56;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.8vw;
+  margin-left: 0.7vw;
 }
 
 ul {
@@ -61,7 +70,7 @@ ul li:nth-child(odd) {
     margin-top: 0vh;
     width: 90vw;
     height: 38vh;
-    margin-left: -67vw;
+    margin-left: -66vw;
   }
 
   ul {
@@ -83,7 +92,12 @@ ul li:nth-child(odd) {
 
   .description {
     font-size: 3vw;
-    margin-left: 30px;
+    margin-left: 1vw;
+  }
+
+  .descriptionB {
+    font-size: 3vw;
+    margin-left: 1vw;
   }
 }
 
