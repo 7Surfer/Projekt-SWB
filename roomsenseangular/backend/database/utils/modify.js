@@ -123,6 +123,7 @@ function mergeSensorAndRoom(sensorData, roomData) {
         lowerTemp: roomData[index].lowerTempLimit,
         upperHumi: roomData[index].upperHumiLimit,
         lowerHumi: roomData[index].lowerHumiLimit,
+        message: roomData[index].message,
         _ts: sensorData[q]._ts,
       });
       roomsWithData.push(roomData[index].deviceId);
@@ -138,6 +139,7 @@ function mergeSensorAndRoom(sensorData, roomData) {
         lowerTemp: null,
         upperHumi: null,
         lowerHumi: null,
+        message: null,
         _ts: sensorData[q]._ts,
       });
     }

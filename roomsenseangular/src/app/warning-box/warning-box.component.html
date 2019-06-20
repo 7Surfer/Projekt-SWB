@@ -14,7 +14,7 @@
     <!-- <li *ngIf="dataEntry.hum > dataEntry.upperHumi">
           <button class="warning-rooms-button">{{ dataEntry.room }}</button> -->
     <li *ngIf="dataEntry.hum != null && dataEntry.hum > dataEntry.upperHumi">
-          <button mat-button class="warning-rooms-button" [routerLink]="['/room-detail', dataEntry.deviceId]">{{ dataEntry.deviceId }}</button>
+          <button mat-button class="warning-rooms-button" [routerLink]="['/room-detail', dataEntry.deviceId]">{{ dataEntry.room }}</button>
           <span class="description">Feuchtigkeit zu hoch</span>
     </li>
     <li *ngIf="dataEntry.hum != null && dataEntry.hum < dataEntry.lowerHumi">

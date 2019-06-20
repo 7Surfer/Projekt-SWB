@@ -1,10 +1,10 @@
 <p *ngIf="clickedDeviceData" class="roomHeading">Werte in {{ clickedDeviceData.room }}
-    <button class="settings" [routerLink]="['/roomsettings', clickedDeviceData.deviceId]">
-      <i class="fas fa-cog"></i> 
+    <button mat-button class="settings" [routerLink]="['/roomsettings', clickedDeviceData.deviceId]">
+      <i class="fas fa-cog"></i>
     <span class="settingsText">Einstellungen</span>
   </button>
     <!--W.I.P-->
-  <button class='goBack' [routerLink]="['/floorplan']" routerLinkActive="router-link-active">
+  <button mat-button class='goBack' [routerLink]="['/floorplan']" routerLinkActive="router-link-active">
     <i class="fas fa-arrow-circle-left"></i>
     <span class="goBackText">Raumübersicht</span>
   </button>
