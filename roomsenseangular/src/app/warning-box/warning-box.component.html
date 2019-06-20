@@ -4,7 +4,7 @@
     <ng-container  *ngFor="let dataEntry of fullData">
 
     <li *ngIf="dataEntry.temp != null && dataEntry.temp > dataEntry.upperTemp">
-      <button mat-button class="warning-rooms-button">{{ dataEntry.room }}</button>
+      <button mat-button class="warning-rooms-button" [routerLink]="['/room-detail', dataEntry.deviceId]">{{ dataEntry.room }}</button>
       <span class="description" >Temperatur zu hoch</span>
     </li>
     <li *ngIf="dataEntry.temp != null && dataEntry.temp < dataEntry.lowerTemp">

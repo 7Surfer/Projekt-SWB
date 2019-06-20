@@ -62,16 +62,16 @@
     <br>
 
     <mat-checkbox [formControl]="messageControl"> Benachrichtigungen</mat-checkbox>
-  
+
     <br>
     <br>
 
 
-    <button class="submit" type="submit" (click)="onSubmit()"> Aktualisieren </button>
-    <button class="submit" type="delete" (click)="onDelete()"> Löschen </button>
-    <button class="escape" [routerLink]="'/room-detail/'+raspberryControl.value" routerLinkActive="router-link-active"> Abbrechen </button>
+    <button mat-button class="submit" type="submit" (click)="onSubmit()"> Aktualisieren </button>
+    <button mat-button class="submit" type="delete" (click)="onDelete()"> Löschen </button>
+    <button mat-button class="escape" [routerLink]="'/room-detail/'+raspberryControl.value" routerLinkActive="router-link-active"> Abbrechen </button>
     <br>
-  
+
 
 
 
