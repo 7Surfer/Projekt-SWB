@@ -70,6 +70,6 @@
    
   <br>
   <br>
-  <button class="submit" type="submit" (click)="onSubmit()" [disabled]="roomNameControl.invalid || raspberryControl.invalid"> Speichern </button>
-  <button class="escape" [routerLink]="['/floorplan']" routerLinkActive="router-link-active"> Abbrechen </button>
+  <button  mat-button class="submit" type="submit" (click)="onSubmit()" [disabled]="roomNameControl.invalid || raspberryControl.invalid"> Speichern </button>
+  <button  mat-button class="escape" [routerLink]="['/floorplan']" routerLinkActive="router-link-active"> Abbrechen </button>
 </div>
