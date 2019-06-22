@@ -24,6 +24,14 @@ export class TempHumDetailComponent implements OnInit, OnDestroy {
   private fullDataSubscription: Subscription;
   clickedDeviceId: any;
   convertedTimes: any[];
+  lastUpdated:any;
+  day: any;
+  month: any;
+  year: any;
+  hour: any;
+  minute: any;
+  second: any;
+
 
   // Chart JS
   //chart: any[] = [];
@@ -185,7 +193,13 @@ export class TempHumDetailComponent implements OnInit, OnDestroy {
     timestampArray.forEach(ts => {
       let date = new Date(ts * 1000);
       console.log('KonvertierterTimestamp: ' + date);
-      let time = date.toString().substring(16, 24);
+      let dateString = date.toString();
+      //this.lastUpdated = dateString.substring(16, 24);
+      this.month = dateString.substr(4, 4);
+      this.day = dateString.substring(8, 10);
+      this.year = dateString.substring(11, 15);
+      let time = dateString.substring(16, 24);
+      this.lastUpdated = `${this.day} ${this.month} ${this.year} ${time}`;
       //console.log('Time: ' + time);
       convertedTimestamps.push(time);
 
