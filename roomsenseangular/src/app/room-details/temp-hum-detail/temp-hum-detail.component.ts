@@ -192,14 +192,8 @@ export class TempHumDetailComponent implements OnInit, OnDestroy {
     let convertedTimestamps = [];
     timestampArray.forEach(ts => {
       let date = new Date(ts * 1000);
-      console.log('KonvertierterTimestamp: ' + date);
-      let dateString = date.toString();
-      //this.lastUpdated = dateString.substring(16, 24);
-      this.month = dateString.substr(4, 4);
-      this.day = dateString.substring(8, 10);
-      this.year = dateString.substring(11, 15);
-      let time = dateString.substring(16, 24);
-      this.lastUpdated = `${this.day} ${this.month} ${this.year} ${time}`;
+      let time = date.toLocaleTimeString();
+      this.lastUpdated = date.toLocaleString().toString().replace(',', '');
       //console.log('Time: ' + time);
       convertedTimestamps.push(time);
 
