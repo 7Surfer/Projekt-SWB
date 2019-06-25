@@ -134,11 +134,16 @@ export class TempHumDetailComponent implements OnInit, OnDestroy {
     this.fullDataSubscription = this.sensorDataService.getFullDataUpdateListener().subscribe((updatedFullData: any[]) => {
       // console.log('Neuer Log im Sensor Box Component: ' + JSON.stringify(updatedFullData));
       this.fullData = updatedFullData;
+      //console.log("Full data detail: " + JSON.stringify(this.fullData))
+
       // console.log('Updated full data: ' + updatedFullData);
       // console.log('Param: ' + this.clickedDeviceId);
       let index = this.getIndexOfSelectedDevice(updatedFullData, this.clickedDeviceId);
       // console.log('Gefundender Index: ' + index);
       this.clickedDeviceData = updatedFullData[index];
+      //console.log("Clicked Device Data: " + JSON.stringify(this.clickedDeviceData));
+      let date = new Date(this.clickedDeviceData._ts * 1000);
+      this.lastUpdated = date.toLocaleString().toString().replace(',', '');
       //console.log('Gecklickte Daten: ' + JSON.stringify(this.clickedDeviceData));
     });
 
@@ -193,8 +198,8 @@ export class TempHumDetailComponent implements OnInit, OnDestroy {
     timestampArray.forEach(ts => {
       let date = new Date(ts * 1000);
       let time = date.toLocaleTimeString();
-      this.lastUpdated = date.toLocaleString().toString().replace(',', '');
-      //console.log('Time: ' + time);
+      //this.lastUpdated = date.toLocaleString().toString().replace(',', '');
+      console.log('Time: ' + time);
       convertedTimestamps.push(time);
 
     });
