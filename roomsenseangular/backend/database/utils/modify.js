@@ -41,10 +41,9 @@ let roomDummy = [
   }
 ];
 
-//getLatestEntries(array);
+
 
 function getLatestEntries(a) {
-  //let dataToDisplay = JSON.parse('[' + a + ']');
   let dataToDisplay = a;
   let nameArray = [];
   let nameCount = dataToDisplay.length;
@@ -52,36 +51,26 @@ function getLatestEntries(a) {
     nameArray.push(dataToDisplay[i].deviceId);
   }
 
-  //console.log('Name Array: ' + nameArray);
-  let distinctNameArray = [...new Set(nameArray)];
-  //console.log('Distinct Names: ' + distinctNameArray);
-  let distLen = distinctNameArray.length;
 
+  let distinctNameArray = [...new Set(nameArray)];
+  let distLen = distinctNameArray.length;
   let distinctIndexes = [];
   for (let i = 0; i < distLen; i++) {
     distinctIndexes.push(nameArray.indexOf(distinctNameArray[i]));
   }
-  //console.log('Distinct Indexes: ' + distinctIndexes);
 
   let newDataArray = [];
-
   let distInLen = distinctIndexes.length;
 
   for (let i = 0; i < distInLen; i++) {
     newDataArray.push(a[distinctIndexes[i]]); //a[disinctIndexes[i]]
   }
 
-  //console.log('New Data Array: ' + newDataArray);
+
   return newDataArray;
 }
 
 function mergeSensorAndRoom(sensorData, roomData) {
-  // sensorData und roomData übergeben
-  /* sensorData = JSON.stringify(sensorData);
-  roomData = JSON.stringify(roomData); */
-
-  /* console.log('Sensor Data: ' + sensorData);
-  console.log('\nRoom Data: ' + roomData); */
 
   //Deklarationen
   let dataLen = sensorData.length;
@@ -93,23 +82,18 @@ function mergeSensorAndRoom(sensorData, roomData) {
   let roomsWithData = [];
   let roomsWithoutData = [];
 
-  //console.log('Len: ' + roomsLen);
-
-
   //Raumnamen Array
   for (let s = 0; s < roomsLen; s++) {
     roomNames.push(roomData[s].deviceId);
   }
-  //console.log('Room Names Array: ' + roomNames);
 
   //Daten deviceId Array
   for (let r = 0; r < dataLen; r++) {
     dataNames.push(sensorData[r].deviceId);
   }
-  //console.log('Daten names: ' + dataNames);
 
   for (let q = 0; q < dataLen; q++) {
-    // raumeLen
+
     let index = roomNames.indexOf(dataNames[q]); // Index des Raumes zu dem Daten an Stelle q gehören
 
     //let index = datenNames.indexOf(raumeNames[q]) //Index im Daten Array für aktuellen Raum, -1 wenn für Raum keine Daten vorliegen
@@ -129,7 +113,7 @@ function mergeSensorAndRoom(sensorData, roomData) {
       roomsWithData.push(roomData[index].deviceId);
     } else {
       //Raum nicht gespeichert
-      //console.log('Daten names q: ' + datenNames[q]);
+
       newData.push({
         deviceId: dataNames[q],
         room: null,
@@ -167,51 +151,42 @@ for (let z = 0; z < roomsLen; z++) {
   }
 }
 
-//console.log("\n\n\nNew Data: " + JSON.stringify(newData));
-
 return newData;
 }
-
-
-//mergeSensorAndRoom(sensorDummy, roomDummy);
 
 
 function getEvery20Temp(array) {
   let arrayLen = array.length;
   let statTemp = [];
-  /* console.log('Array Len: ' + arrayLen); */
+
   for(let i = 1; i < arrayLen; i+=20){
       statTemp.push(array[i].temperature);
       //statHum.push(array[i].humidity);
   }
-  /* console.log(statTemp);
-  console.log(statHum); */
+
   return statTemp;
   }
 
   function getEvery20Hum(array) {
     let arrayLen = array.length;
     let statHum = [];
-    /* console.log('Array Len: ' + arrayLen); */
+
     for(let i = 1; i < arrayLen; i+=20){
         statHum.push(array[i].humidity);
         //statHum.push(array[i].humidity);
     }
-    /* console.log(statTemp);
-    console.log(statHum); */
     return statHum;
     }
 
     function getEvery20Time(array) {
       let arrayLen = array.length;
       let statTime = [];
-      /* console.log('Array Len: ' + arrayLen); */
+
       for(let i = 1; i < arrayLen; i+=20){
           statTime.push(array[i]._ts);
           //statHum.push(array[i].humidity);
       }
-      /* console.log(statTemp);
-      console.log(statHum); */
+
       return statTime;
       }
 

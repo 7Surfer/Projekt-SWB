@@ -42,7 +42,7 @@ const modifyData = require('./modify');
 
 
   // Raum Info
-  sensorData.getRoomInfo()
+  /* sensorData.getRoomInfo()
   .then(result => {
     console.log(chalk.green('Test Output Results: ') + JSON.stringify(result));
     let modifiedRoom = modifyData.getLatestEntries(result);
@@ -50,6 +50,6 @@ const modifyData = require('./modify');
   })
   .catch(error => {
     console.log(error);
-  });
+  }); */
 
 

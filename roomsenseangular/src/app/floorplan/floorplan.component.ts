@@ -32,11 +32,6 @@ export class FloorplanComponent implements OnInit {
   ]
 
   ngOnInit() {
-    //this.getFullRoomData(); // Direkt am Anfang einmal aufrufen, dann im Intervall
-    /* setInterval(() => {
-      console.log('Neue Daten empfangen!');
-      this.getFullRoomData();
-    }, 5000); */
 
     // Subject subscriben damit neueste Änderungen empfangen werden
     this.fullDataSubscription = this.sensorDataService.getFullDataUpdateListener().subscribe((updatedFullData: any[]) => {
@@ -49,15 +44,10 @@ export class FloorplanComponent implements OnInit {
 
   }
 
-  // Funktioniert
   /* getFullRoomData(): void {
     this.sensorDataService.getFullRoomData()
       .subscribe(fetchedFullData => {
         this.fullData = fetchedFullData.fullData;
-        // console.log('Sensor Data: ' + fetchedFullData);
-        // console.log('Fetched Full Data: ' + JSON.stringify(this.fullData));
-        console.log(this.fullData[0].room);
-        console.log(JSON.stringify(this.fullData));
       });
   } */
 

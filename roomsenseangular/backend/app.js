@@ -94,20 +94,12 @@ app.get("/api/fulldata", (req, res, next) => {
 
     sensorData.getRoomInfo()
     .then(fetchedRoom => {
-      //console.log('IsArray: ' + Array.isArray(fetchedRoom))
-      //console.log(chalk.green('RoomData: ') + fetchedRoom);
-
 
       // Nur neueste Rauminfo für Sensoren
       let latestRoomData = modifyData.getLatestEntries(fetchedRoom);
-      fullData = modifyData.mergeSensorAndRoom(fetchedSensorData, latestRoomData) // war fetchedRoom
-      //console.log('Full Data Logged: ' + JSON.stringify(fullData));
+      fullData = modifyData.mergeSensorAndRoom(fetchedSensorData, latestRoomData);
       console.log('Query ausgeführt!' + Date.now()/1000);
       res.status(201).json(
-        /* {
-          sensorData: fetchedSensorData,
-          roomData: fetchedRoom
-        } */
         {
           fullData: fullData,
         }
@@ -154,13 +146,10 @@ app.get("/api/allrooms", (req, res, next) => {
 app.get("/api/statistic/:id", (req, res, next)=> {
   let clickedDevice = req.params.id;
   sensorData.getStatistic(clickedDevice).then(statisticData => {
-   // console.log('Statistic Data: ' + JSON.stringify(statisticData));
     let tempStatistic = modifyData.getEvery20Temp(statisticData.reverse());
     let humStatistic = modifyData.getEvery20Hum(statisticData.reverse());
     let timeStatisticTemp = modifyData.getEvery20Time(statisticData);
     let timeStatistic = timeStatisticTemp.reverse();
-    /* console.log(tempStatistic);
-    console.log(humStatistic); */
     res.status(200).json({
       tempStatistic: tempStatistic,
       humStatistic: humStatistic,
@@ -170,18 +159,5 @@ app.get("/api/statistic/:id", (req, res, next)=> {
 
 });
 
-
-
-// app.get('/api/data', (req, res, next) => {
-//   sensorData.getCurrentData().then((fetchedData) => {
-//     console.log('\nFetched Data Parsed: ' + fetchedData);
-//     res.status(201).send({
-//       message: 'Data fetched successfully!',
-//       data: fetchedData
-//     });
-//   }).catch((err) => {
-//     console.log(err);
-//   });
-// });
 
 module.exports = app;

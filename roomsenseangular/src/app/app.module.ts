@@ -1,7 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -28,13 +26,12 @@ import {
         MatCheckboxModule,
         MatCardModule,
         MatSnackBarModule,} from '@angular/material';
-import { DataListTestComponent } from './data-list-test/data-list-test.component';
+
 import { SensorDataService } from './services/sensor-data.service';
 import { MainPageComponent } from './display-components/main-page/main-page.component';
 import { CreateRoomComponent } from './create-room/create-room.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { FloorplanComponent } from './floorplan/floorplan.component';
-import { CreateRoomYannikComponent } from './create-room-yannik/create-room-yannik.component';
 import { WarningComponent } from './room-details/warning/warning.component';
 import { SearchFilterPipe } from './utils/pipes/search-filter.pipe';
 import { ChartsModule } from 'ng2-charts';
@@ -49,12 +46,10 @@ import { RoomsettingsComponent } from './roomsettings/roomsettings.component';
     SensorBoxComponent,
     MainBoxComponent,
     TempHumDetailComponent,
-    DataListTestComponent,
     MainPageComponent,
     CreateRoomComponent,
     PageNotFoundComponent,
     FloorplanComponent,
-    CreateRoomYannikComponent,
     WarningComponent,
     SearchFilterPipe,
     RoomsettingsComponent,

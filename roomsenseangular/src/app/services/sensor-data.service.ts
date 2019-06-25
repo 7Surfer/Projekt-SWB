@@ -22,16 +22,6 @@ export class SensorDataService {
   fullData: any[] = [];
   clickedRoom: string;
 
-  /* getData() {
-    this.http.get<{message: string, data: any}>('http://localhost:3000/api/data')
-      .subscribe((sensorData) => {
-        this.data = sensorData.data;
-        this.dataUpdated.next([...this.data]);
-        this.dataUpdated.next(this.data); Damit data im Service nicht verändert werden kann
-      });
-  } */
-
-  // Wieder einkommentieren
   /* getData(): Observable<SensorData[]> {
     return this.http.get<SensorData[]>('http://localhost:3000/api/data');
   } */
@@ -59,22 +49,6 @@ export class SensorDataService {
       this.dataUpdated.next([...this.data]);
     });
   }
-
-
-    /*
-  getRoomSettings(){
-    this.http.get<{message: string, data: any}>('http://localhost:3000/api/roomSettings')
-    .subscribe((sensordata) => {
-      this.roomData = sensordata.data;
-      console.log(this.roomData);
-    });
-  }*/
-  //end
-
-
-  /*  getFullRoomData(): Observable<{fullData: any[]}> {
-    return this.http.get<{fullData: any[]}>('http://localhost:3000/api/fulldata'); // war any[]  <{sensorData: any[], roomData: any[]}>
-  } */
 
   getFullRoomData() {
     this.http.get<{fullData: any[]}>('http://localhost:3000/api/fulldata') // war any[]  <{sensorData: any[], roomData: any[]}>
@@ -155,9 +129,6 @@ export class SensorDataService {
                                 upperLimit: upperLimit,
                                 timestamp: Math.floor((Date.now() / 1000) - 7)};
 
-    // Später ///////////////////////////////////////////////////////////////////
-    //this.dataUpdated.next([... this.fullData]);
-    /////////////////////////////////////////////////////////////////////////////
     return this.http.post<{message: string}>('http://localhost:3000/api/create-room-yannik', roomData);
 
   }

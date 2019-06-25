@@ -78,42 +78,10 @@ async function getCurrentData(timestamp) {
     .items.query(`SELECT c.deviceId, c.temperature, c.humidity , c._ts FROM c c WHERE c._ts >  ${timestamp} ORDER BY c._ts DESC`)
     .toArray();
 
-  //console.log(results);
-
   newDataArray.length = 0;
-  /* for (var queryResult of results) {
-    var resultString = JSON.stringify(queryResult);
-    newDataArray.push(resultString);
-  } */
-
-
-  //auskommentiert
-  /* for(let i = 0; i < results.length; i++) {
-    var resultString = JSON.stringify(results[i]);
-    newDataArray[i] = resultString;
-  } */
   newDataArray = results;
   return newDataArray;
 }
-
-// Daten speichern Yannik
-/* async function saveRoomData(itemBody) {
-  try {
-      // read the item to see if it exists
-      const { item } = await client.database(databaseId).container(containerId2).item(itemBody.id).read();
-      console.log(`Item with family id ${itemBody.id} already exists\n`);
-  }
-  catch (error) {
-     // create the family item if it does not exist
-     if (error.code === HttpStatusCodes.NOTFOUND) {
-         const { item } = await client.database(databaseId).container(containerId).items.create(itemBody);
-         console.log(`Created family item with id:\n${itemBody.id}\n`);
-     } else {
-         throw error;
-     }
-  }
-}; */
-
 
 async function getRoomInfo() {
   const { result: results } = await client
@@ -122,19 +90,7 @@ async function getRoomInfo() {
     .items.query(dataQueries.roomInfo, { enableCrossPartitionQuery: true }) // Cross Partition
     .toArray();
 
-
-    //console.log('Room Results: ' + JSON.stringify(results));
-
     return results;
-  /* var jsonArray = JSON.stringify(results);
-  var idArray = JSON.parse(jsonArray); */
-
-  /* lastIdArray = [];
-  for (var i = 0; i < idArray.length; i++) {
-    lastIdArray.push(idArray[i].deviceId);
-    lastIdArray[i] = "'" + lastIdArray[i] + "'";
-  }
-  return lastIdArray; */
 }
 
 // Statistiken
@@ -145,16 +101,9 @@ async function getStatistic(deviceId) {
     .items.query(`SELECT TOP 100 c.temperature, c.humidity, c._ts FROM c c WHERE c.deviceId = '${deviceId}' ORDER BY c._ts DESC`,
       { enableCrossPartitionQuery: true }) // Cross Partition
     .toArray();
-
-
-    //console.log('Room Results: ' + JSON.stringify(results));
     let statisticArray = results;
     return statisticArray;
 }
-
-
-
-
 
 function exit(message) {
   console.log(message);
@@ -191,14 +140,6 @@ async function updateItem(item){
   .replace(item)
 }
 
-
-/*
-  updateItem().then(() => {
-   exit();
- }).catch((error) => {
-   console.log(error);
- })
-*/
 
 module.exports.getDeviceIdArray = getDeviceIdArray;
 module.exports.getDeviceIdRoomArray = getDeviceIdRoomArray;

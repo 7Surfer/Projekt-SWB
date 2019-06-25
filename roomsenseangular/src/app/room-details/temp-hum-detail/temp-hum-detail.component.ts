@@ -34,7 +34,6 @@ export class TempHumDetailComponent implements OnInit, OnDestroy {
 
 
   // Chart JS
-  //chart: any[] = [];
   minValueFromStatistics: any;
   maxValueFromStatistics: any;
 
@@ -52,11 +51,6 @@ export class TempHumDetailComponent implements OnInit, OnDestroy {
           max: this.minValueFromStatistics,
           min: this.maxValueFromStatistics,
         }
-        /* ticks: {
-          beginAtZero: false,
-          max: 35,
-          min: 0,
-        }  */
       }],
       xAxes: [{
           gridLines: {
@@ -132,19 +126,12 @@ export class TempHumDetailComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
 
     this.fullDataSubscription = this.sensorDataService.getFullDataUpdateListener().subscribe((updatedFullData: any[]) => {
-      // console.log('Neuer Log im Sensor Box Component: ' + JSON.stringify(updatedFullData));
       this.fullData = updatedFullData;
-      //console.log("Full data detail: " + JSON.stringify(this.fullData))
 
-      // console.log('Updated full data: ' + updatedFullData);
-      // console.log('Param: ' + this.clickedDeviceId);
       let index = this.getIndexOfSelectedDevice(updatedFullData, this.clickedDeviceId);
-      // console.log('Gefundender Index: ' + index);
       this.clickedDeviceData = updatedFullData[index];
-      //console.log("Clicked Device Data: " + JSON.stringify(this.clickedDeviceData));
       let date = new Date(this.clickedDeviceData._ts * 1000);
       this.lastUpdated = date.toLocaleString().toString().replace(',', '');
-      //console.log('Gecklickte Daten: ' + JSON.stringify(this.clickedDeviceData));
     });
 
     // Bei Initialisierung um Warten auf Intervall zu vermeiden
@@ -166,31 +153,23 @@ export class TempHumDetailComponent implements OnInit, OnDestroy {
     for(let i = 0; i < array.length; i++) {
       nameArray.push(array[i].deviceId);
     }
-    // console.log('Name Array: ' + nameArray);
     return nameArray.indexOf(deviceId);
   }
 
 
   // Statistiken Methode
   getStatistic(deviceId: string) {
-    //console.log('Überegebene Device Id: ' + deviceId);
     this.sensorDataService.getStatisticForClickedDevice(deviceId)
       .subscribe(statisticDataServer => {
-        console.log('Response: ' + JSON.stringify(statisticDataServer));
         this.tempStatisticData = statisticDataServer.tempStatistic;
         this.humStatisticData = statisticDataServer.humStatistic;
         this.timeStatisticData = statisticDataServer.timeStatistic;
         this.convertedTimes = this.convertTimestamps(this.timeStatisticData);
-        console.log('ConvertedTimes: ' + this.convertedTimes);
-        console.log('Timestamps: ' + JSON.stringify(this.timeStatisticData));
+        // console.log('Timestamps: ' + JSON.stringify(this.timeStatisticData));
         // Chart erst dann zeichnen wenn Werte da sind
-        //this.drawTempChart(this.tempStatisticData);
         this.updateTempData(this.tempStatisticData);
-        console.log('Hum Statistics Data: ' + this.humStatisticData);
         this.updateHumData(this.humStatisticData);
-
-
-      });
+     });
   }
 
   convertTimestamps(timestampArray) {
@@ -198,17 +177,14 @@ export class TempHumDetailComponent implements OnInit, OnDestroy {
     timestampArray.forEach(ts => {
       let date = new Date(ts * 1000);
       let time = date.toLocaleTimeString();
-      //this.lastUpdated = date.toLocaleString().toString().replace(',', '');
-      console.log('Time: ' + time);
       convertedTimestamps.push(time);
 
     });
-    console.log('Time Array: ' + convertedTimestamps);
     return convertedTimestamps;
   }
 
   updateTempData(data: any[]) {
-    console.log('Chart geupdated!');
+    //console.log('Chart updated!');
     this.tempChartData[0].data = data;
     this.tempChartOptions.scales.yAxes[0].ticks.max = (Math.max.apply(Math, data)) + 1.0;
     this.tempChartOptions.scales.yAxes[0].ticks.min = (Math.min.apply(Math, data)) - 1.0;
@@ -216,7 +192,7 @@ export class TempHumDetailComponent implements OnInit, OnDestroy {
   }
 
   updateHumData(data: any[]) {
-    console.log('Chart geupdated!');
+    //console.log('Chart updated!');
     this.humChartData[0].data = data;
     this.humChartOptions.scales.yAxes[0].ticks.max = (Math.max.apply(Math, data)) + 5.0;
     this.humChartOptions.scales.yAxes[0].ticks.min = (Math.min.apply(Math, data)) - 5.0;
@@ -224,13 +200,8 @@ export class TempHumDetailComponent implements OnInit, OnDestroy {
 
   }
 
-  /* drawTempChart(tempData) {
-    this.chart = new Chart('canvas', {
-      type: line
 
-    }); */
-
-    ngOnDestroy():void {
+    ngOnDestroy(): void {
       this.fullDataSubscription.unsubscribe();
     }
 

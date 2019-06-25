@@ -33,9 +33,7 @@ export class SensorBoxComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.fullDataSubscription = this.sensorDataService.getFullDataUpdateListener().subscribe((updatedFullData: any[]) => {
-      // console.log('Neuer Log im Sensor Box Component: ' + JSON.stringify(updatedFullData));
       this.fullData = updatedFullData;
-      //console.log('Updated full data: ' + updatedFullData);
     });
 
 
@@ -47,18 +45,6 @@ export class SensorBoxComponent implements OnInit, OnDestroy {
       this.sensorDataService.getFullRoomData();
     }, 5000);
     // Intervall starten wichtig ////////////////////////////////////////////////////////////
-
-
-
-    // let stringifiedData = JSON.stringify(updatedFullData);
-    /* let index = updatedFullData.indexOf('yannik-rpi3');
-    console.log('index: ' + index);
-    console.log(updatedFullData[0].deviceId); */
-    /*  let index = this.getIndexOfSelectedDevice(updatedFullData , 'yannik-rpi3');
-     console.log('Gefundender Index: ' + index);
-     this.clickedDeviceData = updatedFullData[index];
-     console.log('Gecklickte Daten: ' + JSON.stringify(this.clickedDeviceData)); */
-    // });
 
   }
 
