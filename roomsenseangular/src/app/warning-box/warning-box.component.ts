@@ -63,7 +63,7 @@ export class WarningBoxComponent implements OnInit, OnDestroy {
   }
 
   uppertemp(entry){
-    if(entry.temp != null && entry.temp > entry.upperTemp){
+    if(entry.temp != null && entry.upperTemp!= null && entry.temp > entry.upperTemp){
       for (let entry1 of this.message)
         if(entry.message && entry1.room == entry.room && !entry1.upperTemp){
           entry1.upperTemp = true;
@@ -74,7 +74,7 @@ export class WarningBoxComponent implements OnInit, OnDestroy {
     return false;
   }
   lowertemp(entry){
-    if(entry.temp != null && entry.temp < entry.lowerTemp){
+    if(entry.temp != null && entry.lowerTemp!= null && entry.temp < entry.lowerTemp){
       for (let entry1 of this.message)
         if(entry.message && entry1.room == entry.room && !entry1.lowerTemp){
           entry1.lowerTemp = true;
@@ -83,11 +83,10 @@ export class WarningBoxComponent implements OnInit, OnDestroy {
       return true;
     }
     return false;
-    
   }
 
   upperhumi(entry){
-    if(entry.hum != null && entry.hum > entry.upperHumi){
+    if(entry.hum != null && entry.upperHumi != null && entry.hum > entry.upperHumi){
       for (let entry1 of this.message)
         if(entry.message && entry1.room == entry.room && !entry1.upperhumi){
           entry1.upperhumi = true;
@@ -100,7 +99,7 @@ export class WarningBoxComponent implements OnInit, OnDestroy {
   }
   lowerhumi(entry){
     this.reset_message(entry);
-    if(entry.hum != null && entry.hum < entry.lowerHumi){
+    if(entry.hum != null && entry.lowerHumi != null && entry.hum < entry.lowerHumi){
       for (let entry1 of this.message)
         if(entry.message && entry1.room == entry.room && !entry1.lowerhumi){
           entry1.lowerhumi = true;
