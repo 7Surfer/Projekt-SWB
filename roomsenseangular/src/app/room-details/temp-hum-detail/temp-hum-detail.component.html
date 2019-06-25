@@ -35,8 +35,8 @@
   class="kreisHum"
   [ngClass]="{
     inRange: clickedDeviceData.hum >= clickedDeviceData.lowerHumi && clickedDeviceData.hum <= clickedDeviceData.upperHumi,
-    outRangeHigh: clickedDeviceData.hum > clickedDeviceData.lowerHumi,
-    outRangeLow: clickedDeviceData.hum < clickedDeviceData.upperHumi
+    outRangeHigh: clickedDeviceData.hum > clickedDeviceData.upperHumi,
+    outRangeLow: clickedDeviceData.hum < clickedDeviceData.lowerHumi
   }"
 >
   <button *ngIf="clickedDeviceData"
