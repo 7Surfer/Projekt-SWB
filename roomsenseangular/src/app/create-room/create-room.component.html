@@ -28,16 +28,14 @@
     </mat-expansion-panel-header>
     <mat-action-row>
         <mat-form-field >
-            <input [formControl]="lowertempControl" type="number" matInput  #lowertempplimit maxlength="3" placeholder="Unterer Temperatur Grenzwert">
+            <input [formControl]="lowertempControl" type="number" matInput  #lowertempplimit placeholder="Unterer Temperatur Grenzwert">
             <span matSuffix>°C</span>
-            <mat-hint align="end">{{lowertempplimit.value.length}} / 3</mat-hint>
           </mat-form-field>
     </mat-action-row>
     <mat-action-row>
         <mat-form-field >
-            <input [formControl]="uppertempControl" type="number" matInput #uptemplimit maxlength="3" placeholder="Oberer Temperatur Grenzwert">
+            <input [formControl]="uppertempControl" type="number" matInput #uptemplimit placeholder="Oberer Temperatur Grenzwert">
             <span matSuffix>°C</span>
-            <mat-hint align="end">{{uptemplimit.value.length}} / 3</mat-hint>
           </mat-form-field>
     </mat-action-row>
   </mat-expansion-panel>
@@ -49,16 +47,14 @@
       </mat-expansion-panel-header>
       <mat-action-row>
           <mat-form-field >
-              <input [formControl]="lowerhumiControl" type="number" matInput #lowerhumilimit maxlength="3" placeholder="Unterer Feuchtigkeit Grenzwert">
+              <input [formControl]="lowerhumiControl" type="number" matInput #lowerhumilimit placeholder="Unterer Feuchtigkeit Grenzwert">
               <span matSuffix>%</span>
-              <mat-hint align="end">{{lowerhumilimit.value.length}} / 3</mat-hint>
             </mat-form-field>
       </mat-action-row>
       <mat-action-row>
           <mat-form-field >
-              <input [formControl]="upperhumiControl" type="number" matInput #uphumilimit maxlength="3" placeholder="Oberer Feuchtigkeit Grenzwert">
+              <input [formControl]="upperhumiControl" type="number" matInput #uphumilimit placeholder="Oberer Feuchtigkeit Grenzwert">
               <span matSuffix>%</span>
-              <mat-hint align="end">{{uphumilimit.value.length}} / 3</mat-hint>
             </mat-form-field>
       </mat-action-row>
     </mat-expansion-panel>
