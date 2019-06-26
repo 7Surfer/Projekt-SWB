@@ -114,8 +114,8 @@ export class CreateRoomComponent implements OnInit {
 
     if(uppertemp < lowertemp)
     {
-      lowertemp = this.upperhumiControl.value;
-      upperhumi = this.lowertempControl.value;
+      lowertemp = this.uppertempControl.value;
+      uppertemp = this.lowertempControl.value;
     }
     if(upperhumi < lowerhumi)
     {
