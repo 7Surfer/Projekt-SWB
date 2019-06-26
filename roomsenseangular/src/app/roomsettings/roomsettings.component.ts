@@ -70,8 +70,8 @@ export class RoomsettingsComponent implements OnInit {
   onSubmit(){
     let snackBarRef = this.snackbar.open('Raum ' + this.roomNameControl.value + ' gespeichert', 'close', {duration: 5000});
     let message : boolean;
-    let uppertemp = this.lowertempControl.value;
-    let lowertemp = this.uppertempControl.value;
+    let uppertemp = this.uppertempControl.value;
+    let lowertemp = this.lowertempControl.value;
     let upperhumi = this.upperhumiControl.value;
     let lowerhumi  = this.lowerhumiControl.value;
 

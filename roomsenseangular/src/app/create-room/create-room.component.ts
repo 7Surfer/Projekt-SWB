@@ -107,8 +107,8 @@ export class CreateRoomComponent implements OnInit {
     let message : boolean;
     let id = "" + Math.floor((Date.now() / 1000) - 7);
 
-    let uppertemp = this.lowertempControl.value;
-    let lowertemp = this.uppertempControl.value;
+    let uppertemp = this.uppertempControl.value;
+    let lowertemp = this.lowertempControl.value;
     let upperhumi = this.upperhumiControl.value;
     let lowerhumi  = this.lowerhumiControl.value;
 
