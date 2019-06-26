@@ -107,6 +107,22 @@ export class CreateRoomComponent implements OnInit {
     let message : boolean;
     let id = "" + Math.floor((Date.now() / 1000) - 7);
 
+    let uppertemp = this.lowertempControl.value;
+    let lowertemp = this.uppertempControl.value;
+    let upperhumi = this.upperhumiControl.value;
+    let lowerhumi  = this.lowerhumiControl.value;
+
+    if(uppertemp < lowertemp)
+    {
+      lowertemp = this.upperhumiControl.value;
+      upperhumi = this.lowertempControl.value;
+    }
+    if(upperhumi < lowerhumi)
+    {
+      lowerhumi = this.upperhumiControl.value;
+      upperhumi = this.lowerhumiControl.value;
+    }
+
     if (this.messageControl.value)
       message = true;
     else
@@ -118,7 +134,7 @@ export class CreateRoomComponent implements OnInit {
       for(let i = roomname.length; i<10;i++)
         roomname = roomname + ' ';
     
-    this.sensorDataService.saveRoom(this.raspberryControl.value, roomname, this.lowertempControl.value, this.uppertempControl.value, this.lowerhumiControl.value, this.upperhumiControl.value, message, id)
+    this.sensorDataService.saveRoom(this.raspberryControl.value, roomname,lowertemp, uppertemp, lowerhumi, upperhumi, message, id)
       .subscribe((responseData) => {
           //console.log('Response from Server: ' + responseData.message);
       })

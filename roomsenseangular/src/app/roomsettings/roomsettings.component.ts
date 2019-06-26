@@ -70,10 +70,26 @@ export class RoomsettingsComponent implements OnInit {
   onSubmit(){
     let snackBarRef = this.snackbar.open('Raum ' + this.roomNameControl.value + ' gespeichert', 'close', {duration: 5000});
     let message : boolean;
+    let uppertemp = this.lowertempControl.value;
+    let lowertemp = this.uppertempControl.value;
+    let upperhumi = this.upperhumiControl.value;
+    let lowerhumi  = this.lowerhumiControl.value;
+
     if (this.messageControl.value)
       message = true;
     else
     message = false;
+
+    if(uppertemp < lowertemp)
+    {
+      lowertemp = this.upperhumiControl.value;
+      upperhumi = this.lowertempControl.value;
+    }
+    if(upperhumi < lowerhumi)
+    {
+      lowerhumi = this.upperhumiControl.value;
+      upperhumi = this.lowerhumiControl.value;
+    }
 
     //set roomname length to 10 characters
     var roomname = ""+ this.roomNameControl.value;
@@ -81,7 +97,7 @@ export class RoomsettingsComponent implements OnInit {
       for(let i = roomname.length; i<10;i++)
         roomname = roomname + ' ';
 
-    this.sensorDataService.updateRoom(this.raspberryControl.value, roomname, this.lowertempControl.value, this.uppertempControl.value, this.lowerhumiControl.value, this.upperhumiControl.value, message, this.currentRoom.id)
+    this.sensorDataService.updateRoom(this.raspberryControl.value, roomname, lowertemp, uppertemp, lowerhumi, upperhumi, message, this.currentRoom.id)
       .subscribe((responseData) => {
           console.log('Response from Server: ' + responseData.message);
       })
