@@ -23,8 +23,8 @@
 
 <ul ui-scroll-viewport>
     <li *ngFor="let dataEntry of fullData | searchFilter: searchBarInput">
-        <button class="add" *ngIf="dataEntry.upperTemp == null" mat-button [routerLink]="['/create-room']" routerLinkActive="router-link-active" class="rooms-button">+</button>
-        <button *ngIf="dataEntry.upperTemp != null" mat-button [routerLink]="['/room-detail', dataEntry.deviceId]" routerLinkActive="router-link-active" class="rooms-button">{{dataEntry.room}}</button>
+        <button class="add" *ngIf="dataEntry.room == null" mat-button [routerLink]="['/create-room']" routerLinkActive="router-link-active" class="rooms-button">+</button>
+        <button *ngIf="dataEntry.room" mat-button [routerLink]="['/room-detail', dataEntry.deviceId]" routerLinkActive="router-link-active" class="rooms-button">{{dataEntry.room}}</button>
         <div class="verticalLine"></div>
         <span class="description">Temperatur: {{dataEntry.temp}}</span>
         <span class="description">Luftfeuchte: {{dataEntry.hum}}</span>

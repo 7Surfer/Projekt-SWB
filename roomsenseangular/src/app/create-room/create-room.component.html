@@ -21,7 +21,7 @@
     <mat-error *ngIf="raspberryControl.hasError('required')">Bitte einen Raspberry wählen</mat-error>
   </mat-form-field>
   <br>
-  
+
   <mat-expansion-panel class="expTemp">
     <mat-expansion-panel-header>
       <mat-panel-title class="temp">Grenzwerte Temperatur</mat-panel-title>
@@ -58,14 +58,14 @@
             </mat-form-field>
       </mat-action-row>
     </mat-expansion-panel>
-  
+
   <br>
   <br>
   <mat-checkbox [formControl]="messageControl"> Benachrichtigungen</mat-checkbox>
   <br>
-   
+
   <br>
   <br>
-  <button  mat-button class="submit" type="submit" (click)="onSubmit()" [disabled]="roomNameControl.invalid || raspberryControl.invalid"> Speichern </button>
+  <button  mat-button class="submit" type="submit" (click)="onSubmit()" [routerLink]="['/floorplan']" [disabled]="roomNameControl.invalid || raspberryControl.invalid"> Speichern </button>
   <button  mat-button class="escape" [routerLink]="['/floorplan']" routerLinkActive="router-link-active"> Abbrechen </button>
 </div>
