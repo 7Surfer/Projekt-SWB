@@ -55,6 +55,12 @@ export class SensorBoxComponent implements OnInit, OnDestroy {
     // this.sensorDataService.storeClickedDevice();
   }
 
+  haveRoom(entry){
+    if ( entry.room != null)
+      return true;
+    else false;
+  }
+
   ngOnDestroy(): void {
     this.fullDataSubscription.unsubscribe();
     clearInterval(this.dataInterval);
